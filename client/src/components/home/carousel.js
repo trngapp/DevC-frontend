@@ -12,7 +12,7 @@ const CarouselFunction =()=>{
         },
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
-          items: 4
+          items: 3
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
@@ -20,7 +20,7 @@ const CarouselFunction =()=>{
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
-          items: 2
+          items: 1
         }
       };
       //const example = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -46,11 +46,11 @@ const CarouselFunction =()=>{
 
         transitionDuration={500}
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+
 
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-20-px">
-{arr.map(item => <Card head={item.description}/>  )}
+{arr.map(item => <Card description={item.description} projectLeader={item.projectLeader} openings={item.openings} projectName={item.projectName}/> )}
 </Carousel>
 
 );

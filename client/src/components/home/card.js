@@ -3,8 +3,11 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import PaellaImage from "../../static/images/paella.jpeg"
+import { styled } from '@mui/material/styles';
 
 const bull = (
   <Box
@@ -14,29 +17,47 @@ const bull = (
     •
   </Box>
 );
+const ColorButton = styled(Button)(({ theme }) => ({
+    //color: theme.palette.getContrastText(purple[500]),
+    backgroundColor:"blue",
 
-export default function BasicCard({head}) {
+    '&:hover': {
+     backgroundColor:  "blue ",
+   },
+  }));
+
+export default function BasicCard({description,projectLeader,projectName,openings}) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+      <>
+    <Card sx={{ minWidth: 275 ,margin:"2%"}}>
+        <CardMedia
+        component="img"
+        height="194"
+        image={PaellaImage}
+        alt="Paella dish"
+      />
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        {head}
+       Openings: {openings}
         </Typography>
         <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+        Project Name: {projectName}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
+      Project Leader: {projectLeader}
         </Typography>
         <Typography variant="body2">
-        {head}
+       <strong>Description:</strong> <br/> {description}
           <br />
-          {'"a benevolent smile"'}
+
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+       {/* <Button size="small" type="contained">Apply</Button>*/}
+        <center><ColorButton variant="contained" className="next" type="submit">Apply</ColorButton></center>
       </CardActions>
     </Card>
+
+    </>
   );
 }

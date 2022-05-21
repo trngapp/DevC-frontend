@@ -3,7 +3,7 @@ import "bootstrap"
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Carousel from "./carousel"
-
+import { Link } from 'react-router-dom'
 const Home = ()=>{
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
@@ -24,10 +24,10 @@ const Home = ()=>{
 <div class="col">
 <br/>
     <br/>
-    <center> <u><h5>Create your own Project</h5></u> </center>
+    <center> <u><h3>Create your own Project</h3></u> </center>
     <br/>
     <br/>
-    <center><ColorButton variant="contained" className="next" type="submit">Create</ColorButton></center>
+    <center><Link to="/create"><ColorButton variant="contained" className="next" type="submit">Create</ColorButton></Link></center>
 </div>
     </div>
     <div class="row">
@@ -38,7 +38,7 @@ const Home = ()=>{
     <hr style={{width:"1000px"}}></hr>
     <br/>
     <br/>
-   <center><u><h5>Apply to be a part of the team in some amazing projects</h5></u>  </center>
+   <center><u><h3>Apply to be a part of the team in some amazing projects</h3></u>  </center>
    <br/>
     <br/> <br/>
     <br/>

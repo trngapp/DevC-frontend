@@ -1,15 +1,27 @@
 {
     "item1":{
-        "description":"hello my name is tarang "
+        "openings":33,
+        "description":"hello my name is tarang,this is coding club of uiet please come !! ",
+        "projectName":"Codistan",
+        "projectLeader":"Tarang"
     },
     "item2":{
-     "description":"hello my name is rishabh "
+        "openings":33,
+        "description":"hello my name is Rishabh,this is coding club of uiet please come !! ",
+        "projectName":"Vscode",
+        "projectLeader":"Rishabh"
  },
  "item3":{
-     "description":"hello my name is varma "
+    "openings":33,
+    "description":"hello my name is Rahul,this is coding club of uiet please come !! ",
+    "projectName":"CodeHut",
+    "projectLeader":"Rahul"
  },
  "item4":{
-     "description":"hello my name is rahul "
+    "openings":33,
+        "description":"hello my name is Verma,this is coding club of uiet please come !! ",
+        "projectName":"Codevilla",
+        "projectLeader":"Verma"
  }
 
  }
