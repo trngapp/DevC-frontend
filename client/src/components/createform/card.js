@@ -6,7 +6,7 @@ import logo from "./success.png"
 import "bootstrap"
 import { styled } from '@mui/material/styles';
 //import {fontStyle} from '@mui/system';
-function Card({handle}) {
+function Card() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);

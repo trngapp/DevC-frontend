@@ -23,7 +23,7 @@ const Create=()=>{
           return(
 <>
 <div >
-    <Card />
+
 </div>
 </>
           );
@@ -86,7 +86,7 @@ const Create=()=>{
                 <br/>
 
              {/* <center> <ColorButton variant="contained" onClick={card} type="submit" >Submit</ColorButton></center>*/}
-             <Card/>
+<Card/>
                </div>
                </div>
 </Form>

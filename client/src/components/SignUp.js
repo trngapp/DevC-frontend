@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 import './SignUp.css';
 import Arrow from './Arrow.png';
 
+
 const SignUp = () => {
 
   const [file, setFile] = useState("");
@@ -15,9 +16,9 @@ const SignUp = () => {
     setFile(event.target.files[0]);
   }
 
-  
 
-  
+
+
 
   return (
       <div>
@@ -29,60 +30,60 @@ const SignUp = () => {
                 </h2>
 
                 <div className="form-group">
-                  <input type="text" name="name" className="form-input" id="name" required="true" 
+                  <input type="text" name="name" className="form-input" id="name" required="true"
                     placeholder="Name"
                   />
                 </div>
 
                 <div className="form-group">
-                  <input type="email" name="email" className="form-input" id="email" required="true" 
-                    placeholder="Email" 
+                  <input type="email" name="email" className="form-input" id="email" required="true"
+                    placeholder="Email"
                   />
                 </div>
 
                 {/* <div className="form-group">
-                  <input type="text" name="about" className="form-input" id="about" required="true" 
+                  <input type="text" name="about" className="form-input" id="about" required="true"
                     placeholder="About"
                   />
                 </div> */}
 
                 <div className="form-group">
-                  <input type="text" name="city" className="form-input" id="city" required="true" 
-                    placeholder="City" 
+                  <input type="text" name="city" className="form-input" id="city" required="true"
+                    placeholder="City"
                   />
                 </div>
 
                 <div className="form-group">
-                  <input type="text" name="state" className="form-input" id="state" required="true" 
-                    placeholder="State" 
+                  <input type="text" name="state" className="form-input" id="state" required="true"
+                    placeholder="State"
                   />
                 </div>
 
                 <div className="form-group">
-                  <input type="text" name="skill" className="form-input" id="skill" required="true" 
-                    placeholder="Skill" 
+                  <input type="text" name="skill" className="form-input" id="skill" required="true"
+                    placeholder="Skill"
                   />
                 </div>
 
                 <div className="form-group">
-                  <input type="text" name="linkedin" className="form-input" id="linkedin" required="true" 
-                    placeholder="LinkedIn" 
+                  <input type="text" name="linkedin" className="form-input" id="linkedin" required="true"
+                    placeholder="LinkedIn"
                   />
                 </div>
 
                 <div className="form-group">
-                  <input type="text" name="twitter" className="form-input" id="twitter" 
-                    placeholder="Twitter" 
+                  <input type="text" name="twitter" className="form-input" id="twitter"
+                    placeholder="Twitter"
                   />
                 </div>
                 <div className="form-group">
-                  <input type="password" name="password" className="form-input" id="password" required="true" 
-                    placeholder="Your Password" 
+                  <input type="password" name="password" className="form-input" id="password" required="true"
+                    placeholder="Your Password"
                   />
                 </div>
 
                 <div className="form-group">
-                  <input type="password" name="cpassword" className="form-input" id="cpassword" required="true" 
+                  <input type="password" name="cpassword" className="form-input" id="cpassword" required="true"
                     placeholder="Confirm Your Password"
                   />
                 </div>
@@ -99,17 +100,17 @@ const SignUp = () => {
                 <div className="form-button">
                   <input type="submit" name="signup" id="signup" className="form-submit" value="Sign Up To Your Account"/>
                   <img classname="sign-up-arrow" src={Arrow} alt="" />
-                </div> 
+                </div>
 
                 <NavLink to="/signin" className="signup-image-link">I am already registered</NavLink>
-                  
+
                 <hr className="sign-up-line" />
               </div>
-          
+
               </form>
         </section>
       </div>
   )
 }
 
-export default SignUp       
+export default SignUp
