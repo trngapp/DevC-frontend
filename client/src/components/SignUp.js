@@ -16,7 +16,11 @@ const SignUp = () => {
     setFile(event.target.files[0]);
   }
 
+//<div class="col col-md-1">
+//{/*<center><FormatListNumberedIcon /></center>*/}
+//<Card/>
 
+//</div>
 
 
 
