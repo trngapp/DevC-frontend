@@ -1,0 +1,19 @@
+.contain{
+    background:linear-gradient(90deg, rgba(64, 209, 203, 0.8) 0%, rgba(51, 147, 221, 0.8) 50.83%, rgba(51, 107, 213, 0.8) 100%);
+
+
+}
+.headings{
+
+
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+
+/* identical to box height line-height: 26px; */
+
+
+color: #FFFFFF;
+}
