@@ -25,16 +25,16 @@ const Navbar = () => {
         <>
             <div className='nav-container'>
 
-                    <div className='logo'> <Link to='/'> <img src={Logo}  style={{width:"70px"}}></img></Link>  </div>
+                    <div className='logo'> <Link to='/'> <img src={Logo}  style={{width:"200px",marginLeft:50}}></img></Link>  </div>
 
                     <MediaQuery query="(max-width: 650px)">
                {/*<Button type="primary" onClick={showDrawer} style={{margin:"30px"}}>
                     Menu
     </Button>*/}
-              <div>  <MenuIcon style={{color:"white",marginRight:"35px"}} onClick={showDrawer}>
+              <div>  <MenuIcon style={{color:"black",marginRight:"35px"}} onClick={showDrawer}>
 
                 </MenuIcon></div>
-                <Drawer title="Menu" placement="right" width="250px" onClose={onClose} visible={visible}>
+                <Drawer title="Menu" placement="left" width="250px" onClose={onClose} visible={visible}>
                     <ul>
                     <li> <Link to='/'>Home</Link> </li>
                             <li><Link to='/faq'> FAQ</Link> </li>

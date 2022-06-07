@@ -23,17 +23,21 @@ function footer() {
 <div class="container-fluid contain" >
     <div class="row">
 
-        <div class="col-xxl">
+       {/*<div class="col-xxl">
 
         <br/>
            <img  style={{width:"100px",marginLeft:"20%"}} src={Logo}></img>
 
 
-        </div>
+    </div>
 
-        <div class="col">
 
-            </div>
+
+    */}
+<div class="col">
+
+</div>
+
 
         <div class="col-xxl">
         <br/>

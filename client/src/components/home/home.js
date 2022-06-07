@@ -35,7 +35,7 @@ const Home = ()=>{
 <br/>
     <br/> <br/>
     <br/>
-    <hr style={{width:"1000px"}}></hr>
+    <hr style={{width:"100%"}}></hr>
     <br/>
     <br/>
    <center><u><h3>Apply to be a part of the team in some amazing projects</h3></u>  </center>
@@ -49,7 +49,7 @@ const Home = ()=>{
 <h1>Web Development</h1>
 <br/>
 <Carousel/>
-<hr style={{width:"1000px"}}></hr>
+<hr style={{width:"100%"}}></hr>
 <br/> <br/>
 </div>
         </div>
@@ -58,7 +58,7 @@ const Home = ()=>{
 <h1>Android Development</h1>
 <br/>
 <Carousel/>
-<hr style={{width:"1000px"}}></hr>
+<hr style={{width:"100%"}}></hr>
 <br/> <br/>
 </div>
         </div>
@@ -67,7 +67,7 @@ const Home = ()=>{
 <h1>ML/AI</h1>
 <br/>
 <Carousel/>
-<hr style={{width:"1000px"}}></hr>
+<hr style={{width:"100%"}}></hr>
 <br/> <br/>
 </div>
         </div>
@@ -76,7 +76,7 @@ const Home = ()=>{
 <h1>Data Aanalysis</h1>
 <br/>
 <Carousel/>
-<hr style={{width:"1000px"}}></hr>
+<hr style={{width:"100%"}}></hr>
 <br/> <br/>
 </div>
         </div>
@@ -85,7 +85,7 @@ const Home = ()=>{
 <h1>Web Security</h1>
 <br/>
 <Carousel/>
-<hr style={{width:"1000px"}}></hr>
+<hr style={{width:"100%"}}></hr>
 <br/> <br/>
 </div>
         </div>
