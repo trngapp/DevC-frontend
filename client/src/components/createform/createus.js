@@ -289,7 +289,7 @@ function Createus() {
 
                         <Grid item xs={12} md={6}>
 
-                            <Box sx={{ '& .MuiTextField-root': {  ml: {xs:0.25,md:1}, width: {xs:"96%",md:"98%"}  } }}
+                            <Box sx={{ '& .MuiTextField-root': {  ml: {xs:0.25} ,mr:{md:1.0}, width: {xs:"96%",md:"98%"}  } }}
                             >
                                 <TextField id="opening" label="Opening-type"
                                     select
@@ -339,7 +339,7 @@ function Createus() {
                         {/* Opening Number*/}
                         <Grid item xs={12} md={6}>
 
-                            <Box sx={{ '& .MuiTextField-root': { ml:{xs:0.25,md:1}, width: {xs:"96%",md:"98%"} } }}
+                            <Box sx={{ '& .MuiTextField-root': { ml:{xs:0.25},mr:{md:1.0}, width: {xs:"96%",md:"98%"} } }}
                             >
                                 <TextField id="openingnumbr" label="Opening-Number"
                                     select
