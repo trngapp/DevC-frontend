@@ -59,27 +59,27 @@ function Createus() {
 
     const Type = [
         {
-            value: 'WebD',
+            value: 'Web',
             label: 'Web-Development',
         },
         {
-            value: 'AppD',
+            value: 'App',
             label: 'App-Development',
         },
         {
-            value: 'CyberS',
+            value: 'Cyber',
             label: 'Cyber-Security',
         },
         {
-            value: 'Analysis',
+            value: 'AnalysisD',
             label: 'Data-Analysis',
         },
         {
-            value: 'IOT',
+            value: 'IOThings',
             label: 'IOT',
         },
         {
-            value: 'AI',
+            value: 'AIntel',
             label: 'Artificial Intelligence',
         },
     ];
@@ -141,11 +141,22 @@ function Createus() {
     const [ON, setON] = useState('');
 
     const handleChange = (event) => {
-        setOT(event.target.value);
+            setOE(event.target.value);
+    };
+
+    const handleChang = (event) => {
         setPT(event.target.value);
-        setOE(event.target.value);
+    };
+
+    const handle = (event) => {
+        setOT(event.target.value);
+    };
+
+    const Change = (event) => {
         setON(event.target.value);
     };
+    
+
 
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
@@ -212,7 +223,7 @@ function Createus() {
                             </Box>
 
                         </Grid>
-                        <br></br>
+                
 
                         {/* Leader's Email*/}
                         <Grid item xs={12}>
@@ -268,7 +279,7 @@ function Createus() {
                                     select
                                     value={PT}
                                     label="Project-type"
-                                    onChange={handleChange}
+                                    onChange={handleChang}
                                 >
 
 
@@ -293,8 +304,9 @@ function Createus() {
                             >
                                 <TextField id="opening" label="Opening-type"
                                     select
+                                    native
                                     value={OT}
-                                    onChange={handleChange}
+                                    onChange={handle}
 
                                 >
                                     {Type.map((option) => (
@@ -319,6 +331,7 @@ function Createus() {
                                 <TextField id="openingexper"
                                     label="Opening-Expertise"
                                     select
+                                    native
                                     value={OE}
                                     onChange={handleChange}
                                 >
@@ -341,10 +354,12 @@ function Createus() {
 
                             <Box sx={{ '& .MuiTextField-root': { ml:{xs:0.25},mr:{md:1.0}, width: {xs:"96%",md:"98%"} } }}
                             >
-                                <TextField id="openingnumbr" label="Opening-Number"
+                                <TextField id="openingnumbr" 
+                                    label="Opening-Number"
                                     select
+                                    native
                                     value={ON}
-                                    onChange={handleChange}
+                                    onChange={Change}
 
                                 >
 
