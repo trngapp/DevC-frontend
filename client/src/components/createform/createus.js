@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+//import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import TextField from '@mui/material/TextField';
 import { Grid, InputLabel } from '@mui/material';
+import "react-bootstrap"
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import { Image } from 'react-bootstrap';
@@ -198,7 +199,7 @@ function Createus() {
                 Create Form</h2>
             <center>
 
-                <Card sx={{ width: { xs: '100%', md: 1100 } }}>
+                <Card sx={{ width: { xs: '100%', md: 1100 }, backgroundColor:"#F5F5F5"}}>
 
 
 
