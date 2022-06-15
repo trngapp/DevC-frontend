@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-
+import Apply from "./components/apply/apply"
 import Admin from "./components/admin/admin"
 import Footer from "./components/footer/footer.js"
 import Nav from "./components/navbar/navbar"
@@ -24,6 +24,7 @@ const App = () => {
           <Route exact path="/sigin" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/create" element={<Createus />} />
+          <Route exact path="/apply"  element={<Apply />} />
 
         </Routes>
 
