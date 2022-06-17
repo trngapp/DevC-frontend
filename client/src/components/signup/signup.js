@@ -46,7 +46,7 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 2,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -107,6 +107,16 @@ export default function SignUp() {
                   fullWidth
                   id="email"
                   label="Skill"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="GitHub"
                   name="email"
                   autoComplete="email"
                 />

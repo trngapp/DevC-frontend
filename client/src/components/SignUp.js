@@ -45,12 +45,6 @@ const SignUp = () => {
                   />
                 </div>
 
-                {/* <div className="form-group">
-                  <input type="text" name="about" className="form-input" id="about" required="true"
-                    placeholder="About"
-                  />
-                </div> */}
-
                 <div className="form-group">
                   <input type="text" name="city" className="form-input" id="city" required="true"
                     placeholder="City"
@@ -68,10 +62,16 @@ const SignUp = () => {
                     placeholder="Skill"
                   />
                 </div>
+                 
+                <div className="form-group">
+                  <input type="text" name="about" className="form-input" id="github" required="true"
+                    placeholder="GitHub"
+                  />
+                </div>
 
                 <div className="form-group">
-                  <input type="text" name="linkedin" className="form-input" id="linkedin" required="true"
-                    placeholder="LinkedIn"
+                  <input type="text" name="about" className="form-input" id="github" required="true"
+                    placeholder="GitHub"
                   />
                 </div>
 
