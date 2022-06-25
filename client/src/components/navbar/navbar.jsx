@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className='nav-container'>
+            <div className='nav-container' style={{borderBottom:"groove"}}>
 
                     <div className='logo'> <Link to='/'> <img src={Logo}  style={{width:"200px",marginLeft:50}}></img></Link>  </div>
 
