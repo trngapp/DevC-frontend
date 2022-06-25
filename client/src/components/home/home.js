@@ -24,7 +24,7 @@ const Home = ()=>{
 <div class="col">
 <br/>
     <br/>
-    <center> <u><h3>Create your own Project</h3></u> </center>
+    <center> <u><h3 style={{fontFamily:"Georgia"}}>Create your own Project</h3></u> </center>
     <br/>
     <br/>
     <center><Link to="/create"><ColorButton variant="contained" className="next" type="submit">Create</ColorButton></Link></center>
@@ -38,7 +38,7 @@ const Home = ()=>{
     <hr style={{width:"100%"}}></hr>
     <br/>
     <br/>
-   <center><u><h3>Apply to be a part of the team in some amazing projects</h3></u>  </center>
+   <center><u><h3 style={{fontFamily:"Georgia"}}>Apply to be a part of the team in some amazing projects</h3></u>  </center>
    <br/>
     <br/> <br/>
     <br/>

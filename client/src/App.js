@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Apply from "./components/apply/apply"
 import Admin from "./components/admin/admin"
-import Footer from "./components/footer/footer.js"
+import Footer from "./components/footer/footer2"
 import Nav from "./components/navbar/navbar"
 import Home from "./components/home/home"
 import Create from "./components/createform/create"
