@@ -53,7 +53,7 @@ export default function SignUp() {
           </img>
           </MediaQuery>
         </Grid>
-      
+
         <Grid item>
           <Card sx={{ width: { xs: '100%', md: 500 }, alignitem: 'center', backgroundColor: "#F5F5F5",marginBottom:'5%'}}>
             <ThemeProvider theme={theme}>
@@ -198,7 +198,7 @@ export default function SignUp() {
                     </Button>
                     <Grid container justifyContent="flex-end">
                       <Grid item>
-                        <Link href="#" variant="body2">
+                        <Link href="/signin" variant="body2">
                           Already have an account? Sign in
                         </Link>
                       </Grid>

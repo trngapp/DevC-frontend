@@ -1,10 +1,11 @@
 import React from "react";
 import { Box } from "@mui/material";
-
+import "bootstrap"
 function Aboutus()
 {
     return(
-        <Box
+      <>
+       {/* <Box
         sx={{
           width: 300,
           height: 300,
@@ -14,11 +15,18 @@ function Aboutus()
             opacity: [0.9, 0.8, 0.7],
           },
         }}
-      />
-        
+
+      />*/}
+       <div class="container">
+         <div class="row">
+           
+         </div>
+       </div>
+
+     </>
     );
 
-    
+
 }
 
 export default Aboutus
