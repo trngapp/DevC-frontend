@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Card from "@mui/material/Card"
 import Girl from '../signup/girl.gif';
+import MediaQuery from 'react-responsive';
 
 function Copyright(props) {
   return (
@@ -46,10 +47,13 @@ export default function SignUp() {
 
       <Grid container columnSpacing={{xs:4,md:8}}>
         <Grid item>
-          <img src={Girl} alt="Girl" style={{width:{xs:'10px',md:"100%"},height:{xs:'10px',md:"100%"},marginTop:"20%"}}>
+        <MediaQuery query='(min-width: 1025px) and (max-width: 1280px)'>
+          <img src={Girl} alt="Girl" style={{ width: '90vh', height: '90vh',marginTop:'20%' }}>
 
           </img>
+          </MediaQuery>
         </Grid>
+      
         <Grid item>
           <Card sx={{ width: { xs: '100%', md: 500 }, alignitem: 'center', backgroundColor: "#F5F5F5",marginBottom:'5%'}}>
             <ThemeProvider theme={theme}>
