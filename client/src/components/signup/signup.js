@@ -51,7 +51,7 @@ export default function SignUp() {
           </img>
         </Grid>
         <Grid item>
-          <Card sx={{ width: { xs: '50%', md: 500 }, alignitem: 'center', backgroundColor: "#F5F5F5",marginBottom:'5%'}}>
+          <Card sx={{ width: { xs: '100%', md: 500 }, alignitem: 'center', backgroundColor: "#F5F5F5",marginBottom:'5%'}}>
             <ThemeProvider theme={theme}>
 
 

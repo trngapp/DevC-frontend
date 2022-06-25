@@ -47,6 +47,7 @@ const Home = () => {
                 <div class="row">
                     <div class="col">
                         <h1>Web Development</h1>
+                        <Link to="/explore">  <ColorButton style={{marginLeft:"1000px"}}variant="contained" className="next" >Explore</ColorButton></Link>
                         <br />
                         <Carousel />
                         <hr style={{ width: "100%" }}></hr>

@@ -12,7 +12,7 @@ import Signup from "./components/signup/signup"
 import Createus from './components/createform/createus';
 import FAQ from './components/faq/faq';
 import Aboutus from './components/aboutus/aboutus'
-
+import Explore from "./components/ExploreMore/explore"
 const App = () => {
   return (
     <>
@@ -29,6 +29,7 @@ const App = () => {
           <Route exact path="/apply"  element={<Apply />} />
           <Route exact path="/faq"   element={<FAQ />}/>
           <Route exact path="/aboutus" element={<Aboutus />}/>
+          <Route exact path="/explore" element={<Explore />}/>
 
         </Routes>
 

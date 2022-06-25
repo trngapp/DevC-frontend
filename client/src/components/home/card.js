@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import PaellaImage from "../../static/images/paella.jpeg"
+import PaellaImage from "../../static/images/webimage.png"
 import { styled } from '@mui/material/styles';
 
 const bull = (
