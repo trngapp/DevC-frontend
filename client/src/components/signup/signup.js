@@ -109,6 +109,7 @@ export default function SignUp() {
                   label="Skill"
                   name="email"
                   autoComplete="email"
+                  helperText="Multiple values seperated with comma"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -133,7 +134,6 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
                   id="email"
                   label="Twitter"
