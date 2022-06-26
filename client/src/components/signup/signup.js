@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Card from "@mui/material/Card"
-import Girl from '../signup/girl.gif';
+import Girl from '../../static/images/girl.gif';
 import MediaQuery from 'react-responsive';
 
 function Copyright(props) {

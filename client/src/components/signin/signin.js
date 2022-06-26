@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Login from '../signin/login.gif';
+import Login from '../../static/images/login.gif';
 import { Card } from '@mui/material';
 import MediaQuery from 'react-responsive';
 
@@ -51,7 +51,7 @@ export default function SignIn() {
 
         {/*GIF */}
         <Grid item >
-        <MediaQuery query='(min-width: 1025px) and (max-width: 1280px)'>
+        <MediaQuery query='(min-width: 1000px) and (max-width: 1300px)'>
 
         {
           <img src={Login} alt="login"  >
