@@ -8,6 +8,7 @@ import Landing from '../home/landing.gif'
 import Community from '../home/community.gif'
 import Bubbles from "../../static/images/bubbles.gif"
 import Typography from "@mui/material/Typography"
+
 const Home = () => {
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
@@ -47,10 +48,12 @@ const Home = () => {
 
                    {/* <img src={Bubbles} alt="bubbles"> </img> <center> <h1>Create your own Project</h1></center>*/}
 
-<center><Typography fontFamily="agrandir medium" variant="h1" fontSize={40}>Create your own project</Typography></center>
+<center><Typography fontFamily="agrandir medium" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
                     <br />
                     <br />
+
                     <center><Link to="/create"><ColorButton variant="contained" className="next" type="submit">Create</ColorButton></Link></center>
+
                 </div>
             </div>
             <div class="row">
@@ -58,12 +61,12 @@ const Home = () => {
                     <br />
                     <br /> <br />
                     <br />
-                    <hr style={{ width: "100%" }}></hr>
+                    <hr style={{ width: "100%" , backgroundColor:"black"}}></hr>
                     <br />
                     <br />
                    {/*<center><h1>Apply to be a part of the team in some amazing projects</h1> </center>*/}
 
-<center><Typography fontFamily="agrandir medium" variant="h1" fontSize={40}>Apply in different projects</Typography></center>
+<center><Typography fontFamily="agrandir medium" variant="h1" fontSize={35}>APPLY IN DIFFERENT PROJECTS</Typography></center>
                     <br />
                     <br /> <br />
                     <br />

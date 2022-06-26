@@ -38,7 +38,7 @@ const Navbar = () => {
                     <ul>
                     <li> <Link to='/'>Home</Link> </li>
                             <li><Link to='/faq'> FAQ</Link> </li>
-                            <li><Link to='/'> About us</Link> </li>
+                            <li><Link to='/aboutus'> About us</Link> </li>
                             <li> <Link to='/profile'> Profile</Link></li>
                     </ul>
                 </Drawer>
@@ -48,7 +48,7 @@ const Navbar = () => {
                         <ul>
                         <li> <Link to='/'>Home</Link> </li>
                             <li><Link to='/faq'> FAQ</Link> </li>
-                            <li><Link to='/'> About us</Link> </li>
+                            <li><Link to='/aboutus'> About us</Link> </li>
                             <li> <Link to='/profile'> Profile</Link></li>
                         </ul>
                     </div>

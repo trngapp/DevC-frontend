@@ -51,7 +51,7 @@ function request() {
                   } >
 
                         <div>
-                              <h2 id='Heading'>APPLY HERE!!</h2>
+                             {/* <h2 id='Heading'>APPLY HERE!!</h2>*/}
                               <div class="text-center">
                                     <img alt="" src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle"></img>
                               </div>
