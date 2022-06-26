@@ -4,8 +4,8 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Carousel from "./carousel"
 import { Link } from 'react-router-dom'
-import Landing from '../home/landing.gif'
-import Community from '../home/community.gif'
+import Landing from '../../static/images/landing.gif'
+import Community from '../../static/images/community.gif'
 import Bubbles from "../../static/images/bubbles.gif"
 import Typography from "@mui/material/Typography"
 const Home = () => {
