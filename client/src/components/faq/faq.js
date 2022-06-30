@@ -86,7 +86,7 @@ function FAQ() {
 
             </Box>
 
-            <label>
+            <label style={{marginLeft:'25%',}}>
                 How can we help you?
             </label>
 
@@ -94,7 +94,9 @@ function FAQ() {
                 <Card sx={{
                     width: '50%',
                     height: 'auto',
-                    border: 0.5
+                    border: 2,
+                    borderRadius:2,
+                    borderColor:"#D3D3D3"
 
 
                 }}>
@@ -102,7 +104,7 @@ function FAQ() {
 
 
                     <Accordion sx={{
-                        border: '2'
+                        
                     }}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
