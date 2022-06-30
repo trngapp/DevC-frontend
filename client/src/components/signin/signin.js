@@ -47,7 +47,7 @@ export default function SignIn() {
     <>
 
 
-      <Grid container columnSpacing={{ xs: 1, md: 2 }}>
+      <Grid container columnGap={{md:5}}     columnSpacing={{ xs: 1, md: 4 }}>
 
         {/*GIF */}
         <Grid item >

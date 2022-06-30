@@ -45,13 +45,13 @@ export default function SignUp() {
 
     <>
 
-      <Grid container columnSpacing={{xs:4,md:8}}>
+      <Grid container columnGap={{md:5}} columnSpacing={{xs:4,md:8}}>
         <Grid item>
-      {/*  <MediaQuery query='(min-width: 1025px) and (max-width: 1280px)'>*/}
+        <MediaQuery query='(min-width: 1025px) and (max-width: 1280px)'>
           <img src={Girl} alt="Girl" style={{ width: '90vh', height: '90vh',marginTop:'20%' }}>
 
           </img>
-           {/* </MediaQuery>*/}
+           </MediaQuery>
         </Grid>
 
         <Grid item>
