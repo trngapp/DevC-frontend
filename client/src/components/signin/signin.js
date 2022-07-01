@@ -47,11 +47,11 @@ export default function SignIn() {
     <>
 
 
-      <Grid container columnGap={{md:5}}     columnSpacing={{ xs: 1, md: 4 }}>
+      <Grid container columnGap={{md:12}}     columnSpacing={{ xs: 1, md: 4 }}>
 
         {/*GIF */}
         <Grid item >
-        <MediaQuery query='(min-width: 1000px) and (max-width: 1300px)'>
+        <MediaQuery minWidth={1224} >
 
         {
           <img src={Login} alt="login"  >

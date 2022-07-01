@@ -38,6 +38,19 @@ function request() {
       //       p: { xs: 2, md: 4 },
       // };
 
+      const transform = (event) =>{
+
+            if(event)
+            {
+                  setChecked(event.target.checked)
+            }
+            else
+            {
+                  setChecked(event.target);
+            }
+
+      }
+
 
 
 
@@ -101,6 +114,7 @@ function request() {
                                     <Grid container spacing={{ xs: 4, md: 6 }} columns={{ xs: 6, md: 12 }}>
                                           <Grid item xs={2} md={4}  >
                                                 <TextField
+                                                      disabled
                                                       id="PType"
                                                       label="Project Type"
                                                       defaultValue="Web-Development"
@@ -110,6 +124,7 @@ function request() {
 
                                           <Grid item xs={2} md={4}>
                                                 <TextField
+                                                      disabled
                                                       id="OType"
                                                       label="Opening Type"
                                                       defaultValue="Front-End"
@@ -120,6 +135,7 @@ function request() {
 
                                           <Grid item xs={2} md={4}>
                                                 <TextField
+                                                disabled
                                                       id="OExpert"
                                                       label="Opening Expertise"
                                                       defaultValue="Intermediate"
@@ -162,10 +178,10 @@ function request() {
                               <br />
                               <div className='Agreement'>
                                     <div>
-                                          <Button variant="primary" onClick={handleShow} sx={{backgroundColor:"#C81132"}}>
+                                          <Button variant="primary" onClick={handleShow} sx={{backgroundColor:"green"}}>
                                                 Agreement
                                           </Button>
-                                          {checked === true ? <CheckCircleIcon sx={{ color: "green" }} /> : null }
+                                          {checked === true ? <CheckCircleIcon sx={{ color: "blue" }} /> : null  }
                                     </div>
 
                                     <Modal show={show} onHide={handleClose}>
@@ -176,7 +192,7 @@ function request() {
                                           <Modal.Footer>
                                                 <Checkbox
                                                       checked={checked}
-                                                      onChange={() => setChecked(true)}
+                                                      onChange={transform}
                                                       inputProps={{ 'aria-label': 'controlled' }}
                                                       align='right'
 
@@ -191,7 +207,7 @@ function request() {
                         </div>
                   </Card>
                   <br />
-                  {checked === true ? <Button variant='contained' color='success'>APPLY</Button> : <Button variant="contained" disabled color='success'>APPLY</Button>}
+                  {checked === true ? <Button variant='contained' sx={{backgroundColor:"#C81132"}}>APPLY</Button> : <Button variant="contained" disabled color='success'>APPLY</Button>}
                   <br />
                   <br />
             </center>

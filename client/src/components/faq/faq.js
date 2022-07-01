@@ -85,12 +85,13 @@ function FAQ() {
 
 
             </Box>
-
-            <label style={{marginLeft:'25%',}}>
-                How can we help you?
-            </label>
-
+             
             <center>
+            <Typography sx={{alignContent:'center'}}>
+                How can we help you?
+            </Typography>
+
+            
                 <Card sx={{
                     width: '50%',
                     height: 'auto',
