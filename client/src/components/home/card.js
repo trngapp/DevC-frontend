@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import PaellaImage from "../../static/images/webimage.png"
 import { styled } from '@mui/material/styles';
-
+import { Link } from 'react-router-dom'
 const bull = (
   <Box
     component="span"
@@ -54,7 +54,7 @@ export default function BasicCard({description,projectLeader,projectName,opening
       </CardContent>
       <CardActions>
        {/* <Button size="small" type="contained">Apply</Button>*/}
-        <center><ColorButton variant="contained" className="next" type="submit">Apply</ColorButton></center>
+        <center><Link to="/apply"><ColorButton variant="contained" className="next" >Apply</ColorButton></Link></center>
       </CardActions>
     </Card>
 
