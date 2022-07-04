@@ -10,8 +10,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Card } from "@mui/material";
-import Faq from '../../components/faq/faq.gif'
-import Help from '../../components/faq/help.gif'
+import Flow from '../faq/flow.jpg'
+import Heel from '../faq/heel.jpg'
 
 
 function FAQ() {
@@ -45,7 +45,7 @@ function FAQ() {
                     <div class="row">
 
                         <div class="col">
-                        <img src={Faq} alt="Image" style={{ width: '60vh', height: '60vh' }}>
+                        <img src={Flow} alt="Image" style={{ width: '65vh', height: '50vh' }}>
 
                         </img>
 
@@ -70,7 +70,7 @@ function FAQ() {
                         </div>
 
                         <div class="col">
-                        <img src={Help} alt="Image" style={{ width: '60vh', height: '60vh' }}>
+                        <img src={Heel} alt="Image" style={{ width: '60vh', height: '60vh' }}>
                         </img>
                           
                         </div>

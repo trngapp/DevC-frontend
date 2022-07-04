@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Login from '../../static/images/login.gif';
+import Mobile from '../signin/mobile.png';
 import { Card } from '@mui/material';
 import MediaQuery from 'react-responsive';
 
@@ -47,14 +47,14 @@ export default function SignIn() {
     <>
 
 
-      <Grid container columnGap={{md:12}}     columnSpacing={{ xs: 1, md: 4 }}>
+      <Grid container columnGap={{md:12}}  columnSpacing={{ xs: 1, md: 4 }}>
 
         {/*GIF */}
         <Grid item >
         <MediaQuery minWidth={1224} >
 
         {
-          <img src={Login} alt="login"  >
+          <img src={Mobile} alt="login"  style={{ width: '80vh', height: '80vh',marginTop:'20%' }} >
 
           </img>
         }

@@ -49,7 +49,7 @@ function request() {
                   setChecked(event.target);
             }
 
-      }
+      };
 
 
 

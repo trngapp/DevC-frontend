@@ -27,7 +27,7 @@ function Aboutus() {
       <Grid container spacing={2} sx={{ padding: 6 }} >
         <Grid item md={12}>
           <MediaQuery maxWidth={1224} >
-            <center><ReactPlayer url="https://www.youtube.com/watch?v=8zKuNo4ay8E&ab_channel=AkshaySaini" playing={false} width='100%' height='100%'/></center>
+            <center><ReactPlayer url="https://www.youtube.com/watch?v=8zKuNo4ay8E&ab_channel=AkshaySaini" playing={false} width='110%' height='110%'/></center>
           </MediaQuery>
           <MediaQuery minWidth={1224.1} >
             <center><ReactPlayer url="https://www.youtube.com/watch?v=8zKuNo4ay8E&ab_channel=AkshaySaini" playing={false} /></center>

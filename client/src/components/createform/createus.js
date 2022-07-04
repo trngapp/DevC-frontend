@@ -17,6 +17,7 @@ import { Card } from '@mui/material';
 
 
 
+
 function Createus() {
     const [file, setFile] = useState("");
 
@@ -168,6 +169,8 @@ function Createus() {
             background: "linear-gradient(90deg, rgba(200, 17, 50, 0.8) 0%, rgba(214, 25, 0, 0.8) 50.31%, rgba(202, 0, 0, 0.8) 100%)"
         },
     }));
+
+
 
 
     const card = () => {

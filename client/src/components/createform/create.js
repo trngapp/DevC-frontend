@@ -46,7 +46,7 @@ const Create=()=>{
 {/*<h1 class="h1">Personal Information</h1>
                 <br/>
     <br/>*/}
-</div>
+</div >
 <div class="row">
 <h2 class="h2">All fields are mandatory</h2>
  <br/>
@@ -91,10 +91,11 @@ const Create=()=>{
                </div>
 </Form>
 
-</div>
+</div >
 
 
         </>
     )
 }
 export default Create;
+
