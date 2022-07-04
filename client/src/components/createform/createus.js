@@ -9,6 +9,7 @@ import { Image } from 'react-bootstrap';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Card } from '@mui/material';
+import Confirm from './card';
 
 
 
@@ -176,9 +177,7 @@ function Createus() {
     const card = () => {
         return (
             <>
-                <div >
-
-                </div>
+                {Confirm}
             </>
         );
     };
