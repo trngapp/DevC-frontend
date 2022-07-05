@@ -6,7 +6,7 @@ import logo from "./success.png"
 import "bootstrap"
 import { styled } from '@mui/material/styles';
 //import {fontStyle} from '@mui/system';
-function Card() {
+function Confirm() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -76,4 +76,4 @@ function Card() {
     )
 }
 
-export default Card;
+export default Confirm;

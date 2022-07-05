@@ -416,9 +416,11 @@ function Createus() {
                                 minWidth: { md: 350 }
                             }}>
                                 <center>
-                                    <ColorButton variant="contained" onClick={card} type="submit" >
+                                    {/*<ColorButton variant="contained" onClick={card} type="submit" >
                                         Submit
-                                    </ColorButton>
+                                    </ColorButton>*/}
+                                    <Confirm/>
+                                    {/* Condition will be added for validation */}
                                 </center>
                                 <br/>
                             </Box>
