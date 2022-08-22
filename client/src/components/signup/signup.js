@@ -15,8 +15,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Card from "@mui/material/Card"
 import Entry from '../signup/entry.png';
 import MediaQuery from 'react-responsive';
+import { useForm, Controller } from "react-hook-form";
+
+
 
 function Copyright(props) {
+
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -32,15 +36,26 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
+ /* const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     });
-  };
-
+  };*/
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    clearErrors,
+  } = useForm();
+  const onsubmit=(formData)=>{
+    console.log(formData.first_name);
+    console.log(formData.last_name);
+    console.log(formData.city);
+  }
   return (
 
     <>
@@ -60,8 +75,10 @@ export default function SignUp() {
 
 
 
-              <Container component="main" maxWidth="xs">
+              <Container component="main" maxWidth="xs" >
+
                 <CssBaseline />
+
                 <Box
                   sx={{
                     marginTop: 2,
@@ -70,117 +87,177 @@ export default function SignUp() {
                     alignItems: 'center',
                   }}
                 >
+
                   <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                     <LockOutlinedIcon />
                   </Avatar>
                   <Typography component="h1" variant="h5">
                     Sign up
                   </Typography>
-                  <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                  <Box component="form" noValidate onSubmit={handleSubmit(onsubmit)} sx={{ mt: 3 }}>
                     <Grid container spacing={2}>
                       <Grid item xs={12} sm={6}>
+                      <Controller
+          name="first_name"
+          control={control}
+          defaultValue=""
+          rules={{ required: "First Name is required" }}
+          render={({ field }) => (
                         <TextField
+                        {...field}
                           autoComplete="given-name"
                           name="firstName"
                           required
                           fullWidth
                           id="firstName"
                           label="First Name"
+                          error={!!errors.first_name}
+                         // helperText={errors.last_name && errors.first_name? message:null}
                           autoFocus
                         />
+          )}
+          />
                       </Grid>
                       <Grid item xs={12} sm={6}>
+                      <Controller
+          name="last_name"
+          control={control}
+          defaultValue=""
+          rules={{ required: "Last Name is required" }}
+          render={({ field }) => (
                         <TextField
+                        {...field}
                           required
                           fullWidth
                           id="lastName"
                           label="Last Name"
                           name="lastName"
+                          error={!!errors.last_name}
                           autoComplete="family-name"
                         />
+          )}
+          />
                       </Grid>
                       <Grid item xs={12}>
+
                         <TextField
+
                           required
                           fullWidth
+                          error={!!errors.first_name}
                           id="email"
                           label="Email Address"
                           name="email"
                           autoComplete="email"
                         />
+
                       </Grid>
                       <Grid item xs={12}>
+                     <Controller
+          name="city"
+          control={control}
+          defaultValue=""
+          rules={{ required: "City Name is required" }}
+                     render={({ field }) => (
                         <TextField
+{...field}
                           required
                           fullWidth
-                          id="email"
+                          error={!!errors.city}
+                          id="city"
                           label="City"
-                          name="email"
-                          autoComplete="email"
+                          name="city"
+                          autoComplete="city"
                         />
+          )}
+          />
                       </Grid>
                       <Grid item xs={12}>
+
                         <TextField
+
                           required
                           fullWidth
-                          id="email"
+                          error={!!errors.skills}
+                          id="skills"
                           label="Skill"
-                          name="email"
-                          autoComplete="email"
+                          name="skills"
+                          autoComplete="skills"
                           helperText="Multiple values seperated with comma"
                         />
+
                       </Grid>
                       <Grid item xs={12}>
+
                         <TextField
+
                           required
                           fullWidth
-                          id="email"
+                          error={!!errors.github}
+                          id="github"
                           label="GitHub"
-                          name="email"
-                          autoComplete="email"
+                          name="github"
+                          autoComplete="github"
                         />
+
                       </Grid>
                       <Grid item xs={12}>
+
                         <TextField
+
                           required
+                          error={!!errors.linkedin}
                           fullWidth
-                          id="email"
+                          id="linkedin"
                           label="Linkedin"
-                          name="email"
-                          autoComplete="email"
+                          name="linkedin"
+                          autoComplete="linkedin"
                         />
+
                       </Grid>
                       <Grid item xs={12}>
                         <TextField
+
                           fullWidth
-                          id="email"
+                          id="twitter"
                           label="Twitter"
-                          name="email"
-                          autoComplete="email"
+                          name="twitter"
+                          autoComplete="twitter"
                         />
                       </Grid>
                       <Grid item xs={12}>
+
                         <TextField
-                          required
+
+                        label="Password"
+                        required
+                        //type={visible ? "text" : "password"}
+                        error={!!errors.password}
                           fullWidth
                           name="password"
-                          label="Password"
                           type="password"
                           id="password"
                           autoComplete="new-password"
                         />
+
                       </Grid>
                       <Grid item xs={12}>
+
                         <TextField
-                          required
+
+                        label="Password"
+                        required
+                      //  type={visible ? "text" : "password"}
+                        error={!!errors.passwordr}
+
                           fullWidth
-                          name="password"
-                          label="Confirm Password"
-                          type="password"
-                          id="password"
-                          autoComplete="new-password"
+                          name="passwordr"
+
+                          type="passwordr"
+                          id="passwordr"
+                          autoComplete="new-passwordr"
                         />
-                      </Grid>
+                </Grid>
                       <Grid item xs={12}>
                         <FormControlLabel
                           control={<Checkbox value="allowExtraEmails" color="primary" />}
@@ -196,6 +273,7 @@ export default function SignUp() {
                     >
                       Sign Up
                     </Button>
+
                     <Grid container justifyContent="flex-end">
                       <Grid item>
                         <Link href="/signin" variant="body2">
