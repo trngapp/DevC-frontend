@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Mobile from '../signin/mobile.png';
 import { Card } from '@mui/material';
 import MediaQuery from 'react-responsive';
+import { useForm, Controller } from "react-hook-form";
 
 
 
@@ -34,20 +35,31 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+  /*const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     });
-  };
+  };*/
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    clearErrors,
+  } = useForm();
+  const onsubmit = (formData) => {
+    console.log(formData.email);
+  }
 
   return (
     <>
 
 
-      <Grid container columnGap={{md:12}}  columnSpacing={{ xs: 1, md: 4 }}>
+      <Grid container columnGap={{md:20}}  columnSpacing={{ xs: 1, md: 12 }}>
 
         {/*GIF */}
         <Grid item >
@@ -85,8 +97,15 @@ export default function SignIn() {
                   <Typography component="h1" variant="h5">
                     Sign in
                   </Typography>
-                  <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                  <Box component="form" onSubmit={handleSubmit(onsubmit)} noValidate sx={{ mt: 1 }}>
+                  <Controller
+                          name="email"
+                          control={control}
+                          defaultValue=""
+                          rules={{ required: "E-mail is required" }}
+                          render={({ field }) => (
                     <TextField
+                      {...field}
                       margin="normal"
                       required
                       fullWidth
@@ -95,7 +114,10 @@ export default function SignIn() {
                       name="email"
                       autoComplete="email"
                       autoFocus
+                      error={!!errors.email}
                     />
+                    )}
+                        />
                     <TextField
                       margin="normal"
                       required
