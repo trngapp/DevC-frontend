@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getUser } from './auth.js'
+import { getUser } from './auth.js.js'
 import AuthContext from './AuthContext'
 
 

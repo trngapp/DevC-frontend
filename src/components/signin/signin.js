@@ -59,19 +59,19 @@ export default function SignIn() {
     <>
 
 
-      <Grid container columnGap={{md:20}}  columnSpacing={{ xs: 1, md: 12 }}>
+      <Grid container columnGap={{ md: 20 }} columnSpacing={{ xs: 1, md: 12 }}>
 
         {/*GIF */}
         <Grid item >
-        <MediaQuery minWidth={1224} >
+          <MediaQuery minWidth={1224} >
 
-        {
-          <img src={Mobile} alt="login"  style={{ width: '80vh', height: '80vh',marginTop:'20%' }} >
+            {
+              <img src={Mobile} alt="login" style={{ width: '80vh', height: '80vh', marginTop: '20%' }} >
 
-          </img>
-        }
-        
-        </MediaQuery>
+              </img>
+            }
+
+          </MediaQuery>
 
         </Grid>
 
@@ -98,27 +98,35 @@ export default function SignIn() {
                     Sign in
                   </Typography>
                   <Box component="form" onSubmit={handleSubmit(onsubmit)} noValidate sx={{ mt: 1 }}>
-                  <Controller
-                          name="email"
-                          control={control}
-                          defaultValue=""
-                          rules={{ required: "E-mail is required" }}
-                          render={({ field }) => (
-                    <TextField
-                      {...field}
-                      margin="normal"
-                      required
-                      fullWidth
-                      id="email"
-                      label="Email Address"
+                    <Controller
                       name="email"
-                      autoComplete="email"
-                      autoFocus
-                      error={!!errors.email}
-                    />
-                    )}
+                      control={control}
+                      defaultValue=""
+                      rules={{ required: "E-mail is required" }}
+                      render={({ field }) => (
+                        <TextField
+                          {...field}
+                          margin="normal"
+                          required
+                          fullWidth
+                          id="email"
+                          label="Email Address"
+                          name="email"
+                          autoComplete="email"
+                          autoFocus
+                          error={!!errors.email}
                         />
+                      )}
+                    />
+
+                    <Controller
+                      name="password"
+                      control={control}
+                      defaultValue=""
+                      rules={{ required: "Password is required" }}
+                      render={({ field }) => (
                     <TextField
+                    {...field}
                       margin="normal"
                       required
                       fullWidth
@@ -128,6 +136,10 @@ export default function SignIn() {
                       id="password"
                       autoComplete="current-password"
                     />
+                      )}
+                      />
+
+
                     <FormControlLabel
                       control={<Checkbox value="remember" color="primary" />}
                       label="Remember me"
