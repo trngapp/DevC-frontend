@@ -4,8 +4,8 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Carousel from "./carousel"
 import { Link } from 'react-router-dom'
-import Landing from '../../static/images/landing.gif'
-import Community from '../../static/images/community.gif'
+import Landing from '../../static/images/hello.jpg'
+import Community from '../../static/images/hii.jpg'
 import Bubbles from "../../static/images/bubbles.gif"
 import Typography from "@mui/material/Typography"
 
@@ -36,7 +36,7 @@ const Home = () => {
                     </div>
 
                     <div class="col">
-                        <img src={Community} alt="Image" style={{ width: '60vh', height: '60vh' }}>
+                        <img src={Community} alt="Image" style={{ width: '90vh', height: '60vh' }}>
                         </img>
                     </div>
                 </div>
