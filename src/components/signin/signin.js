@@ -53,6 +53,7 @@ export default function SignIn() {
   } = useForm();
   const onsubmit = (formData) => {
     console.log(formData.email);
+    console.log(formData.password);
   }
 
   return (

@@ -54,7 +54,15 @@ export default function SignUp() {
   const onsubmit = (formData) => {
     console.log(formData.first_name);
     console.log(formData.last_name);
+    console.log(formData.email);
     console.log(formData.city);
+    console.log(formData.skills); 
+    console.log(formData.github);
+    console.log(formData.twitter);
+    console.log(formData.linkedin);
+    console.log(formData.password);
+    console.log(formData.passwordr);
+
   }
   return (
 
@@ -298,9 +306,15 @@ export default function SignUp() {
 
                       </Grid>
                       <Grid item xs={12}>
+                      <Controller
+                          name="passwordr"
+                          control={control}
+                          defaultValue=""
+                          rules={{ required: "Confirm Password is required" }}
+                          render={({ field }) => (
 
                         <TextField
-
+                          {...field}
                           label="Password"
                           required
                           //  type={visible ? "text" : "password"}
@@ -313,6 +327,9 @@ export default function SignUp() {
                           id="passwordr"
                           autoComplete="new-passwordr"
                         />
+                          )}
+                          />
+
                       </Grid>
                       <Grid item xs={12}>
                         <FormControlLabel
