@@ -16,7 +16,7 @@ import Mobile from '../signin/mobile.png';
 import { Card } from '@mui/material';
 import MediaQuery from 'react-responsive';
 import { useForm, Controller } from "react-hook-form";
-
+import axios from "axios"
 
 
 function Copyright(props) {
@@ -54,6 +54,10 @@ export default function SignIn() {
   const onsubmit = (formData) => {
     console.log(formData.email);
     console.log(formData.password);
+    const value={email:formData.email,password:"Mukesh@123"};
+    axios.post('http://localhost:3336/login',value,{withCredentials:true}).then((res)=>{
+        console.log(res.data);
+    })
   }
 
   return (
