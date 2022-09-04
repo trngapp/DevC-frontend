@@ -113,32 +113,32 @@ function Createus() {
     const Number = [
         {
             value: 'none',
-            label: 'NONE',
+            num: 'NONE',
         },
         {
             value: 'EUR',
-            label: '1',
+            num: '1',
         },
         {
             value: 'BTC',
-            label: '2',
+            num: '2',
         },
         {
             value: 'JPY',
-            label: '3',
+            num: '3',
         },
 
         {
             value: 'EUR',
-            label: '4',
+            num: '4',
         },
         {
             value: 'BTC',
-            label: '5',
+            num: '5',
         },
         {
             value: 'JPY',
-            label: '6',
+            num: '6',
         },
     ]
     const [ON, setON] = useState('');
@@ -371,7 +371,7 @@ function Createus() {
 
                                     {Number.map((option) => (
                                         <MenuItem key={option.value} value={option.value}>
-                                            {option.label}
+                                            {option.num}
                                         </MenuItem>
                                     ))}
                                 </TextField>

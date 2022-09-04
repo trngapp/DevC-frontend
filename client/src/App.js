@@ -6,7 +6,7 @@ import Admin from "./components/admin/admin"
 import Footer from "./components/footer/footer2"
 import Nav from "./components/navbar/navbar"
 import Home from "./components/home/home"
-import Create from "./components/createform/create"
+//import Create from "./components/createform/create"
 import Signin from "./components/signin/signin"
 import Signup from "./components/signup/signup"
 import Createus from './components/createform/createus';

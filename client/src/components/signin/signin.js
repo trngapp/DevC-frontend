@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Mobile from '../signin/mobile.png';
+import Mobile from './mobile.png';
 import { Card } from '@mui/material';
 import MediaQuery from 'react-responsive';
 import { useForm, Controller } from "react-hook-form";
@@ -50,6 +50,7 @@ export default function SignIn() {
     formState: { errors },
     watch,
     clearErrors,
+    register
   } = useForm();
   const onsubmit = (formData) => {
     console.log(formData.email);
@@ -103,7 +104,13 @@ export default function SignIn() {
                       name="email"
                       control={control}
                       defaultValue=""
-                      rules={{ required: "E-mail is required" }}
+                      rules={{
+                        required: "E-mail is required",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                          message: 'Enter a valid e-mail address',
+                        },
+                      }}
                       render={({ field }) => (
                         <TextField
                           {...field}
@@ -124,21 +131,29 @@ export default function SignIn() {
                       name="password"
                       control={control}
                       defaultValue=""
-                      rules={{ required: "Password is required" }}
+                      rules={{
+                        required: "Password is required",
+                        minLength: {
+                          value: 8,
+                          message: 'Minimum 8 characters'
+                        }
+                      }}
+
                       render={({ field }) => (
-                    <TextField
-                    {...field}
-                      margin="normal"
-                      required
-                      fullWidth
-                      name="password"
-                      label="Password"
-                      type="password"
-                      id="password"
-                      autoComplete="current-password"
-                    />
+                        <TextField
+                          {...field}
+                          margin="normal"
+                          required
+                          fullWidth
+                          name="password"
+                          label="Password"
+                          type="password"
+                          id="password"
+                          autoComplete="current-password"
+                          error={!!errors.password}
+                        />
                       )}
-                      />
+                    />
 
 
                     <FormControlLabel

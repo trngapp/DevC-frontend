@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Card from "@mui/material/Card"
-import Entry from '../signup/entry.png';
+import Entry from './entry.png';
 import MediaQuery from 'react-responsive';
 import { useForm, Controller } from "react-hook-form";
 
@@ -56,7 +56,7 @@ export default function SignUp() {
     console.log(formData.last_name);
     console.log(formData.email);
     console.log(formData.city);
-    console.log(formData.skills); 
+    console.log(formData.skills);
     console.log(formData.github);
     console.log(formData.twitter);
     console.log(formData.linkedin);
@@ -153,7 +153,13 @@ export default function SignUp() {
                           name="email"
                           control={control}
                           defaultValue=""
-                          rules={{ required: "Email is required" }}
+                          rules={{
+                            required: "Email is required",
+                            pattern: {
+                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                              message: 'Enter a valid e-mail address',
+                            },
+                          }}
                           render={({ field }) => (
 
                             <TextField
@@ -306,29 +312,29 @@ export default function SignUp() {
 
                       </Grid>
                       <Grid item xs={12}>
-                      <Controller
+                        <Controller
                           name="passwordr"
                           control={control}
                           defaultValue=""
                           rules={{ required: "Confirm Password is required" }}
                           render={({ field }) => (
 
-                        <TextField
-                          {...field}
-                          label="Password"
-                          required
-                          //  type={visible ? "text" : "password"}
-                          error={!!errors.passwordr}
+                            <TextField
+                              {...field}
+                              label="Password"
+                              required
+                              //  type={visible ? "text" : "password"}
+                              error={!!errors.passwordr}
 
-                          fullWidth
-                          name="passwordr"
+                              fullWidth
+                              name="passwordr"
 
-                          type="passwordr"
-                          id="passwordr"
-                          autoComplete="new-passwordr"
-                        />
+                              type="passwordr"
+                              id="passwordr"
+                              autoComplete="new-passwordr"
+                            />
                           )}
-                          />
+                        />
 
                       </Grid>
                       <Grid item xs={12}>
