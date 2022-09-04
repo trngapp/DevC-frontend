@@ -1,4 +1,4 @@
-import React from "react"
+import React ,{useEffect} from "react"
 import "bootstrap"
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -8,8 +8,22 @@ import Landing from '../../static/images/hello.jpg'
 import Community from '../../static/images/hii.jpg'
 import Bubbles from "../../static/images/bubbles.gif"
 import Typography from "@mui/material/Typography"
+import axios from "axios"
+
+
+
 
 const Home = () => {
+
+     useEffect(()=>{
+         const value={email:"Mukesh@gmail.com",password:"Mukesh@123"};
+         axios.post('http://localhost:3336/login',value,{withCredentials:true}).then((res)=>{
+             console.log(res.data);
+         })
+
+    })
+
+
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
         backgroundColor: "#C81132",
