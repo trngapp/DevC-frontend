@@ -65,16 +65,7 @@ export default function SignUp() {
 
   }
   
-  function matchPassword() {  
-    var pw1 = document.getElementById("password").value;  
-    var pw2 = document.getElementById("passwordr").value;  
-    if(pw1 != pw2)  
-    {   
-      console.log("hi")
-    } else {  
-    
-    }  
-  }  
+ 
 
 
   return (
@@ -84,7 +75,7 @@ export default function SignUp() {
       <Grid container columnGap={{ md: 16 }} columnSpacing={{ xs: 4, md: 8 }}>
         <Grid item>
           <MediaQuery minWidth={1224}>
-            <img src={Entry} alt="Girl" style={{ width: '80vh', height: '80vh', marginTop: '20%' }}>
+            <img src={Entry} alt="Girl" style={{ width: '80vh', height: '80vh', marginTop: '50%' }}>
 
             </img>
           </MediaQuery>
@@ -358,7 +349,7 @@ export default function SignUp() {
                       </Grid>
                     </Grid>
                     <Button
-                      onclick={matchPassword()}
+                     
                       type="submit"
                       fullWidth
                       variant="contained"

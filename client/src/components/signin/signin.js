@@ -72,7 +72,7 @@ export default function SignIn() {
           <MediaQuery minWidth={1224} >
 
             {
-              <img src={Mobile} alt="login" style={{ width: '80vh', height: '80vh', marginTop: '20%' }} >
+              <img src={Mobile} alt="login" style={{ width: '80vh', height: '80vh', marginTop: '15%' }} >
 
               </img>
             }
