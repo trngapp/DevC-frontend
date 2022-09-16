@@ -45,7 +45,7 @@ function FAQ() {
                     <div class="row">
 
                         <div class="col">
-                        <img src={Flow} alt="Image" style={{ width: '65vh', height: '50vh' }}>
+                        <img src={Flow} alt="Image" style={{ width: '60vh', height: '40vh' }}>
 
                         </img>
 
@@ -70,7 +70,7 @@ function FAQ() {
                         </div>
 
                         <div class="col">
-                        <img src={Heel} alt="Image" style={{ width: '60vh', height: '60vh' }}>
+                        <img src={Heel} alt="Image" style={{ width: '40vh', height: '40vh' }}>
                         </img>
                           
                         </div>
@@ -85,11 +85,15 @@ function FAQ() {
 
 
             </Box>
+            <br/>
+            <br/>
              
             <center>
-            <Typography sx={{alignContent:'center'}}>
+            <Typography 
+            sx={{alignContent:'center',justifyContent:'center',fontSize:20,fontWeight: 'bold'}}>
                 How can we help you?
             </Typography>
+            <br/>
 
             
                 <Card sx={{

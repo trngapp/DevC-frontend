@@ -39,7 +39,7 @@ const Home = () => {
                 <div class="row">
 
                     <div class="col">
-                        <img src={Landing} alt="Image" style={{ width: '60vh', height: '60vh' }}>
+                        <img src={Landing} alt="Image" style={{ width: '50vh', height: '40vh' }}>
 
                         </img>
                     </div>
@@ -50,7 +50,7 @@ const Home = () => {
                     </div>
 
                     <div class="col">
-                        <img src={Community} alt="Image" style={{ width: '90vh', height: '60vh' }}>
+                        <img src={Community} alt="Image" style={{ width: '70vh', height: '40vh' }}>
                         </img>
                     </div>
                 </div>

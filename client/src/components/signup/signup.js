@@ -64,6 +64,19 @@ export default function SignUp() {
     console.log(formData.passwordr);
 
   }
+  
+  function matchPassword() {  
+    var pw1 = document.getElementById("password").value;  
+    var pw2 = document.getElementById("passwordr").value;  
+    if(pw1 != pw2)  
+    {   
+      console.log("hi")
+    } else {  
+    
+    }  
+  }  
+
+
   return (
 
     <>
@@ -299,6 +312,7 @@ export default function SignUp() {
                               {...field}
                               label="Password"
                               required
+
                               //type={visible ? "text" : "password"}
                               error={!!errors.password}
                               fullWidth
@@ -325,11 +339,10 @@ export default function SignUp() {
                               required
                               //  type={visible ? "text" : "password"}
                               error={!!errors.passwordr}
-
+                              
                               fullWidth
                               name="passwordr"
-
-                              type="passwordr"
+                              type="password"
                               id="passwordr"
                               autoComplete="new-passwordr"
                             />
@@ -345,6 +358,7 @@ export default function SignUp() {
                       </Grid>
                     </Grid>
                     <Button
+                      onclick={matchPassword()}
                       type="submit"
                       fullWidth
                       variant="contained"
