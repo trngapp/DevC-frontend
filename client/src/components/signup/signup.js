@@ -16,6 +16,8 @@ import Card from "@mui/material/Card"
 import Entry from './entry.png';
 import MediaQuery from 'react-responsive';
 import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 
 
 
@@ -44,14 +46,12 @@ export default function SignUp() {
        password: data.get('password'),
      });
    };*/
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-    watch,
-    clearErrors,
-  } = useForm();
+
+
+
   const onsubmit = (formData) => {
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(formData, null, 4));
     console.log(formData.first_name);
     console.log(formData.last_name);
     console.log(formData.email);
@@ -62,10 +62,46 @@ export default function SignUp() {
     console.log(formData.linkedin);
     console.log(formData.password);
     console.log(formData.passwordr);
+    return false;
 
   }
-  
- 
+
+
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .required('Email is required')
+      .email('Email is invalid'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(6, 'Password must be at least 6 characters')
+      .max(40, 'Password must not exceed 40 characters'),
+    confirmPassword: Yup.string()
+      .required('Confirm Password is required')
+      .oneOf([Yup.ref('password'), null], 'Confirm Password does not match')
+  });
+
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(validationSchema)
+  })
+
+
+  // get functions to build form with useForm() hook
+  //const { register, handleSubmit, reset, formState } = useForm(formOptions);
+  //const { errors } = formState;
+
+  //function onSubmit(data) {
+  // display form data on success
+  //alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
+  // return false;
+  // }
+
+
 
 
   return (
@@ -75,7 +111,7 @@ export default function SignUp() {
       <Grid container columnGap={{ md: 16 }} columnSpacing={{ xs: 4, md: 8 }}>
         <Grid item>
           <MediaQuery minWidth={1224}>
-            <img src={Entry} alt="Girl" style={{ width: '80vh', height: '80vh', marginTop: '50%' }}>
+            <img src={Entry} alt="Girl" style={{ width: '80vh', height: '80vh', marginLeft: '10%', marginTop: '40%' }}>
 
             </img>
           </MediaQuery>
@@ -170,11 +206,13 @@ export default function SignUp() {
                               {...field}
                               required
                               fullWidth
-                              error={!!errors.email}
                               id="email"
                               label="Email Address"
                               name="email"
                               autoComplete="email"
+                              {...register('email')}
+                              error={errors.email ? true : false}
+                              helperText={errors['email'] ? errors['email'].message : ''}
                             />
                           )}
                         />
@@ -305,20 +343,25 @@ export default function SignUp() {
                               required
 
                               //type={visible ? "text" : "password"}
-                              error={!!errors.password}
+                              error={!!errors['password']}
                               fullWidth
                               name="password"
                               type="password"
                               id="password"
                               autoComplete="new-password"
+                              helperText={errors['password'] ? errors['password'].message : ''}
+                              {...register('password')}
                             />
+
+
                           )}
+
                         />
 
                       </Grid>
                       <Grid item xs={12}>
                         <Controller
-                          name="passwordr"
+                          name="confirmPassword"
                           control={control}
                           defaultValue=""
                           rules={{ required: "Confirm Password is required" }}
@@ -326,19 +369,22 @@ export default function SignUp() {
 
                             <TextField
                               {...field}
-                              label="Password"
+                              label="Confirm Password"
                               required
                               //  type={visible ? "text" : "password"}
-                              error={!!errors.passwordr}
-                              
+                              error={!!errors['confirmPassword']}
                               fullWidth
-                              name="passwordr"
+                              name="confirmPassword"
                               type="password"
-                              id="passwordr"
+                              id="confirmPassword"
                               autoComplete="new-passwordr"
+                              helperText={errors['confirmPassword'] ? errors['confirmPassword'].message : ''}
+                              {...register('confirmPassword')}
                             />
                           )}
                         />
+
+
 
                       </Grid>
                       <Grid item xs={12}>
@@ -349,7 +395,7 @@ export default function SignUp() {
                       </Grid>
                     </Grid>
                     <Button
-                     
+
                       type="submit"
                       fullWidth
                       variant="contained"
