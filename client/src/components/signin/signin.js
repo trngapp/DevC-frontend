@@ -123,7 +123,8 @@ export default function SignIn() {
                           name="email"
                           autoComplete="email"
                           autoFocus
-                          error={!!errors.email}
+                          error={!!errors['email']}
+                          helperText={errors['email'] ? errors['email'].message : ''}
                         />
                       )}
                     />
@@ -151,7 +152,8 @@ export default function SignIn() {
                           type="password"
                           id="password"
                           autoComplete="current-password"
-                          error={!!errors.password}
+                          error={!!errors['password']}
+                          helperText={errors['password'] ? errors['password'].message : ''}
                         />
                       )}
                     />
