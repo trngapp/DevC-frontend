@@ -51,7 +51,7 @@ export default function SignUp() {
 
   const onsubmit = (formData) => {
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(formData, null, 4));
+
     console.log(formData.first_name);
     console.log(formData.last_name);
     console.log(formData.email);
@@ -62,16 +62,30 @@ export default function SignUp() {
     console.log(formData.linkedin);
     console.log(formData.password);
     console.log(formData.passwordr);
-    return false;
+
 
   }
 
 
 
   const validationSchema = Yup.object().shape({
+    first_name: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Firstname is required"),
+    last_name: Yup.string()
+      .required('Last Name is required'),
     email: Yup.string()
       .required('Email is required')
       .email('Email is invalid'),
+    city: Yup.string()
+      .required('City is required'),
+    skills: Yup.string()
+      .required('Skills is required'),
+    github: Yup.string()
+      .required('GitHub is required'),
+    linkedin: Yup.string()
+      .required('Linkedin is required'),
     password: Yup.string()
       .required('Password is required')
       .min(6, 'Password must be at least 6 characters')
@@ -159,8 +173,9 @@ export default function SignUp() {
                               fullWidth
                               id="firstName"
                               label="First Name"
-                              error={!!errors.first_name}
-                              // helperText={errors.last_name && errors.first_name? message:null}
+                              {...register('first_name')}
+                              error={!!errors['first_name']}
+                              helperText={errors['first_name'] ? errors['first_name'].message : ''}
                               autoFocus
                             />
                           )}
@@ -181,7 +196,8 @@ export default function SignUp() {
                               id="lastName"
                               label="Last Name"
                               name="lastName"
-                              error={!!errors.last_name}
+                              error={!!errors['last_name']}
+                              helperText={errors['last_name'] ? errors['last_name'].message : ''}
                               autoComplete="family-name"
                             />
                           )}
@@ -230,11 +246,12 @@ export default function SignUp() {
                               {...field}
                               required
                               fullWidth
-                              error={!!errors.city}
+                              error={!!errors['city']}
                               id="city"
                               label="City"
                               name="city"
                               autoComplete="city"
+                              helperText={errors['city'] ? errors['city'].message : ''}
                             />
                           )}
                         />
@@ -251,12 +268,12 @@ export default function SignUp() {
                               {...field}
                               required
                               fullWidth
-                              error={!!errors.skills}
+                              error={!!errors['skills']}
                               id="skills"
                               label="Skill"
                               name="skills"
                               autoComplete="skills"
-                              helperText="Multiple values seperated with comma"
+                              helperText={errors['skills'] ? errors['skills'].message : 'Multiple values seperated with comma'}
                             />
                           )}
                         />
@@ -275,11 +292,12 @@ export default function SignUp() {
                               {...field}
                               required
                               fullWidth
-                              error={!!errors.github}
+                              error={!!errors['github']}
                               id="github"
                               label="GitHub"
                               name="github"
                               autoComplete="github"
+                              helperText={errors['github'] ? errors['github'].message : ''}
                             />
                           )}
                         />
@@ -297,12 +315,13 @@ export default function SignUp() {
                             <TextField
                               {...field}
                               required
-                              error={!!errors.linkedin}
+                              error={!!errors['linkedin']}
                               fullWidth
                               id="linkedin"
                               label="Linkedin"
                               name="linkedin"
                               autoComplete="linkedin"
+                              helperText={errors['linkedin'] ? errors['linkedin'].message : ''}
                             />
 
                           )}
