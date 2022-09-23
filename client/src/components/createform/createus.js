@@ -4,10 +4,10 @@ import TextField from '@mui/material/TextField';
 import { Grid, InputLabel } from '@mui/material';
 import "react-bootstrap"
 import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 import { Image } from 'react-bootstrap';
 import { Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
+//import { styled } from '@mui/material/styles';
 import { Card } from '@mui/material';
 import Confirm from './card';
 
@@ -161,7 +161,7 @@ function Createus() {
 
 
 
-    const ColorButton = styled(Button)(({ theme }) => ({
+    /*const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
         background: "linear-gradient(90deg, rgba(200, 17, 50, 0.8) 0%, rgba(214, 25, 0, 0.8) 50.31%, rgba(202, 0, 0, 0.8) 100%)",
         //backgroundColor: "#1C4774",
@@ -169,18 +169,18 @@ function Createus() {
             // backgroundColor:  "#1C4774",
             background: "linear-gradient(90deg, rgba(200, 17, 50, 0.8) 0%, rgba(214, 25, 0, 0.8) 50.31%, rgba(202, 0, 0, 0.8) 100%)"
         },
-    }));
+    }));*/
 
 
 
 
-    const card = () => {
+    /*const card = () => {
         return (
             <>
                 {Confirm}
             </>
         );
-    };
+    };*/
 
 
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
+//import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -9,14 +9,16 @@ import Typography from '@mui/material/Typography';
 import PaellaImage from "../../static/images/webimage.png"
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom'
-const bull = (
+
+/*const bull = (
   <Box
     component="span"
     sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
   >
     •
   </Box>
-);
+);*/
+
 const ColorButton = styled(Button)(({ theme }) => ({
     //color: theme.palette.getContrastText(purple[500]),
     backgroundColor:"blue",

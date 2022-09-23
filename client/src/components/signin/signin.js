@@ -48,9 +48,6 @@ export default function SignIn() {
     control,
     handleSubmit,
     formState: { errors },
-    watch,
-    clearErrors,
-    register
   } = useForm();
   const onsubmit = (formData) => {
     console.log(formData.email);

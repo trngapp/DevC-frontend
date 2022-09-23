@@ -6,7 +6,7 @@ import Carousel from "./carousel"
 import { Link } from 'react-router-dom'
 import Landing from '../../static/images/hello.jpg'
 import Community from '../../static/images/hii.jpg'
-import Bubbles from "../../static/images/bubbles.gif"
+//import Bubbles from "../../static/images/bubbles.gif"
 import Typography from "@mui/material/Typography"
 import axios from "axios"
 
@@ -39,7 +39,7 @@ const Home = () => {
                 <div class="row">
 
                     <div class="col">
-                        <img src={Landing} alt="Image" style={{ width: '50vh', height: '40vh' }}>
+                        <img src={Landing} alt="homeimg" style={{ width: '50vh', height: '40vh' }}>
 
                         </img>
                     </div>
@@ -50,7 +50,7 @@ const Home = () => {
                     </div>
 
                     <div class="col">
-                        <img src={Community} alt="Image" style={{ width: '70vh', height: '40vh' }}>
+                        <img src={Community} alt="home" style={{ width: '70vh', height: '40vh' }}>
                         </img>
                     </div>
                 </div>
