@@ -17,8 +17,9 @@ import { Card } from '@mui/material';
 import MediaQuery from 'react-responsive';
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios"
-
-
+import {AuthContext} from "../../context/AuthContext";
+import Loading from "../loading.js"
+import {useNavigate} from "react-router-dom";
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -34,6 +35,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+
 export default function SignIn() {
   /*const handleSubmit = (event) => {
     event.preventDefault();
@@ -44,6 +46,7 @@ export default function SignIn() {
     });
   };*/
 
+  const {login,logout} = React.useContext(AuthContext);
   const {
     control,
     handleSubmit,
@@ -52,19 +55,46 @@ export default function SignIn() {
     clearErrors,
     register
   } = useForm();
+  const [isLoading,setLoading]=React.useState(false);
+  const navigate = useNavigate();
   const onsubmit = (formData) => {
-    console.log(formData.email);
-    console.log(formData.password);
-    const value={email:formData.email,password:"Mukesh@123"};
+
+    setLoading(true);
+    //console.log(formData.email);
+   // console.log(formData.password);
+    const value={email:formData.email,password:formData.password};
     axios.post('http://localhost:3336/login',value,{withCredentials:true}).then((res)=>{
-        console.log(res.data);
+
+     console.log(res);
+     login(formData.email);
+
+     setTimeout(()=>{
+       setLoading(false);
+      navigate("/");
+     },2000)
+
+
+
+
+
+
+    }).catch(error=>{
+console.log(error.response.data);
+setTimeout(()=>{
+setLoading(false);
+},1000)
     })
   }
+  const signout=()=>{
+
+         logout();
+
+}
 
   return (
     <>
 
-
+{isLoading===true?<Loading/>:
       <Grid container columnGap={{ md: 20 }} columnSpacing={{ xs: 1, md: 12 }}>
 
         {/*GIF */}
@@ -194,6 +224,7 @@ export default function SignIn() {
 
 
       </Grid>
+      }
     </>
   );
 }

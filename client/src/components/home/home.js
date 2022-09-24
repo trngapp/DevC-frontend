@@ -1,4 +1,4 @@
-import React ,{useEffect} from "react"
+import React ,{useEffect,useContext} from "react"
 import "bootstrap"
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -9,19 +9,25 @@ import Community from '../../static/images/hii.jpg'
 import Bubbles from "../../static/images/bubbles.gif"
 import Typography from "@mui/material/Typography"
 import axios from "axios"
-
+import {AuthContext} from "../../context/AuthContext"
 
 
 
 const Home = () => {
 
-     useEffect(()=>{
+     /*useEffect(()=>{
          const value={email:"Mukesh@gmail.com",password:"Mukesh@123"};
          axios.post('http://localhost:3336/login',value,{withCredentials:true}).then((res)=>{
              console.log(res.data);
          })
 
-    })
+    })*/
+
+    const {logout} = useContext(AuthContext);
+
+    const log=()=>{
+       logout();
+    }
 
 
     const ColorButton = styled(Button)(({ theme }) => ({
@@ -36,6 +42,7 @@ const Home = () => {
         <>
 
             <div class="container">
+                <button onClick={log}></button>
                 <div class="row">
 
                     <div class="col">

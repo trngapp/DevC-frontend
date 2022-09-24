@@ -18,6 +18,9 @@ import MediaQuery from 'react-responsive';
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import axios from 'axios';
+import Loading from "../loading.js"
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -49,10 +52,51 @@ export default function SignUp() {
 
 
 
-  const onsubmit = (formData) => {
+  /*const onsubmit = (formData) => {
 
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(formData, null, 4));
     console.log(formData.first_name);
+  }*/
+  /*const {
+    control,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    clearErrors,
+  } = useForm();*/
+  const navigate = useNavigate();
+  const [isLoading,setLoading]=React.useState(false);
+  const onsubmit = (formData) => {
+   // alert('SUCCESS!! :-)\n\n' + JSON.stringify(formData, null, 4));
+
+    setLoading(true);
+    const value={
+      first_name: formData.first_name,
+    last_name: formData.last_name,
+    email: formData.email,
+    city: formData.city,
+    skill: formData.skills,
+    linkedin: formData.linkedin,
+    twitter: formData.twitter,
+    github: formData.github,
+    password: formData.password
+  }
+
+  axios.post('http://localhost:3336/signup',value,{withCredentials:true}).then((res)=>{
+  console.log(res.data);
+  setTimeout(()=>{
+   setLoading(false);
+   navigate("/signin");
+  },2000)
+
+  }).catch((error)=>{
+    console.log(error);
+    setTimeout(()=>{
+      setLoading(false);
+      },1000)
+  })
+
+    /*console.log(formData.first_name);
     console.log(formData.last_name);
     console.log(formData.email);
     console.log(formData.city);
@@ -63,6 +107,7 @@ export default function SignUp() {
     console.log(formData.password);
     console.log(formData.passwordr);
     return false;
+    console.log(formData.passwordr);*/
 
   }
 
@@ -107,7 +152,7 @@ export default function SignUp() {
   return (
 
     <>
-
+    {isLoading===true?<Loading/>:
       <Grid container columnGap={{ md: 16 }} columnSpacing={{ xs: 4, md: 8 }}>
         <Grid item>
           <MediaQuery minWidth={1224}>
@@ -420,6 +465,9 @@ export default function SignUp() {
           </Card>
         </Grid>
       </Grid>
+    }
     </>
   );
-}
+  }
+
+
