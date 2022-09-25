@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, InputBase, Paper, Box } from '@mui/material';
+import { Grid, InputBase, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import Json from "../home/items.json";

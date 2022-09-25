@@ -4,10 +4,11 @@ import TextField from '@mui/material/TextField';
 import { Grid, InputLabel } from '@mui/material';
 import "react-bootstrap"
 import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 import { Image } from 'react-bootstrap';
 import { Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { useForm, Controller } from "react-hook-form";
+//import { styled } from '@mui/material/styles';
 import { Card } from '@mui/material';
 import Confirm from './card';
 
@@ -141,10 +142,10 @@ function Createus() {
             num: '6',
         },
     ]
-    const [ON, setON] = useState('');
+    
 
     const handleChange = (event) => {
-            setOE(event.target.value);
+        setOE(event.target.value);
     };
 
     const handleChang = (event) => {
@@ -155,13 +156,11 @@ function Createus() {
         setOT(event.target.value);
     };
 
-    const Change = (event) => {
-        setON(event.target.value);
-    };
+   
 
 
 
-    const ColorButton = styled(Button)(({ theme }) => ({
+    /*const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
         background: "linear-gradient(90deg, rgba(200, 17, 50, 0.8) 0%, rgba(214, 25, 0, 0.8) 50.31%, rgba(202, 0, 0, 0.8) 100%)",
         //backgroundColor: "#1C4774",
@@ -169,19 +168,32 @@ function Createus() {
             // backgroundColor:  "#1C4774",
             background: "linear-gradient(90deg, rgba(200, 17, 50, 0.8) 0%, rgba(214, 25, 0, 0.8) 50.31%, rgba(202, 0, 0, 0.8) 100%)"
         },
-    }));
+    }));*/
 
 
 
 
-    const card = () => {
+    /*const card = () => {
         return (
             <>
                 {Confirm}
             </>
         );
-    };
+    };*/
+    const {
+        control,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
 
+    const onsubmit = (formData) => {
+
+
+        console.log(formData.Leademail);
+
+
+
+    }
 
 
 
@@ -197,13 +209,13 @@ function Createus() {
                 style={{
                     textAlign: "center",
                     fontWeight: 200,
-                    fontFamily:"Georgia"
+                    fontFamily: "Georgia"
                 }}
-               >
+            >
                 Create Form</h2>
             <center>
 
-                <Card sx={{ width: { xs: '100%', md: 1100 }, backgroundColor:"#F5F5F5"}}>
+                <Card sx={{ width: { xs: '100%', md: 1100 }, backgroundColor: "#F5F5F5" }} onSubmit={handleSubmit(onsubmit)}>
 
 
 
@@ -216,6 +228,8 @@ function Createus() {
                         <Grid item xs={12}>
 
                             <Box >
+
+
                                 {/* Project Logo */}
                                 <div className="Form-logo">
                                     <div id="upload-logo">
@@ -234,14 +248,26 @@ function Createus() {
                         <Grid item xs={12}>
 
                             <Box sx={{
-                                "& > :not(style)": { m: 1, width:{xs:"96%",md:"98.5%"} },
+                                "& > :not(style)": { m: 1, width: { xs: "96%", md: "98.5%" } },
                             }}>
-                                <TextField
-                                    id="outlined-password-input"
-                                    label="Leader's Email"
-                                    type="email"
-                                    autoComplete="current-password"
-                                    required
+                                <Controller
+                                    name="leademail"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Leader Email is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="leademail"
+                                            label="Leader's Email"
+                                            type="email"
+                                            id="leademail"
+                                            autoComplete="current-password"
+                                            required
+                                            error={!!errors['leademail']}
+                                            helperText={errors['leademail'] ? errors['leademail'].message : ''}
+                                        />
+                                    )}
                                 />
                             </Box>
 
@@ -254,14 +280,24 @@ function Createus() {
                         <Grid item xs={12}>
 
                             <Box sx={{
-                                "& > :not(style)": { m: 1, width: {xs:"96%",md:"98.5%"} },
+                                "& > :not(style)": { m: 1, width: { xs: "96%", md: "98.5%" } },
                             }}>
-                                <TextField
-                                    id="outlined-password-input"
-                                    label="Project-Name"
-                                    type="text"
-                                    autoComplete="current-password"
-                                    required
+                                <Controller
+                                    name="projectname"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Project Name is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="projectname"
+                                            id="projectname"
+                                            label="Project-Name"
+                                            type="text"
+                                            autoComplete="current-password"
+                                            required
+                                        />
+                                    )}
                                 />
                             </Box>
 
@@ -277,23 +313,35 @@ function Createus() {
 
                         <Grid item xs={12} md={6}>
 
-                            <Box sx={{ '& .MuiTextField-root': { ml: {xs:0.25,md:1}, width: {xs:"96%",md:"98%"} } }}
+                            <Box sx={{ '& .MuiTextField-root': { ml: { xs: 0.25, md: 1 }, width: { xs: "96%", md: "98%" } } }}
                                 noValidate
                                 autoComplete="off">
-                                <TextField id="project_type"
-                                    select
-                                    value={PT}
-                                    label="Project-type"
-                                    onChange={handleChang}
-                                >
+                                <Controller
+                                    name="projecttype"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Project type is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="projecttype"
+                                            id="projecttype"
+                                            select
+                                            required
+                                            value={PT}
+                                            label="Project-type"
+                                            onChange={handleChang}
+                                        >
 
 
-                                    {Typeoe.map((option) => (
-                                        <MenuItem key={option.value} value={option.value}>
-                                            {option.label}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>
+                                            {Typeoe.map((option) => (
+                                                <MenuItem key={option.value} value={option.value}>
+                                                    {option.label}
+                                                </MenuItem>
+                                            ))}
+                                        </TextField>
+                                    )}
+                                />
                             </Box>
 
                         </Grid>
@@ -305,21 +353,34 @@ function Createus() {
 
                         <Grid item xs={12} md={6}>
 
-                            <Box sx={{ '& .MuiTextField-root': {  ml: {xs:0.25} ,mr:{md:1.0}, width: {xs:"96%",md:"98%"}  } }}
+                            <Box sx={{ '& .MuiTextField-root': { ml: { xs: 0.25 }, mr: { md: 1.0 }, width: { xs: "96%", md: "98%" } } }}
                             >
-                                <TextField id="opening" label="Opening-type"
-                                    select
-                                    native
-                                    value={OT}
-                                    onChange={handle}
+                                <Controller
+                                    name="opentype"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Opening Type is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="opentype"
+                                            id="opentype"
+                                            label="Opening-type"
+                                            select
+                                            native="true"
+                                            required
+                                            value={OT}
+                                            onChange={handle}
 
-                                >
-                                    {Type.map((option) => (
-                                        <MenuItem key={option.value} value={option.value}>
-                                            {option.label}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>
+                                        >
+                                            {Type.map((option) => (
+                                                <MenuItem key={option.value} value={option.value}>
+                                                    {option.label}
+                                                </MenuItem>
+                                            ))}
+                                        </TextField>
+                                    )}
+                                />
                             </Box>
 
                         </Grid>
@@ -331,23 +392,35 @@ function Createus() {
                         {/* Opening Expertise*/}
                         <Grid item xs={12} md={6}>
 
-                            <Box sx={{ '& .MuiTextField-root': { ml: {xs:0.25,md:1}, width: {xs:"96%",md:"98%"} } }}
+                            <Box sx={{ '& .MuiTextField-root': { ml: { xs: 0.25, md: 1 }, width: { xs: "96%", md: "98%" } } }}
                             >
-                                <TextField id="openingexper"
-                                    label="Opening-Expertise"
-                                    select
-                                    native
-                                    value={OE}
-                                    onChange={handleChange}
-                                >
+                                <Controller
+                                    name="openexper"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Opening Expertise is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="openexper"
+                                            id="openingexper"
+                                            label="Opening-Expertise"
+                                            select
+                                            native="true"
+                                            value={OE}
+                                            onChange={handleChange}
+                                            required
+                                        >
 
 
-                                    {Expertise.map((option) => (
-                                        <MenuItem key={option.value} value={option.value}>
-                                            {option.label}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>
+                                            {Expertise.map((option) => (
+                                                <MenuItem key={option.value} value={option.value}>
+                                                    {option.label}
+                                                </MenuItem>
+                                            ))}
+                                        </TextField>
+                                    )}
+                                />
                             </Box>
 
                         </Grid>
@@ -357,24 +430,34 @@ function Createus() {
                         {/* Opening Number*/}
                         <Grid item xs={12} md={6}>
 
-                            <Box sx={{ '& .MuiTextField-root': { ml:{xs:0.25},mr:{md:1.0}, width: {xs:"96%",md:"98%"} } }}
+                            <Box sx={{ '& .MuiTextField-root': { ml: { xs: 0.25 }, mr: { md: 1.0 }, width: { xs: "96%", md: "98%" } } }}
                             >
-                                <TextField id="openingnumbr"
-                                    label="Opening-Number"
-                                    select
-                                    native
-                                    value={ON}
-                                    onChange={Change}
+                                <Controller
+                                    name="openingnum"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Opening number is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="openingnum"
+                                            id="openingnum"
+                                            label="Opening-Number"
+                                            type="number"
+                                            inputProps={{ min:1, max:6 }}
+                                            required
 
-                                >
+                                        >
 
 
-                                    {Number.map((option) => (
-                                        <MenuItem key={option.value} value={option.value}>
-                                            {option.num}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>
+                                            {Number.map((option) => (
+                                                <MenuItem key={option.value} value={option.value}>
+                                                    {option.num}
+                                                </MenuItem>
+                                            ))}
+                                        </TextField>
+                                    )}
+                                />
                             </Box>
 
                         </Grid>
@@ -386,16 +469,29 @@ function Createus() {
 
                             <Box
                                 sx={{
-                                    m: 1, width:{xs:"96%",md:"98.5%"},
+                                    m: 1, width: { xs: "96%", md: "98.5%" },
                                     maxWidth: '98.5%',
                                 }}
                             >
-                                <TextField
-                                    fullWidth
-                                    multiline
-                                    maxRows={10}
-                                    label="Project Description"
-                                    id="fullWidth" />
+                                <Controller
+                                    name="projdesc"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Project Description is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="projdesc"
+                                            id="projdesc"
+                                            fullWidth
+                                            multiline
+                                            maxRows={10}
+                                            label="Project Description"
+                                            required
+
+                                        />
+                                    )}
+                                />
                             </Box>
 
                         </Grid>
@@ -419,10 +515,10 @@ function Createus() {
                                     {/*<ColorButton variant="contained" onClick={card} type="submit" >
                                         Submit
                                     </ColorButton>*/}
-                                    <Confirm/>
+                                    <Confirm />
                                     {/* Condition will be added for validation */}
                                 </center>
-                                <br/>
+                                <br />
                             </Box>
 
                         </Grid>
@@ -434,9 +530,9 @@ function Createus() {
 
                 </Card>
             </center>
-            <br/>
-<br/><br/>
-<br/>
+            <br />
+            <br /><br />
+            <br />
         </>
     )
 }

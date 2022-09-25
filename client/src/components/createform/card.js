@@ -44,6 +44,7 @@ function Confirm() {
                             <div class="col">
                                 <img src={logo}
                                     width="25%"
+                                    alt='Create Logo'
                                     style={
                                         {marginLeft: "38%"}
                                 }></img>

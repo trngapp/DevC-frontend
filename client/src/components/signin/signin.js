@@ -51,9 +51,6 @@ export default function SignIn() {
     control,
     handleSubmit,
     formState: { errors },
-    watch,
-    clearErrors,
-    register
   } = useForm();
   const [isLoading,setLoading]=React.useState(false);
   const navigate = useNavigate();
@@ -156,7 +153,8 @@ setLoading(false);
                           name="email"
                           autoComplete="email"
                           autoFocus
-                          error={!!errors.email}
+                          error={!!errors['email']}
+                          helperText={errors['email'] ? errors['email'].message : ''}
                         />
                       )}
                     />
@@ -184,7 +182,8 @@ setLoading(false);
                           type="password"
                           id="password"
                           autoComplete="current-password"
-                          error={!!errors.password}
+                          error={!!errors['password']}
+                          helperText={errors['password'] ? errors['password'].message : ''}
                         />
                       )}
                     />

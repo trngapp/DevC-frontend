@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import DevC from "../faq/hello.png";
-import { Grid, InputBase, Paper } from '@mui/material';
+import {  InputBase, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import Accordion from '@mui/material/Accordion';
@@ -45,7 +45,7 @@ function FAQ() {
                     <div class="row">
 
                         <div class="col">
-                        <img src={Flow} alt="Image" style={{ width: '60vh', height: '40vh' }}>
+                        <img src={Flow} alt="faq1" style={{ width: '60vh', height: '40vh' }}>
 
                         </img>
 
@@ -53,7 +53,7 @@ function FAQ() {
                         </div>
 
                         <div class="col">
-                        <img src={DevC} style={{ width: "200px", }} />
+                        <img src={DevC} alt='faq2' style={{ width: "200px", }} />
 
                         <TextAreaWrapper>
                         <SearchIcon sx={{ color: 'darkgrey' }} />
@@ -70,7 +70,7 @@ function FAQ() {
                         </div>
 
                         <div class="col">
-                        <img src={Heel} alt="Image" style={{ width: '40vh', height: '40vh' }}>
+                        <img src={Heel} alt="faq3" style={{ width: '40vh', height: '40vh' }}>
                         </img>
                           
                         </div>
