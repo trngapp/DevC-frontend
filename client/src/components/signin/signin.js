@@ -92,14 +92,15 @@ setLoading(false);
     <>
 
 {isLoading===true?<Loading/>:
-      <Grid container columnGap={{ md: 20 }} columnSpacing={{ xs: 1, md: 12 }}>
+      <Grid container columnGap={{ md: 20 }} columnSpacing={{ xs: 1, md: 12 }} sx={{marginTop:"90px"}}>
+
 
         {/*GIF */}
         <Grid item >
           <MediaQuery minWidth={1224} >
 
             {
-              <img src={Mobile} alt="login" style={{ width: '80vh', height: '80vh', marginTop: '15%' }} >
+              <img src={Mobile} alt="login" style={{ width: '80vh', height: '80vh', marginTop: '2%',marginLeft: '15%' }} >
 
               </img>
             }

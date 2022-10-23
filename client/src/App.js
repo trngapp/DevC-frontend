@@ -6,6 +6,7 @@ import Admin from "./components/admin/admin"
 import Footer from "./components/footer/footer2"
 import Nav from "./components/navbar/navbar"
 import Home from "./components/home/home"
+import Home1 from "./components/home/home1"
 //import Create from "./components/createform/create"
 import Signin from "./components/signin/signin"
 import Signup from "./components/signup/signup"
@@ -17,6 +18,7 @@ import AuthGuard from "./Guards/AuthGuard";
 import {AuthProvider} from "./context/AuthContext";
 import Loading from "./components/loading.js"
 import Profile from "./components/Profile/profile";
+
 const App = () => {
   const location =useLocation();
   const [isLoading,setLoading]=useState(true);
@@ -27,7 +29,7 @@ const App = () => {
    })
   return (
     <>
-    {isLoading==true?<Loading/> :
+    {isLoading===true?<Loading/> :
     <AuthProvider>
       <div>
       {location.pathname !== '/signin' && location.pathname !=='/signup' ? <Nav /> : null}
@@ -36,7 +38,7 @@ const App = () => {
         <Routes>
 
  <Route element={<AuthGuard />}>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home1 />} />
          {/* <Route exact path="/create" element={<Create />} />*/}
           <Route exact path="/admin" element={<Admin />} />
 

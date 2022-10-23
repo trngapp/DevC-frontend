@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Carousel from "./carousel"
 import { Link } from 'react-router-dom'
+
 import Landing from '../../static/images/hello.jpg'
 import Community from '../../static/images/hii.jpg'
 //import Bubbles from "../../static/images/bubbles.gif"
@@ -40,28 +41,52 @@ const Home = () => {
     }));
     return (
         <>
-
+<br/>
+<br/>
+<br/>
             <div class="container">
-                <button onClick={log}></button>
-                <div class="row">
+                {/*<button onClick={log}></button>*/}
+                <div class="row" style={{backgroundColor:"F8F9FA",marginLeft:"0px",marginRight:"0px"}}>
 
-                    <div class="col">
-                        <img src={Landing} alt="homeimg" style={{ width: '50vh', height: '40vh' }}>
+                <div class="col" style={{padding:"1px"}}>
 
-                        </img>
-                    </div>
+                <br/>
+<br/>
+<br/>
+                <Typography fontFamily="agrandir medium" variant="h1" fontSize={35}>Finding a Project or Creating one, We got you covered</Typography>
+                <br/>
+                <br/>
 
-                    <div class="col">
 
+                <Typography fontFamily="agrandir medium" variant="h2" fontSize={25}> Find answers to your questions about finding a co-founder, and maintaining co-founder relationships.</Typography>
+                &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;&nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;
+                <hr/>
 
-                    </div>
-
-                    <div class="col">
-                        <img src={Community} alt="home" style={{ width: '70vh', height: '40vh' }}>
-                        </img>
-                    </div>
                 </div>
 
+                    <div class="col"style={{padding:"1px",marginLeft:"10px"}}>
+                    &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;&nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;   &nbsp;
+                        <img src={Landing} alt="homeimg" style={{ width: '60vh', height: '50vh',marginLeft:"10px" }}>
+
+                        </img>
+                    </div>
+
+
+
+                   {/* <div class="col">
+                        <img src={Community} alt="home" style={{ width: '70vh', height: '40vh' }}>
+                        </img>
+    </div>*/}
+                </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
                 <div class="row">
                     <div class="col">
                         <br />
