@@ -40,3 +40,15 @@
       width: 10%;
     }
   }
+  #Item1:hover{
+    border-bottom: 5px solid #00BFFF;
+}
+#Item2:hover{
+    border-bottom: 5px solid #00FFFF;
+}
+#Item3:hover{
+    border-bottom: 5px solid #00BFFF;
+}
+#Item4:hover{
+    border-bottom: 5px solid #007FFF;
+}

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import './App.css';
 import { Route, Routes,useLocation } from 'react-router-dom';
 import Apply from "./components/apply/apply"
+import Invalid from "./components/invalid/invalid"
 import Admin from "./components/admin/admin"
 import Footer from "./components/footer/footer2"
 import Nav from "./components/navbar/navbar"
@@ -18,7 +19,8 @@ import AuthGuard from "./Guards/AuthGuard";
 import {AuthProvider} from "./context/AuthContext";
 import Loading from "./components/loading.js"
 import Profile from "./components/Profile/profile";
-
+import {ApplyProvider} from "./context/ApplyContext";
+import {ApplyContext} from "./context/ApplyContext";
 const App = () => {
   const location =useLocation();
   const [isLoading,setLoading]=useState(true);
@@ -27,10 +29,12 @@ const App = () => {
        setLoading(false);
      },2000)
    })
+   //const {from,to} = React.useContext(ApplyContext);
   return (
     <>
     {isLoading===true?<Loading/> :
     <AuthProvider>
+      <ApplyProvider>
       <div>
       {location.pathname !== '/signin' && location.pathname !=='/signup' ? <Nav /> : null}
 
@@ -43,7 +47,7 @@ const App = () => {
           <Route exact path="/admin" element={<Admin />} />
 
           <Route exact path="/create" element={<Createus />} />
-          <Route exact path="/apply"  element={<Apply />} />
+          <Route exact path="/apply"  element={<Apply /*To="tarang@gmail.com"  From="taran@gmail.com"*/ />} />
           <Route exact path="/faq"   element={<FAQ />}/>
           <Route exact path="/aboutus" element={<Aboutus />}/>
           <Route exact path="/explore" element={<Explore />}/>
@@ -51,11 +55,12 @@ const App = () => {
           <Route exact path="/profile" element={<Profile/>}/>
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route  path="*" element={<Invalid />} />
         </Routes>
 
       </div>
       {location.pathname !== '/signin' && location.pathname !=='/signup' ? <Footer /> : null}
-
+      </ApplyProvider>
       </AuthProvider>
       }
 </>

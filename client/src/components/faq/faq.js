@@ -45,15 +45,15 @@ function FAQ() {
                     <div class="row">
 
                         <div class="col">
-                        <img src={Flow} alt="faq1" style={{ width: '60vh', height: '40vh' }}>
+                        <img src={Flow} alt="faq1" style={{ width: '40vh', height: '36vh' }}>
 
                         </img>
 
-                    
+
                         </div>
 
                         <div class="col">
-                        <img src={DevC} alt='faq2' style={{ width: "200px", }} />
+                        <img src={DevC} alt='faq2' style={{ width: "210px", }} />
 
                         <TextAreaWrapper>
                         <SearchIcon sx={{ color: 'darkgrey' }} />
@@ -72,13 +72,13 @@ function FAQ() {
                         <div class="col">
                         <img src={Heel} alt="faq3" style={{ width: '40vh', height: '40vh' }}>
                         </img>
-                          
+
                         </div>
                     </div>
-                    
 
 
-                    
+
+
 
                 </center>
                 <br />
@@ -87,15 +87,15 @@ function FAQ() {
             </Box>
             <br/>
             <br/>
-             
+
             <center>
-            <Typography 
+            <Typography
             sx={{alignContent:'center',justifyContent:'center',fontSize:20,fontWeight: 'bold'}}>
                 How can we help you?
             </Typography>
             <br/>
 
-            
+
                 <Card sx={{
                     width: '50%',
                     height: 'auto',
@@ -109,7 +109,7 @@ function FAQ() {
 
 
                     <Accordion sx={{
-                        
+
                     }}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}

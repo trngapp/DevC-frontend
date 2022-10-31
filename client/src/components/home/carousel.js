@@ -1,9 +1,44 @@
-import React from "react"
+import React ,{useEffect,useState}from "react"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from "./card"
-import Json from "./items.json"
-const CarouselFunction =()=>{
+import Ca from "./card12"
+//import Json from "./items.json"
+import axios from "axios"
+const CarouselFunction =({Type})=>{
+  var p=[];
+ var [arr,setarr]=useState([]);
+
+ useEffect(()=>{
+   console.log(arr);
+   //console.log(arr.length);
+  var type=Type;
+  axios.get(`http://localhost:3336/projectinfo/all?type=${type}`).then((res)=>{
+    console.log(res.data);
+    //const Json=res.data[0];
+    const Json=res.data;
+
+    var d=[];
+    Object.keys(Json).forEach(function(key) {
+      d.push(Json[key]);
+    })
+    //d.push(Json);
+
+    setarr(d);
+    console.log(d);
+
+
+
+}).catch((error)=>{
+// console.log(error.response.data);
+setTimeout(()=>{
+//setLoading(false);
+},1000)
+
+})
+
+ },arr)
+
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -26,13 +61,17 @@ const CarouselFunction =()=>{
       //const example = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
       const renderCard=()=>{
 
-        var arr = [];
+        /*var arr = [];
     Object.keys(Json).forEach(function(key) {
       arr.push(Json[key]);
     });
     arr.forEach((item)=>{
         console.log(item.description)
-    })
+    })*/
+
+
+
+
     return(
         <Carousel swipeable={false}
         draggable={false}
@@ -50,7 +89,9 @@ const CarouselFunction =()=>{
 
         //dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-20-px">
-{arr.map(item => <Card description={item.description} projectLeader={item.projectLeader} openings={item.openings} projectName={item.projectName}/> )}
+
+{/*{arr[0]!==undefined ? */}
+{arr[0]!==undefined ? arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.project_leader:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> ):<Ca/>}
 </Carousel>
 
 );

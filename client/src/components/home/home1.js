@@ -13,11 +13,39 @@ import Grid from '@mui/material/Grid';
 import {AuthContext} from "../../context/AuthContext"
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import HandshakeIcon from '@mui/icons-material/Handshake';
+import { useNavigate } from "react-router-dom";
 
 
 
 
 const Home1 = () => {
+    const navigate= useNavigate();
+
+    const handleSecurity=()=>{
+navigate('/explore',{state:{Type:"Security"}});
+
+
+    }
+    const handleWeb=()=>{
+        navigate('/explore',{state:{Type:"Web"}});
+
+
+            }
+            const handleAndroid=()=>{
+                navigate('/explore',{state:{Type:"Android"}});
+
+
+                    }
+                    const handleML=()=>{
+                        navigate('/explore',{state:{Type:"ML"}});
+
+
+                            }
+                            const handleData=()=>{
+                                navigate('/explore',{state:{Type:"Data"}});
+
+
+                                    }
 
      /*useEffect(()=>{
          const value={email:"Mukesh@gmail.com",password:"Mukesh@123"};
@@ -53,12 +81,12 @@ const Home1 = () => {
                 <Grid item md={7} xs={12} sx={{marginTop:"100px"}}>
 
 
-                <Typography  sx={{fontWeight:550,fontFamily:"Georgia"}} variant="h1" fontSize="3rem">Finding a Project or Creating one, We got you covered</Typography>
+                <Typography  sx={{fontWeight:550,fontFamily:"Franklin Gothic Medium"}} variant="h1" fontSize="3rem">Finding a Project or Creating one, We got you covered</Typography>
                 <br/>
                 <br/>
 
 
-                <Typography fontFamily="Georgia" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Find answers to your questions about finding a project, and creating your own project and building your own team.</Typography>
+                <Typography fontFamily="Franklin Gothic Medium" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Find answers to your questions about finding a project, and creating your own project and building your own team.</Typography>
 
                 <hr/>
 <br/>
@@ -90,7 +118,7 @@ const Home1 = () => {
                         <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><TipsAndUpdatesIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"8px"}}/></center></div></center>
                         <br />
 
-                        <center><Typography fontFamily="Georgia" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
+                        <center><Typography fontFamily="Franklin Gothic Medium" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
                         <br />
                         <br />
 
@@ -109,7 +137,7 @@ const Home1 = () => {
                         {/*<center><h1>Apply to be a part of the team in some amazing projects</h1> </center>*/}
                         <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><HandshakeIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"5px"}}/></center></div></center>
                         <br/>
-                        <center><Typography fontFamily="Georgia" variant="h1" fontSize={35}>APPLY IN DIFFERENT PROJECTS</Typography></center>
+                        <center><Typography fontFamily="Franklin Gothic Medium" variant="h1" fontSize={35}>APPLY IN DIFFERENT PROJECTS</Typography></center>
                         <br />
                         <br /> <br />
                         <br />
@@ -117,9 +145,10 @@ const Home1 = () => {
 
                    <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1>Web Development</h1>
-                        <Link to="/explore">  <ColorButton sx={{ marginLeft: { md: "1150px", xs: "10px" } }} variant="contained" className="next" >Explore</ColorButton></Link>
-                        <br />
-                        <Carousel />
+                         <br />
+                        <Carousel Type="Web"/>
+                          <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleWeb}>Explore</ColorButton>
+                       <br/>
                         <hr style={{ width: "100%" }}></hr>
                         <br /> <br />
                     </Grid>
@@ -127,9 +156,10 @@ const Home1 = () => {
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1>Android Development</h1>
-                        <Link to="/explore">  <ColorButton sx={{ marginLeft: { md: "1150px", xs: "10px" } }} variant="contained" className="next" >Explore</ColorButton></Link>
-                        <br />
-                        <Carousel />
+                       <br />
+                        <Carousel Type="Android"/>
+                      <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleAndroid}>Explore</ColorButton>
+                       <br/>
                         <hr style={{ width: "100%" }}></hr>
                         <br /> <br />
                     </Grid>
@@ -137,9 +167,10 @@ const Home1 = () => {
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1>ML/AI</h1>
-                        <Link to="/explore">  <ColorButton sx={{ marginLeft: { md: "1150px", xs: "10px" } }} variant="contained" className="next" >Explore</ColorButton></Link>
-                        <br />
-                        <Carousel />
+                          <br />
+                        <Carousel Type="ML"/>
+                         <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleML}>Explore</ColorButton>
+                       <br/>
                         <hr style={{ width: "100%" }}></hr>
                         <br /> <br />
                     </Grid>
@@ -147,9 +178,10 @@ const Home1 = () => {
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1>Data Aanalysis</h1>
-                        <Link to="/explore">  <ColorButton sx={{ marginLeft: { md: "1150px", xs: "10px" } }} variant="contained" className="next" >Explore</ColorButton></Link>
-                        <br />
-                        <Carousel />
+                         <br />
+                        <Carousel Type="Data" />
+                          <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next"  onClick={handleData}>Explore</ColorButton>
+                       <br/>
                         <hr style={{ width: "100%" }}></hr>
                         <br /> <br />
                     </Grid>
@@ -157,10 +189,12 @@ const Home1 = () => {
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1>Web Security</h1>
-                        <Link to="/explore">  <ColorButton sx={{ marginLeft: { md: "1150px", xs: "10px" } }} variant="contained" className="next" >Explore</ColorButton></Link>
+
                         <br />
-                        <Carousel />
-                        <hr style={{ width: "100%" }}></hr>
+                        <Carousel Type="Security" />
+
+                <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right"  }}  onClick={handleSecurity} variant="contained" className="next" >Explore</ColorButton>
+                       <br/> <hr style={{ width: "100%" }}></hr>
                         <br /> <br />
 
                 </Grid>

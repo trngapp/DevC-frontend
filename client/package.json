@@ -22,6 +22,7 @@
     "react-responsive": "^9.0.0-beta.8",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^2.1.3",
+    "react-spinner-overlay": "^0.1.33",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

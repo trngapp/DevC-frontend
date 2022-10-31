@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React , {useEffect,useContext} from 'react';
 //import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -9,6 +9,8 @@ import Typography from '@mui/material/Typography';
 import PaellaImage from "../../static/images/webimage.png"
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import {AuthContext} from "../../context/AuthContext"
 
 /*const bull = (
   <Box
@@ -29,6 +31,14 @@ const ColorButton = styled(Button)(({ theme }) => ({
   }));
 
 export default function BasicCard({description,projectLeader,projectName,openings}) {
+  useEffect(()=>{
+    console.log(description);
+  })
+  const {user} = useContext(AuthContext);
+  const navigate= useNavigate();
+    const handleClick=()=>{
+navigate('/apply',{state:{To:projectLeader,From:user}});
+    }
   return (
       <>
     <Card sx={{ minWidth: 275 ,margin:"2%"}}>
@@ -56,7 +66,7 @@ export default function BasicCard({description,projectLeader,projectName,opening
       </CardContent>
       <CardActions>
        {/* <Button size="small" type="contained">Apply</Button>*/}
-        <center><Link to="/apply"><ColorButton variant="contained" className="next" >Apply</ColorButton></Link></center>
+      <center><ColorButton variant="contained" className="next"  onClick={handleClick}>Apply</ColorButton></center>
       </CardActions>
     </Card>
 

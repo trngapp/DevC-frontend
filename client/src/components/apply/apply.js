@@ -1,27 +1,128 @@
-import React from 'react'
+import React,{useEffect,useContext} from 'react'
 import { useState } from 'react';
 import { Card, Grid, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Button from '@mui/material/Button';
-import { Modal } from "react-bootstrap"
+import { Modal } from "react-bootstrap";
 import Typography from '@mui/material/Typography';
 import Checkbox from '@mui/material/Checkbox';
 import { TextField } from '@mui/material';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import axios from "axios"
+import {AuthContext} from "../../context/AuthContext";
+import Invalid from "../invalid/invalid";
+import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
+
+import Success from "./success.js"
+
+import Error from "./error.js"
+import {useLocation} from 'react-router-dom';
 
 
 
-function request() {
+const request=()=>{
+
+
+const {user}=useContext(AuthContext);
+
+
+      const {state} = useLocation();
+      //console.log(state.To);
 
 
       const [checked, setChecked] = React.useState(false);
       const [show, setShow] = useState(false);
 
+
+
+
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
+
+
+
+      const [ logo, setLogo] = useState("");
+      const [leaderemail, setLeader] = useState("");
+      const [projectname,setName]=useState("");
+      const [desc,setDesc]=useState("");
+      const [Ptype,setPtype]=useState("");
+       const [Otype,setOtype]=useState("");
+      const [expertise,setExpertise]=useState("");
+      const [number,setNumber]=useState("");
+      const [sub,setsub]=useState(false);
+      const [done,setdone]=useState(false);
+      const [error,seterror]=useState(false);
+
+      useEffect(()=>{
+            //const values={email:'tarang@gmail.com'};
+            //const params = new url.URLSearchParams(values);
+
+           // console.log(state.To);
+           // console.log(state.From);
+            const value=state?state.To:"";
+            console.log(value);
+
+            axios.get(`http://localhost:3336/projectinfo?email=${value}`).then((res)=>{
+                  console.log(res.data[0].opening_type);
+                  setLogo(res.data[0].logo);
+                  setLeader(res.data[0].project_leader);
+                  setName(res.data[0].project_name);
+                  setDesc(res.data[0].project_desc);
+                  setPtype(res.data[0].project_type);
+                  setOtype(res.data[0].opening_type);
+                  setExpertise(res.data[0].opening_expertise);
+                  setNumber(res.data[0].opening_number);
+
+      }).catch((error)=>{
+           // console.log(error.response.data);
+        setTimeout(()=>{
+        //setLoading(false);
+        },1000)
+
+      })
+
+      })
+
+    const submit=()=>{
+           //console.log(From);
+            const value={from:user,to:state?state.To:""};
+            setsub(true);
+           axios.post('http://localhost:3336/apply',value,{withCredentials:true}).then((res)=>{
+
+            console.log(res);
+            // login(formData.email);
+
+            setTimeout(()=>{
+              //setLoading(false);
+              //navigate("/");
+             setsub(false);
+             setdone(true);
+             },3000)
+
+
+           setdone(false);
+
+
+
+           }).catch(error=>{
+        console.log(error.response.data);
+
+
+        setTimeout(()=>{
+        //setLoading(false);
+        setsub(false);
+
+        seterror(true);
+        },3000)
+
+        seterror(false);
+
+            })
+
+      }
 
 
 
@@ -55,7 +156,19 @@ function request() {
 
 
       return (
+            <>
+
+            {/*<FerrisWheelSpinner loading={sub}　size={28} />*/}
+
+            { done===true? <Success/>:null}
+            {error===true?<Error/>:null}
+            <CircleSpinnerOverlay
+      　　loading={sub}
+       overlayColor="rgba(0,153,255,0.2)"
+      />
             <center>
+
+
                   <Card sx={{
                         width: { xs: '100%', md: 1100 },
                         backgroundColor: "#F5F5F5",
@@ -75,7 +188,7 @@ function request() {
                                     <span class="bg-secondary p-1 px-4 rounded text-white">Leader</span>
                                     <h5 class="mt-2 mb-0">Alexender Schidmt</h5>
                                     <br />
-                                    <h4 id='Pname'>Sample Heading</h4>
+                                    <h4 id='Pname'>{projectname}</h4>
                                     <br />
                                     <Grid container spacing={{ xs: 4, md: 1 }} columns={{ xs: 6, md: 12 }}>
                                           <Grid item xs={2} md={4}  >
@@ -116,20 +229,24 @@ function request() {
                                                 <TextField
                                                       disabled
                                                       id="PType"
-                                                      label="Project Type"
-                                                      defaultValue="Web-Development"
+                                                      label=  {Ptype}
+                                                      //defaultValue="Web-Development"
                                                       variant="standard"
-                                                />
+                                                >
+
+                                                </TextField>
                                           </Grid>
 
                                           <Grid item xs={2} md={4}>
                                                 <TextField
                                                       disabled
                                                       id="OType"
-                                                      label="Opening Type"
-                                                      defaultValue="Front-End"
+                                                      label=     {Otype}
+                                                      //defaultValue="Front-End"
                                                       variant="standard"
-                                                />
+                                                >
+
+                                                </TextField>
 
                                           </Grid>
 
@@ -137,38 +254,19 @@ function request() {
                                                 <TextField
                                                 disabled
                                                       id="OExpert"
-                                                      label="Opening Expertise"
-                                                      defaultValue="Intermediate"
+                                                      label= {expertise}
+                                                      //defaultValue="Intermediate"
                                                       variant="standard"
-                                                />
+                                                >
+
+                                                </TextField>
 
                                           </Grid>
                                     </Grid>
                                     <br />
                                     <Grid item xs={12}>
                                           <Typography variant="body2" align='justify'>
-                                                body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                                                quasi quidem quibusdam. body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                                                quasi quidem quibusdam. body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                                                quasi quidem quibusdam. body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                                                quasi quidem quibusdam. body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                                                quasi quidem quibusdam. body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                                                quasi quidem quibusdam. body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                                                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                                                quasi quidem quibusdam.
+                                                {desc}
                                           </Typography>
 
 
@@ -207,11 +305,13 @@ function request() {
                         </div>
                   </Card>
                   <br />
-                  {checked === true ? <Button variant='contained' sx={{backgroundColor:"#C81132"}}>APPLY</Button> : <Button variant="contained" disabled color='success'>APPLY</Button>}
+                  {checked === true ? <Button variant='contained' onClick={submit} sx={{backgroundColor:"#C81132"}}>APPLY</Button> : <Button variant="contained" disabled color='success'>APPLY</Button>}
                   <br />
                   <br />
             </center>
-            
+
+            </>
+
       )
 }
 

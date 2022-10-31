@@ -1,9 +1,12 @@
-import React from "react";
+import React ,{useState,useEffect}from "react";
 import { Grid, InputBase, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import Json from "../home/items.json";
 import Card from "../home/card"
+import {useLocation} from 'react-router-dom';
+import axios from "axios"
+import NotAvailable from "./NotAvailable"
 const GridWrapper = styled(Grid)({
     '.search_wrapper': {
       display: 'flex',
@@ -37,24 +40,54 @@ const GridWrapper = styled(Grid)({
 
 
 const Explore=()=>{
+  var [arr,setarr]=useState([]);
+  const {state} = useLocation();
+  useEffect(()=>{
+    console.log(arr);
+    //console.log(arr.length);
+   var type= state?state.Type:"";
+   axios.get(`http://localhost:3336/projectinfo/all?type=${type}`).then((res)=>{
+     console.log(res);
+     const Json=res.data;
+     var d=[];
+     Object.keys(Json).forEach(function(key) {
+       d.push(Json[key]);
+     });
+     //d.push(Json);
+
+     setarr(d);
+     console.log(d);
+
+
+
+ }).catch((error)=>{
+ // console.log(error.response.data);
+ setTimeout(()=>{
+ //setLoading(false);
+ },1000)
+
+ })
+
+  },arr)
     const RenderCards =()=>{
-        var arr = [];
-        Object.keys(Json).forEach(function(key) {
+        //var arr = [];
+        /*Object.keys(Json).forEach(function(key) {
           arr.push(Json[key]);
-        });
+        });*/
         return(
             <>
+           {arr[0]!==undefined ?
 <CardContainer container>
-{arr.map(item => <Card description={item.description} projectLeader={item.projectLeader} openings={item.openings} projectName={item.projectName}/> )}
-    </CardContainer>
+{arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.project_leader:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> )}
+    </CardContainer>: <NotAvailable/>}
             </>
         )
     }
     const content=(
 
-            <RenderCards>
+            <RenderCards/>
 
-            </RenderCards>
+
 
     )
 

@@ -21,6 +21,16 @@ const Navbar = () => {
         setVisible(false);
     };
 
+    const [isOne,clickone]=useState(false);
+
+    const [isTwo,clicktwo]=useState(false);
+
+
+    const [isThree,clickthree]=useState(false);
+
+
+    const [isFour,clickfour]=useState(false);
+
     return (
         <>
             <div className='nav-container' style={{borderBottom:"groove"}}>
@@ -46,10 +56,10 @@ const Navbar = () => {
             <MediaQuery query="(min-width: 992px)">
               <div className='navigation'>
                         <ul>
-                        <li> <Link to='/'>Home</Link> </li>
-                            <li><Link to='/faq'> FAQ</Link> </li>
-                            <li><Link to='/aboutus'> About us</Link> </li>
-                            <li> <Link to='/profile'> Profile</Link></li>
+                        <li> <Link  id="Item1" style={{borderBottom:isOne?"#89CFF0":""}} to='/' >Home</Link> </li>
+                            <li><Link id="Item2" style={{borderBottom:isTwo?'#C81132':""}} to='/faq'> FAQ</Link> </li>
+                            <li><Link id="Item3" style={{borderBottom:isThree?'#C81132':""}} to='/aboutus'> About us</Link> </li>
+                            <li> <Link id="Item4" style={{borderBottom:isFour?'#C81132':""}} to='/profile'> Profile</Link></li>
                         </ul>
                     </div>
                     </MediaQuery>
