@@ -81,12 +81,12 @@ navigate('/explore',{state:{Type:"Security"}});
                 <Grid item md={7} xs={12} sx={{marginTop:"100px"}}>
 
 
-                <Typography  sx={{fontWeight:550,fontFamily:"Franklin Gothic Medium"}} variant="h1" fontSize="3rem">Finding a Project or Creating one, We got you covered</Typography>
+                <Typography  sx={{fontWeight:550,fontFamily:"helvetica,garamond"}} variant="h1" fontSize="3rem">Finding a Project or Creating one, We got you covered</Typography>
                 <br/>
                 <br/>
 
 
-                <Typography fontFamily="Franklin Gothic Medium" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Find answers to your questions about finding a project, and creating your own project and building your own team.</Typography>
+                <Typography fontFamily="helvetica,garamond" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Find answers to your questions about finding a project, and creating your own project and building your own team.</Typography>
 
                 <hr/>
 <br/>
@@ -118,7 +118,7 @@ navigate('/explore',{state:{Type:"Security"}});
                         <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><TipsAndUpdatesIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"8px"}}/></center></div></center>
                         <br />
 
-                        <center><Typography fontFamily="Franklin Gothic Medium" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
+                        <center><Typography fontFamily="helvetica,garamond" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
                         <br />
                         <br />
 
@@ -135,9 +135,12 @@ navigate('/explore',{state:{Type:"Security"}});
                         <br />
                         <br />
                         {/*<center><h1>Apply to be a part of the team in some amazing projects</h1> </center>*/}
-                        <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><HandshakeIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"5px"}}/></center></div></center>
-                        <br/>
-                        <center><Typography fontFamily="Franklin Gothic Medium" variant="h1" fontSize={35}>APPLY IN DIFFERENT PROJECTS</Typography></center>
+
+                         <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><HandshakeIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"5px"}}/></center></div></center>
+                         <br/>
+                        <center><Typography fontFamily="helvetica,garamond" variant="h1" fontSize={35}>APPLY IN DIFFERENT PROJECTS</Typography></center>
+
+
                         <br />
                         <br /> <br />
                         <br />

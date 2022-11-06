@@ -11,6 +11,8 @@ import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext"
+import Badge from '@mui/material/Badge';
+
 
 /*const bull = (
   <Box
@@ -29,7 +31,36 @@ const ColorButton = styled(Button)(({ theme }) => ({
      backgroundColor:  "blue ",
    },
   }));
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    '& .MuiBadge-badge': {
+      backgroundColor: '#44b700',
+      color: '#44b700',
+      width:"10px",
+      height:"10px",
+      boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+      '&::after': {
+        //position: 'absolute',
+        top: 0,
 
+        width: '100%',
+        height: '100%',
+        borderRadius: '50%',
+        animation: 'ripple 1.2s infinite ease-in-out',
+        border: '1px solid currentColor',
+        content: '""',
+      },
+    },
+    '@keyframes ripple': {
+      '0%': {
+        transform: 'scale(.8)',
+        opacity: 1,
+      },
+      '100%': {
+        transform: 'scale(2.4)',
+        opacity: 0,
+      },
+    },
+  }));
 export default function BasicCard({description,projectLeader,projectName,openings}) {
   useEffect(()=>{
     console.log(description);
@@ -42,6 +73,12 @@ navigate('/apply',{state:{To:projectLeader,From:user}});
   return (
       <>
     <Card sx={{ minWidth: 275 ,margin:"2%"}}>
+    <StyledBadge
+        overlap="circular"
+        //anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        sx={{marginLeft:"10px",}}
+        variant="dot"
+      ></StyledBadge> &nbsp; {/*<h6 style={{display:"inline-block",color:"#44b700",paddingTop:"5px"}}>ACTIVE</h6>*/}
         <CardMedia
         component="img"
         height="194"
@@ -49,6 +86,7 @@ navigate('/apply',{state:{To:projectLeader,From:user}});
         alt="Paella dish"
       />
       <CardContent>
+
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
        Openings: {openings}
         </Typography>

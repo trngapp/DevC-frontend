@@ -8,6 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from "@mui/material/Typography";
 import MediaQuery from "react-responsive";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function Aboutus() {
   return (
@@ -82,6 +83,18 @@ function Aboutus() {
 
             </CardActions>
           </Card>
+
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <br/>
+          <center>
+        <Typography>Made with <FavoriteIcon sx={{color:"red"}}/> by</Typography>
+        <Typography>TARANG SHARMA( FRONTEND & BACKEND)</Typography>
+        <br/>
+        <Typography>Other Team members:</Typography>
+        <Typography>Frontend:</Typography>
+        <Typography>HARISHITA RANA</Typography>
+        </center>
         </Grid>
       </Grid>
 
