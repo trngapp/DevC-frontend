@@ -4,13 +4,18 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Loading from "../loading.js"
 import { styled } from '@mui/material/styles';
+
 const Project=()=>{
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
-        backgroundColor: "#C81132",
-
+        backgroundColor: "white",
+       // borderColor:"#C81132",
+        color:"blue", border:"3px solid blue"
+,
         '&:hover': {
-            backgroundColor: "#C81132 ",
+            backgroundColor: "white",
+            border:"3px solid #C81132",
+            color:"#C81132"
         },
     }));
     const [load,setLoad]=useState(false);

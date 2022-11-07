@@ -38,6 +38,7 @@ export function AuthProvider({children}){
         setLog(false);
         setUser(null);
         localStorage.removeItem("user");
+        
     })
 
 

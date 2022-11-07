@@ -1,4 +1,4 @@
-import React ,{useState}from "react"
+import React ,{useState,useContext}from "react"
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Project from "./project"
@@ -9,33 +9,74 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Typography from "@mui/material/Typography";
+import {AuthContext} from "../../context/AuthContext"
+import {useNavigate} from "react-router-dom"
 const profile =()=>{
+    const {logout} = useContext(AuthContext);
+const navigate=useNavigate();
+    const log=()=>{
+       logout();
+       navigate("/signin");
+
+    }
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
         backgroundColor: "#C81132",
-
+        outline:"none",
+color:"black",
         '&:hover': {
             backgroundColor: "#C81132 ",
+            color:"black"
         },
+    }));
+    const CButton = styled(Button)(({ theme }) => ({
+        //color: theme.palette.getContrastText(purple[500]),
+        backgroundColor: "white",
+        color:"black",
+        outline:"none",
+        //outline:"none",visibility:"hidden",opacity:0,
+
+        '&:hover': {
+            backgroundColor: "#C81132",
+            color:"white",
+
+            //transition: "0.5s"
+        },
+        '&:focus':{
+            outline:"none"
+
+        }
     }));
     const [proj,setproj]=useState(false);
     const [personal,setpersonal]=useState(true);
     const [req,setreq]=useState(false);
+    const [applied,setapplied]=useState(false);
     const Projects=()=>{
         setpersonal(false);
         setproj(true);
         setreq(false);
+        setapplied(false);
 
     }
     const Personal=()=>{
        setpersonal(true);
        setproj(false);
+       setapplied(false);
        setreq(false);
     }
     const Requests=()=>{
         setpersonal(false);
         setproj(false);
+        setapplied(false);
         setreq(true);
+    }
+    const Applied=()=>{
+        setpersonal(false);
+        setproj(false);
+        setreq(false);
+        setapplied(true);
     }
     return (
         <>
@@ -59,6 +100,11 @@ const profile =()=>{
 <PermIdentityIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:personal?"white":"black"}}/><h6 style={{padding:"15px",paddingLeft:"5px",display:"inline-block",color:personal?"white":"black"}}>Personal Info</h6>
 </div>
 <br/>
+<div onClick={Applied} style={{backgroundColor:applied?"#64b9f9":"white",height:"50px",borderRadius:"5px",cursor:"pointer"}}>
+    <ListAltIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:applied?"white":"black"}}/>
+<h6 style={{padding:"15px",color:applied?"white":"black",paddingLeft:"5px",display:"inline-block",fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"}}>Applied</h6>
+</div>
+<br/>
 <div onClick={Projects}  style={{backgroundColor:proj?"#64b9f9":"white",height:"50px",borderRadius:"5px",cursor:"pointer"}}>
     <CreateNewFolderIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:proj?"white":"black"}}/>
 <h6 style={{padding:"15px",paddingLeft:"5px",display:"inline-block",color:proj?"white":"black"}}>Project Created</h6>
@@ -68,6 +114,11 @@ const profile =()=>{
     <ListAltIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:req?"white":"black"}}/>
 <h6 style={{padding:"15px",color:req?"white":"black",paddingLeft:"5px",display:"inline-block",fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"}}>Requests</h6>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<center><CButton onClick={log}><LogoutIcon /><Typography>Logout</Typography></CButton></center>
 </Grid>
                </Grid>
                <Grid item lg={10} xs={12} sx={{border:"1px #EAEAEA solid ",height:"700px"}}>

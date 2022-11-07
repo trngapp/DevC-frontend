@@ -87,6 +87,12 @@ setLoading(false);
          logout();
 
 }
+React.useEffect(()=>{
+  setLoading(true)
+  setTimeout(()=>{
+    setLoading(false);
+  },1000)
+},isLoading)
 
   return (
     <>
