@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Project from "./project"
 import Persona from "./info"
+import Applications from "./applications"
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
 import ListAltIcon from '@mui/icons-material/ListAlt';
@@ -36,6 +37,7 @@ color:"black",
         backgroundColor: "white",
         color:"black",
         outline:"none",
+
         //outline:"none",visibility:"hidden",opacity:0,
 
         '&:hover': {
@@ -118,12 +120,14 @@ color:"black",
 <br/>
 <br/>
 <br/>
-<center><CButton onClick={log}><LogoutIcon /><Typography>Logout</Typography></CButton></center>
+<center><CButton onClick={log}><LogoutIcon /><Typography><strong>Logout</strong></Typography></CButton></center>
 </Grid>
                </Grid>
                <Grid item lg={10} xs={12} sx={{border:"1px #EAEAEA solid ",height:"700px"}}>
 {proj?<Project/>:null}
 {personal?<Persona/>:null}
+{applied? <Applications/> : null}
+{req? <Applications/> : null}
                    </Grid>
            </Grid>
 

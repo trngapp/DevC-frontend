@@ -7,6 +7,7 @@ import Card from "../home/card"
 import {useLocation} from 'react-router-dom';
 import axios from "axios"
 import NotAvailable from "./NotAvailable"
+import Loading from "../loading.js"
 const GridWrapper = styled(Grid)({
     '.search_wrapper': {
       display: 'flex',
@@ -76,6 +77,7 @@ const Explore=()=>{
         });*/
         return(
             <>
+
            {arr[0]!==undefined ?
 <CardContainer container>
 {arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.project_leader:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> )}
@@ -92,7 +94,10 @@ const Explore=()=>{
     )
 
     return(
+
         <>
+
+          <div>
         <GridWrapper container spacing={2}>
         <Grid item xs={10} sm={4} className="search_wrapper">
           <TextAreaWrapper>
@@ -125,6 +130,8 @@ const Explore=()=>{
         </Grid>
       </GridWrapper>
 {content}
+</div>
+
     </>
     )
 }

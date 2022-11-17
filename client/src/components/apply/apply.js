@@ -45,7 +45,8 @@ const {user}=useContext(AuthContext);
 
 
       const [ logo, setLogo] = useState("");
-      const [leaderemail, setLeader] = useState("");
+      const [leaderemail, setLeadermail] = useState("");
+      const [leadername, setLeadername] = useState("");
       const [projectname,setName]=useState("");
       const [desc,setDesc]=useState("");
       const [Ptype,setPtype]=useState("");
@@ -55,6 +56,7 @@ const {user}=useContext(AuthContext);
       const [sub,setsub]=useState(false);
       const [done,setdone]=useState(false);
       const [error,seterror]=useState(false);
+      const [errorMessage,seterrorMessage]=useState("");
 
       useEffect(()=>{
             //const values={email:'tarang@gmail.com'};
@@ -66,9 +68,10 @@ const {user}=useContext(AuthContext);
             console.log(value);
 
             axios.get(`http://localhost:3336/projectinfo?email=${value}`).then((res)=>{
-                  console.log(res.data[0].opening_type);
+                  console.log(res.data[0].project_type);
                   setLogo(res.data[0].logo);
-                  setLeader(res.data[0].project_leader);
+                  setLeadermail(res.data[0].leader_email);
+                  setLeadername(res.data[0].leader_name);
                   setName(res.data[0].project_name);
                   setDesc(res.data[0].project_desc);
                   setPtype(res.data[0].project_type);
@@ -114,11 +117,12 @@ const {user}=useContext(AuthContext);
         setTimeout(()=>{
         //setLoading(false);
         setsub(false);
-
+seterrorMessage(error.response.data);
         seterror(true);
         },3000)
 
         seterror(false);
+        seterrorMessage("");
 
             })
 
@@ -161,7 +165,7 @@ const {user}=useContext(AuthContext);
             {/*<FerrisWheelSpinner loading={sub}　size={28} />*/}
 
             { done===true? <Success/>:null}
-            {error===true?<Error/>:null}
+            {error===true?<Error message={errorMessage}/>:null}
             <CircleSpinnerOverlay
       　　loading={sub}
        overlayColor="rgba(0,153,255,0.2)"
@@ -186,7 +190,7 @@ const {user}=useContext(AuthContext);
 
                               <div class="text-center mt-3">
                                     <span class="bg-secondary p-1 px-4 rounded text-white">Leader</span>
-                                    <h5 class="mt-2 mb-0">Alexender Schidmt</h5>
+                                    <h5 class="mt-2 mb-0">{leadername}</h5>
                                     <br />
                                     <h4 id='Pname'>{projectname}</h4>
                                     <br />

@@ -1,14 +1,13 @@
 import React, {useState} from 'react'
 import {Modal} from "react-bootstrap"
 import Button from '@mui/material/Button';
-import logo from "../../static/images/symbolwrong.png"
+import logo from "./success.png"
 //import "react-bootstrap"
 import "bootstrap"
 import { styled } from '@mui/material/styles';
-import { colors } from '@mui/material';
 //import {fontStyle} from '@mui/system';
-function Error({handle,message}) {
-    const [show, setShow] = useState(true);
+function CreateCheck() {
+    const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -30,7 +29,7 @@ function Error({handle,message}) {
                 onClick={handleShow}>
                 modal
     </Button>*/}
-     {/*<center> <ColorButton variant="contained" onClick={handleShow} type="submit" >Submit</ColorButton></center>*/}
+     <center> <ColorButton variant="contained" onClick={handleShow} type="submit" >Submit</ColorButton></center>
 
 
             <Modal show={show}
@@ -44,7 +43,8 @@ function Error({handle,message}) {
                         <div class="row ">
                             <div class="col">
                                 <img src={logo}
-                                    width="20%"
+                                    width="25%"
+                                    alt='Create Logo'
                                     style={
                                         {marginLeft: "38%"}
                                 }></img>
@@ -56,26 +56,16 @@ function Error({handle,message}) {
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4 style={
+                                    <h1 style={
                                         {
-                                            fontStyle: "Franklin Gothic Medium",
-                                            fontWeight: "normal",
-                                            color:"red"
-
+                                            fontStyle: "Roboto",
+                                            fontWeight: "normal"
                                         }
-                                    }>You Cannot Apply Right Now</h4>
+                                    }>Successfull!!</h1>
                                 </center>
                             </div>
                         </div>
-                        <div class="row">
-                            <center><h3 style={
-                                        {
-                                            fontStyle: "Franklin Gothic Medium",
-                                            fontWeight: "normal",
-                                            color:"red"
 
-                                        }}>{message}</h3></center>
-                        </div>
 
                     </div>
 
@@ -87,4 +77,4 @@ function Error({handle,message}) {
     )
 }
 
-export default Error;
+export default CreateCheck;

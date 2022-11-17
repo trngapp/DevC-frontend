@@ -60,6 +60,7 @@ const Info=()=>{
                           fullWidth
                           defaultValue={firstName}
  label="First Name"
+ InputProps={{style: {fontSize: 20}}}
  sx={{cursor: 'pointer'}}
                       />
 
@@ -73,6 +74,7 @@ const Info=()=>{
         { readOnly: true, }
     }
      defaultValue={lastName}
+     InputProps={{style: {fontSize: 20}}}
  label="Last Name"
  />
                       </Grid>
@@ -85,6 +87,7 @@ const Info=()=>{
                             { readOnly: true, }
                         }
                           defaultValue={email}
+                          InputProps={{style: {fontSize: 20}}}
  label="Email"
 />
                       </Grid>
@@ -95,6 +98,7 @@ const Info=()=>{
                             { readOnly: true, }
                         }
                           defaultValue={skill}
+                          InputProps={{style: {fontSize: 20}}}
  label="Skills"
 />
                           </Grid>
@@ -105,6 +109,7 @@ const Info=()=>{
                                 { readOnly: true, }
                             }
                               defaultValue={city}
+                              InputProps={{style: {fontSize: 20}}}
  label="City"
 />
                           </Grid>
@@ -115,6 +120,7 @@ const Info=()=>{
                                 { readOnly: true, }
                             }
                               defaultValue={linkedin}
+                              InputProps={{style: {fontSize: 20}}}
  label="Linkedin"
 />
                           </Grid>
@@ -125,6 +131,7 @@ const Info=()=>{
                                 { readOnly: true, }
                             }
                               defaultValue={twitter}
+                              InputProps={{style: {fontSize: 20}}}
  label="Twitter"
 />
                           </Grid>
@@ -135,6 +142,7 @@ const Info=()=>{
                                 { readOnly: true, }
                             }
                               defaultValue={github}
+                              InputProps={{style: {fontSize: 20}}}
  label="Github"
 />
                           </Grid>

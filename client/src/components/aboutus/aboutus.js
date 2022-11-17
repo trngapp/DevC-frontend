@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import MediaQuery from "react-responsive";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
+
 function Aboutus() {
   return (
     <>
@@ -88,12 +89,11 @@ function Aboutus() {
         <Grid item xs={12} md={12}>
           <br/>
           <center>
-        <Typography>Made with <FavoriteIcon sx={{color:"red"}}/> by</Typography>
-        <Typography>TARANG SHARMA( FRONTEND & BACKEND)</Typography>
-        <br/>
-        <Typography>Other Team members:</Typography>
-        <Typography>Frontend:</Typography>
-        <Typography>HARISHITA RANA</Typography>
+       {/* <Typography>Made with <FavoriteIcon sx={{color:"red"}}/> by</Typography>
+        <Typography sx={{fontWeight:"bolder",fontSize:"19px"}}>TARANG SHARMA( Founder & Developer(Frontend & Backend))</Typography>
+    <br/>*/}
+{/*<Typography>Team members: Frontend </Typography>
+<Typography sx={{fontWeight:"bolder",fontSize:"17px"}}>Harishita Rana</Typography>*/}
         </center>
         </Grid>
       </Grid>
