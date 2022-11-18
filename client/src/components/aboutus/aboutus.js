@@ -89,9 +89,9 @@ function Aboutus() {
         <Grid item xs={12} md={12}>
           <br/>
           <center>
-       {/* <Typography>Made with <FavoriteIcon sx={{color:"red"}}/> by</Typography>
+        <Typography>Made with <FavoriteIcon sx={{color:"red"}}/> by</Typography>
         <Typography sx={{fontWeight:"bolder",fontSize:"19px"}}>TARANG SHARMA( Founder & Developer(Frontend & Backend))</Typography>
-    <br/>*/}
+    <br/>
 {/*<Typography>Team members: Frontend </Typography>
 <Typography sx={{fontWeight:"bolder",fontSize:"17px"}}>Harishita Rana</Typography>*/}
         </center>
