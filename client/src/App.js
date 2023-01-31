@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
 import { Route, Routes,useLocation } from 'react-router-dom';
-import Apply from "./components/apply/apply"
+import Apply from "./components/apply/apply1"
 import Invalid from "./components/invalid/invalid"
 import Admin from "./components/admin/admin"
 import Footer from "./components/footer/footer2"
@@ -11,7 +11,7 @@ import Home1 from "./components/home/home1"
 //import Create from "./components/createform/create"
 import Signin from "./components/signin/signin"
 import Signup from "./components/signup/signup"
-import Createus from './components/createform/createus';
+import Createus from './components/createform/create';
 import FAQ from './components/faq/faq';
 import Aboutus from './components/aboutus/aboutus'
 import Explore from "./components/ExploreMore/explore"
@@ -55,7 +55,7 @@ const App = () => {
           <Route exact path="/profile" element={<Profile/>}/>
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
-         
+
           <Route  path="*" element={<Invalid />} />
         </Routes>
 

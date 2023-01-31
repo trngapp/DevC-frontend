@@ -112,33 +112,30 @@ function Createus() {
     const [OE, setOE] = useState('');
 
     const Number = [
+       
         {
-            value: 'none',
-            num: 'NONE',
-        },
-        {
-            value: 'EUR',
+            value: 1,
             num: '1',
         },
         {
-            value: 'BTC',
+            value: 2,
             num: '2',
         },
         {
-            value: 'JPY',
+            value: 3,
             num: '3',
         },
 
         {
-            value: 'EUR',
+            value: 4,
             num: '4',
         },
         {
-            value: 'BTC',
+            value: 5,
             num: '5',
         },
         {
-            value: 'JPY',
+            value: 6,
             num: '6',
         },
     ]

@@ -4,6 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import Project from "./project"
 import Persona from "./info"
 import Applications from "./applications"
+import Request from "./request.js"
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
 import ListAltIcon from '@mui/icons-material/ListAlt';
@@ -14,6 +15,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import Typography from "@mui/material/Typography";
 import {AuthContext} from "../../context/AuthContext"
 import {useNavigate} from "react-router-dom"
+
 const profile =()=>{
     const {logout} = useContext(AuthContext);
 const navigate=useNavigate();
@@ -55,6 +57,7 @@ color:"black",
     const [personal,setpersonal]=useState(true);
     const [req,setreq]=useState(false);
     const [applied,setapplied]=useState(false);
+    const [open,setopen]=useState(false);
     const Projects=()=>{
         setpersonal(false);
         setproj(true);
@@ -80,8 +83,10 @@ color:"black",
         setreq(false);
         setapplied(true);
     }
+
     return (
         <>
+
            <Grid container style={{padding:"20px"}}>
                <Grid item lg={2} xs={12} sx={{border:"0.5px #EAEAEA solid ",height:"700px"}}>
 
@@ -123,11 +128,11 @@ color:"black",
 <center><CButton onClick={log}><LogoutIcon /><Typography><strong>Logout</strong></Typography></CButton></center>
 </Grid>
                </Grid>
-               <Grid item lg={10} xs={12} sx={{border:"1px #EAEAEA solid ",height:"700px"}}>
+               <Grid item lg={10} xs={12} sx={{border:"1px #EAEAEA solid ",height:"700px",overflow:"scroll"}}>
 {proj?<Project/>:null}
 {personal?<Persona/>:null}
 {applied? <Applications/> : null}
-{req? <Applications/> : null}
+{req? <Request/> : null}
                    </Grid>
            </Grid>
 

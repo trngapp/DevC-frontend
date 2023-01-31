@@ -88,7 +88,10 @@ const {user}=useContext(AuthContext);
       })
 
       })
-
+    const Files=(e)=>{
+          e.preventDefault();
+          console.log("files");
+    }
     const submit=()=>{
            //console.log(From);
             const value={from:user,to:state?state.To:""};
@@ -277,10 +280,18 @@ seterrorMessage(error.response.data);
 
                                     </Grid>
                               </Box>
+                              <br/>
+                              <form onSubmit={Files}>
+                                    <label>Select resume/cv (pdf)</label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="file" id="myfile" name="myfile" accept="application/pdf" />
+                              <input  style={{borderRadius:"5px",backgroundColor:"#0A66C2",color:"white",border:"none"}} type="submit" name="Upload"/>
+
+                              </form>
                               <br />
                               <div className='Agreement'>
                                     <div>
-                                          <Button variant="primary" onClick={handleShow} sx={{backgroundColor:"green"}}>
+                                          <Button variant="primary" onClick={handleShow} sx={{backgroundColor:"green",color:"white"}}>
                                                 Agreement
                                           </Button>
                                           {checked === true ? <CheckCircleIcon sx={{ color: "blue" }} /> : null  }

@@ -173,7 +173,7 @@ React.useEffect(()=>{
                       rules={{
                         required: "Password is required",
                         minLength: {
-                          value: 8,
+                          value: 7,
                           message: 'Minimum 8 characters'
                         }
                       }}

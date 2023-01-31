@@ -1,4 +1,4 @@
-import React,{useState,useEffect}from 'react';
+import React,{useState,useEffect, useCallback}from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,7 +9,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Loading from "../loading.js"
 import axios from "axios";
+import Desc from "./description"
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import { useRef } from 'react';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor:"#64b9f7", //theme.palette.common.black,
@@ -47,18 +49,34 @@ const rows = [
 
 function CustomizedTables() {
   const [load,setLoad]=useState(true);
+  const [arrInfo,setArrayinfo]=useState([]);
   const [arr,setArray]=useState([]);
+  const [open,setopen]=useState(false);
+  //const [user,setuser]=useState("");
+
+
+
+
   useEffect(()=>{
 
     const value=localStorage.getItem("user");
-    axios.get(`http://localhost:3336/apply/get?from=${value}`).then((result)=>{
-         console.log(result.data);
-         setArray(result.data);
+    axios.get(`http://localhost:3336/apply/get?from=${value}&applied=yes`).then((result)=>{
+         console.log(result.data[0].status);
+         setArrayinfo(result.data);
 
       })
       .catch((err)=>{
         console.log(err);
       })
+
+     /* axios.get(`http://localhost:3336/apply/get?from=${value}&info=no`).then((result)=>{
+         console.log(result.data[0].status);
+         setArray(result.data);
+
+      })
+      .catch((err)=>{
+        console.log(err);
+      })*/
 
 
 
@@ -71,35 +89,62 @@ function CustomizedTables() {
      },1000)
   },arr)
 
+
   return (
 
     <>
     {load?<Loading/> :
     <>
+
 <center><div style={{padding:"20px",marginTop:"45px",width:"500px",borderRadius:"5px",border:"1px solid black",backgroundColor:"#F0F0F0"}}><ProductionQuantityLimitsIcon style={{display:"inline-block"}}/> <h5 style={{display:"inline-block"}}>&nbsp;&nbsp;Application Limit:&nbsp;6</h5></div></center>
     <TableContainer sx={{marginRight:"5px",marginTop:"50px"}}component={Paper}>
       <Table sx={{ minWidth: 700,overflowY:"auto"}} aria-label="customized table">
         <TableHead >
           <TableRow >
             <StyledTableCell><strong>Project Name</strong></StyledTableCell>
-            <StyledTableCell /*align="right"*/><strong>Project Email</strong></StyledTableCell>
+            <StyledTableCell /*align="right"*/><strong>Leader Name</strong></StyledTableCell>
             <StyledTableCell ><strong>Date</strong></StyledTableCell>
             <StyledTableCell ><strong>Description&nbsp;</strong></StyledTableCell>
             <StyledTableCell ><strong>Status&nbsp;</strong></StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {arr.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
+        {arrInfo.map((row)=>(
+            <StyledTableRow >
+
+<>
+
+
+
+              <StyledTableCell  scope="row">
                 {row.project_name}
               </StyledTableCell>
-              <StyledTableCell /*align="right"*/>{row.leader_email}</StyledTableCell>
+              <StyledTableCell /*align="right"*/>{row.leader_name}</StyledTableCell>
               <StyledTableCell >10/11/22</StyledTableCell>
-              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}>Desc</button></StyledTableCell>
+              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  >Desc</button></StyledTableCell>
+
               <StyledTableCell >{row.status}</StyledTableCell>
+
+
+
+
+
+
+
+
+</>
+
+
             </StyledTableRow>
-          ))}
+                ))}
+                  {/* <StyledTableRow >
+                { arr.map((r)=>(
+  <StyledTableCell >{r.status}</StyledTableCell>
+              ))
+
+              }
+            </StyledTableRow>*/}
+
         </TableBody>
       </Table>
     </TableContainer> </>}

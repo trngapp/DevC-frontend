@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+import React,{useState} from "react"
 import {Modal} from "react-bootstrap"
 import Button from '@mui/material/Button';
-import logo from "./success.png"
+//import logo from "../../static/images/symbolwrong.png"
 //import "react-bootstrap"
 import "bootstrap"
 import { styled } from '@mui/material/styles';
-//import {fontStyle} from '@mui/system';
-function Confirm({handle}) {
+import { colors } from '@mui/material';
+const Desc=({user,message})=>{
     const [show, setShow] = useState(true);
 
     const handleClose = () => setShow(false);
@@ -21,18 +21,9 @@ function Confirm({handle}) {
         background: "linear-gradient(90deg, rgba(200, 17, 50, 0.8) 0%, rgba(214, 25, 0, 0.8) 50.31%, rgba(202, 0, 0, 0.8) 100%)"
        },
       }));
-    return (
-        <>
-
-
-            {/*<Button variant="primary"
-                onClick={handleShow}>
-                modal
-    </Button>*/}
-
-
-
-            <Modal show={show}
+return (
+    <>
+  <Modal show={show}
                 onHide={handleClose}
                 size='lg'
                 centered>
@@ -42,12 +33,11 @@ function Confirm({handle}) {
                         <div class="row"></div>
                         <div class="row ">
                             <div class="col">
-                                <img src={logo}
-                                    width="25%"
-                                    alt='Create Logo'
+                              {/*  <img src={logo}
+                                    width="20%"
                                     style={
                                         {marginLeft: "38%"}
-                                }></img>
+                                }></img>*/}
                                 <br/>
                                 <br/>
                                 <br/>
@@ -56,16 +46,26 @@ function Confirm({handle}) {
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h1 style={
+                                    <h4 style={
                                         {
-                                            fontStyle: "Roboto",
-                                            fontWeight: "normal"
+                                            fontStyle: "Franklin Gothic Medium",
+                                            fontWeight: "normal",
+                                            color:"red"
+
                                         }
-                                    }>Successfull!!</h1>
+                                    }>You Cannot Apply Right Now</h4>
                                 </center>
                             </div>
                         </div>
+                        <div class="row">
+                            <center><h3 style={
+                                        {
+                                            fontStyle: "Franklin Gothic Medium",
+                                            fontWeight: "normal",
+                                            color:"red"
 
+                                        }}>{message}</h3></center>
+                        </div>
 
                     </div>
 
@@ -73,8 +73,7 @@ function Confirm({handle}) {
                 </Modal.Body>
                 <Modal.Footer></Modal.Footer>
             </Modal>
-        </>
-    )
+    </>
+)
 }
-
-export default Confirm;
+export default Desc;
