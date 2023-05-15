@@ -82,7 +82,7 @@ export default function SignUp() {
     password: formData.password
   }
 
-  axios.post('http://localhost:3336/signup',value,{withCredentials:true}).then((res)=>{
+  axios.post('https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/signup',value,{withCredentials:true}).then((res)=>{
   console.log(res.data);
   setTimeout(()=>{
    setLoading(false);

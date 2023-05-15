@@ -26,7 +26,9 @@ const Info=()=>{
 
     useEffect(()=>{
         const value=localStorage.getItem("user");
-        axios.get(`http://localhost:3336/info?email=${value}`,{withCredentials:true}).then((res)=>{
+        //http://localhost:9000/.netlify/functions/api/
+        //`http://localhost:3336/info?email=${value}`
+        axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/info?email=${value}`,{withCredentials:true}).then((res)=>{
         console.log(res);
         setFirst(res.data[0].first_name);
         setLast(res.data[0].last_name);
@@ -53,7 +55,7 @@ const Info=()=>{
     return (
         <>
         {load?<Loading/>:
-    <center>  <Grid container spacing={2} sx={{padding:{lg:"30px",xs:"5px"},width:"80%"}}>
+    <center>  <Grid container spacing={2} sx={{padding:{lg:"30px",xs:"5px"},width:"50%"}}>
                       <Grid item xs={12} md={6}>
 
                       <TextField
@@ -146,18 +148,30 @@ const Info=()=>{
  label="Github"
 />
                           </Grid>
-                        {/*  <Grid item md={12} xs={12}>
-                          <TextField
-                              fullWidth
- label="First Name"
-/>
-                          </Grid>
                           <Grid item md={12} xs={12}>
                           <TextField
                               fullWidth
- label="First Name"
+                              multiline
+                              maxRows={10}
+                             // defaultValue={github}
+                              InputProps={{style: {fontSize: 20}}}
+ label="Add Bio"
 />
-        </Grid>*/}
+
+                          </Grid>
+
+                          <Grid item md={12} xs={12}>
+                          <TextField
+                              fullWidth
+
+                              //defaultValue={github}
+                              InputProps={{style: {fontSize: 20}}}
+ label="Job Profile"
+/>
+
+                          </Grid>
+
+
 
 
      </Grid>

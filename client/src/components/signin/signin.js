@@ -60,7 +60,7 @@ export default function SignIn() {
     //console.log(formData.email);
    // console.log(formData.password);
     const value={email:formData.email,password:formData.password};
-    axios.post('http://localhost:3336/login',value,{withCredentials:true}).then((res)=>{
+    axios.post('https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/login',value,{withCredentials:true}).then((res)=>{
 
      console.log(res);
      login(formData.email);

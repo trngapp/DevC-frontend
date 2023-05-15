@@ -21,6 +21,8 @@ import Loading from "./components/loading.js"
 import Profile from "./components/Profile/profile";
 import {ApplyProvider} from "./context/ApplyContext";
 import {ApplyContext} from "./context/ApplyContext";
+import {InfoProvider} from "./components/createform/context.js"
+import {ProfileProvider} from "./components/Profile/profContext.js";
 const App = () => {
   const location =useLocation();
   const [isLoading,setLoading]=useState(true);
@@ -35,6 +37,8 @@ const App = () => {
     {isLoading===true?<Loading/> :
     <AuthProvider>
       <ApplyProvider>
+      <InfoProvider>
+        <ProfileProvider>
       <div>
       {location.pathname !== '/signin' && location.pathname !=='/signup' ? <Nav /> : null}
 
@@ -47,6 +51,7 @@ const App = () => {
           <Route exact path="/admin" element={<Admin />} />
 
           <Route exact path="/create" element={<Createus />} />
+
           <Route exact path="/apply"  element={<Apply /*To="tarang@gmail.com"  From="taran@gmail.com"*/ />} />
           <Route exact path="/faq"   element={<FAQ />}/>
           <Route exact path="/aboutus" element={<Aboutus />}/>
@@ -61,6 +66,8 @@ const App = () => {
 
       </div>
       {location.pathname !== '/signin' && location.pathname !=='/signup' ? <Footer /> : null}
+      </ProfileProvider>
+      </InfoProvider>
       </ApplyProvider>
       </AuthProvider>
       }

@@ -18,6 +18,8 @@ import Button from '@mui/material/Button';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import CardInfo from "./reqInfoCard.js"
+import {ProfileContext} from "./profContext.js"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -30,15 +32,32 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RequestCard({name,email,skill,linkedin,twitter,github}) {
+export default function RequestCard({name,last,email,skill,linkedin,twitter,github,bio,job,logo}) {
   const [expanded, setExpanded] = React.useState(false);
+
+  //const [open,setopen]=React.useState(false);
+  const {open,setopen,setfirst,setlast,setemail,setlink,settwit,setskill,setgit} =React.useContext(ProfileContext);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  const clicky=()=>{
+    console.log("clickkkyy");
+
+    setopen(true);
+    setfirst(name);
+    setlast(last);
+    setemail(email);
+    setskill(skill);
+    setlink(linkedin);
+    settwit(twitter);
+    setgit(github);
+  }
 
   return (
-    <Card sx={{ maxWidth: 345,margin:5 }}>
+    <>
+    {open==true? <CardInfo firstName={name} lastName={last} skill={skill} email={email} linkedin={linkedin} twitter={twitter} github={github} bio={bio} job={job} logo={logo}/> :null}
+    <Card sx={{ maxWidth: 345,margin:5 }} >
       <CardHeader
         /*avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -51,7 +70,9 @@ export default function RequestCard({name,email,skill,linkedin,twitter,github}) 
           </IconButton>
         }
         title={name}
-        subheader="September 14, 2016"
+         sx={{cursor:"pointer"}}
+        onClick={clicky}
+
       />
       {/*<CardMedia
         component="img"
@@ -59,9 +80,9 @@ export default function RequestCard({name,email,skill,linkedin,twitter,github}) 
         image="/static/images/cards/paella.jpg"
         alt="Paella dish"
       />*/}
-      <CardContent>
+      <CardContent onClick={clicky} sx={{cursor:"pointer"}}>
         <Typography variant="body2" color="text.secondary">
-          {skill}
+        September 14, 2016
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -100,5 +121,6 @@ export default function RequestCard({name,email,skill,linkedin,twitter,github}) 
         </CardContent>
       </Collapse>
     </Card>
+    </>
   );
 }

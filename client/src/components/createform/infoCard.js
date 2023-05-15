@@ -1,17 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react'
 import {Modal} from "react-bootstrap"
 import Button from '@mui/material/Button';
-import logo from "../../static/images/symbolwrong.png"
+import logo from "./success.png"
+import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
 //import "react-bootstrap"
 import "bootstrap"
 import { styled } from '@mui/material/styles';
-import { colors } from '@mui/material';
+import {InfoContext} from "./context.js"
 //import {fontStyle} from '@mui/system';
-function CardError({handle,message}) {
-    const [show, setShow] = useState(true);
+function Info({handle}) {
+    //const [show, setShow] = useState(true);
+    const {open,setopen} = useContext(InfoContext);
+    const handleClose = () =>{
+     setopen(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    }
+    const handleShow = () => setopen(true);
 
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
@@ -26,15 +30,14 @@ function CardError({handle,message}) {
         <>
 
 
-           
             {/*<Button variant="primary"
                 onClick={handleShow}>
                 modal
     </Button>*/}
-     {/*<center> <ColorButton variant="contained" onClick={handleShow} type="submit" >Submit</ColorButton></center>*/}
 
 
-     <Modal show={show}
+
+<Modal show={open}
                 onHide={handleClose}
                 size='lg'
                 centered>
@@ -44,39 +47,45 @@ function CardError({handle,message}) {
                         <div class="row"></div>
                         <div class="row ">
                             <div class="col">
-                                <img src={logo}
-                                    width="20%"
-                                    style={
-                                        {marginLeft: "38%"}
-                                }></img>
+                          <center>  <PlaylistAddCheckCircleIcon sx={{width:"60px",height:"60px",color:"#00BFFF"}}/> </center>
+
                                 <br/>
-                                <br/>
-                                <br/>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4 style={
+                                    <h1 style={
                                         {
                                             fontStyle: "Franklin Gothic Medium",
-                                            fontWeight: "normal",
-                                            color:"red"
-
+                                            fontWeight: "normal"
                                         }
-                                    }>You Cannot Apply Right Now</h4>
+                                    }>
+
+                                     <ol style={{textAlign:"left",fontFamily:"sans-serif",fontSize:"27px"}}>
+                                      <li>
+                                          <b>Keep the description clear and ellaborative</b>
+
+                                      </li>
+                                      <li>
+                                         <b>Fill details carefully</b>
+                                      </li>
+                                      <li>
+                                         <b> Don't mention any social medial handles in description, once caught doing it your account will be deactivated</b>
+                                      </li>
+
+                                     </ol>
+
+
+
+
+
+                                    </h1>
                                 </center>
                             </div>
                         </div>
-                        <div class="row">
-                            <center><h3 style={
-                                        {
-                                            fontStyle: "Franklin Gothic Medium",
-                                            fontWeight: "normal",
-                                            color:"red"
 
-                                        }}>{message}</h3></center>
-                        </div>
 
                     </div>
 
@@ -88,4 +97,4 @@ function CardError({handle,message}) {
     )
 }
 
-export default CardError;
+export default Info;

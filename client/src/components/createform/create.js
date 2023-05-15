@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState,useContext} from "react"
 import { Card } from '@mui/material';
 import { Grid, InputLabel } from '@mui/material';
 import { Box } from '@mui/material';
@@ -9,24 +9,37 @@ import MenuItem from '@mui/material/MenuItem';
 import {Typography}  from '@mui/material';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import WbIncandescentIcon from '@mui/icons-material/WbIncandescent';
+import Select from '@mui/material/Select';
 import PopUp from "./card.js"
+import axios from "axios"
+import Success from "./card.js"
+import Error from "./cardError.js"
+import Info from "./infoCard.js"
+import {InfoContext} from "./context.js"
+import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
 
 const Create=()=>{
-    const Open=()=>{
+   /* const Open=()=>{
         console.log(Card);
         setpop(Card.show);
 
-    }
+    }*/
  const [pop,setpop]=useState(false);
     const {
         control,
         handleSubmit,
         formState: { errors },
     } = useForm();
+    const {open,setopen} = useContext(InfoContext);
     const [OT, setOT] = useState('');
     const [PT, setPT] = useState('');
     const [workplace,setWorkplace]=useState('');
     const [expertise,setExpertise]=useState('');
+
+    const [sub,setsub]=useState(false);
+    const [done,setdone]=useState(false);
+    const [error,seterror]=useState(false);
+    const [errorMessage,seterrorMessage]=useState("");
     const Type0 = [
         {
             value: 'Remote',
@@ -110,6 +123,7 @@ const Create=()=>{
             }
         ]
         const handleWorkplace = (event) => {
+            console.log(event.target.value);
             setWorkplace(event.target.value);
         };
         const handleOpening  = (event) => {
@@ -122,22 +136,77 @@ const Create=()=>{
         const handleExpertise = (event) => {
             setExpertise(event.target.value);
         };
+        const onsubmit = (event) => {
+
+console.log(event);
+          const email=localStorage.getItem("user");
+
+            const form =event;
+            form.leaderEmail=email;
+            setsub(true);
+             console.log(form);
+            axios.post('https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/creating',form,
+            {withCredentials:true}).then((res)=>{
+
+             console.log(res);
+             setTimeout(()=>{
+                //setLoading(false);
+                //navigate("/");
+               setsub(false);
+               setdone(true);
+               },3000)
+
+
+             setdone(false);
+
+
+        }).catch(error=>{
+            console.log(error.response.data);
+
+
+     setTimeout(()=>{
+     //setLoading(false);
+     setsub(false);
+seterrorMessage(error.response.data);
+     seterror(true);
+     },3000)
+
+     seterror(false);
+     seterrorMessage("");
+        })
+
+
+
+
+        }
+
+        const infoclick=()=>{
+            setopen(true);
+        }
 
     return (
 
         <>
-
+        { done===true? <Success/>:null}
+        {error===true?<Error message={errorMessage}/>:null}
+        {open===true?<Info/>:null}
 {pop==true?<PopUp/>:null}
          <div style={{backgroundColor:"#F5F5F5"}}>
 
          <center>
+         <CircleSpinnerOverlay
+      　　loading={sub}
+       overlayColor="rgba(0,153,255,0.2)"
+      />
          <br/>
-         <Card sx={{ width: { xs: '100%', md: 500 }, backgroundColor: "white",padding:"20px",paddingRight:"26px" }} onSubmit={handleSubmit(onsubmit)}>
+         <Card  sx={{ width: { xs: '100%', md: 500 }, backgroundColor: "white",padding:"20px",paddingRight:"26px" }} >
         <PsychologyIcon sx={{display:"inline",color:"#00BFFF",fontSize:"50px"}}/> <Typography style={{fontWeight:"bold",fontFamily:"sans-serif",display:"inline",fontSize:"27px",marginTop:"2px"}}>Find a great hire, fast</Typography>
         <br/>
 
-<div onClick={Open}  style={{textAlign:"center",borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}><center>  <WbIncandescentIcon sx={{width:"4vh",height:"4vh",color:"#007FFF",marginTop:"22px"}}/>  <Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"17px",marginTop:"2px"}}>Tips</Typography> </center></div>
+<div onClick={infoclick}  style={{cursor:"pointer",textAlign:"center",borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}><center>  <WbIncandescentIcon sx={{width:"4vh",height:"4vh",color:"#007FFF",marginTop:"22px"}}/>  <Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"17px",marginTop:"2px"}}>Tips</Typography> </center></div>
 <br/>
+<form onSubmit={handleSubmit(onsubmit)} enctype="multipart/form-data">
+<Box  noValidate onSubmit={handleSubmit(onsubmit)} >
 
          <Grid container spacing={1}>
 
@@ -166,7 +235,7 @@ const Create=()=>{
                                 />
                             </Box>
          </Grid>
-         <Grid item xs={12}>
+        <Grid item xs={12}>
          <Box sx={{
                                 "& > :not(style)": { m: 1, width: { xs: "96%", md: "98.5%" } },
                             }}>
@@ -183,7 +252,7 @@ const Create=()=>{
                                             type="text"
                                             id="projectName"
                                             //autoComplete="current-password"
-                                            required
+                                             required
                                             error={!!errors['projectName']}
                                             helperText={errors['projectName'] ? errors['projectName'].message : ''}
                                         />
@@ -191,14 +260,14 @@ const Create=()=>{
                                 />
                             </Box>
          </Grid>
-         <Grid item xs={12}>
-         <Box sx={{
+       <Grid item xs={12}>
+   <Box sx={{
                                 "& > :not(style)": { m: 1, width: { xs: "96%", md: "98.5%" } },
                             }}>
                                 <Controller
                                     name="workplace"
                                     control={control}
-                                    defaultValue=""
+                                 defaultValue=""
                                     rules={{ required: "Workplace is required" }}
                                     render={({ field }) => (
                                         <TextField
@@ -210,8 +279,8 @@ const Create=()=>{
                                             select
                                             native="true"
                                             required
-                                            value={workplace}
-                                            onChange={handleWorkplace}
+                                           // value={workplace}
+                                           // onChange={handleWorkplace}
                                             //autoComplete="current-password"
 
                                             error={!!errors['workplace']}
@@ -224,10 +293,12 @@ const Create=()=>{
                                             ))}
                                         </TextField>
                                     )}
-                                />
-                            </Box>
-             </Grid>
-         <Grid item xs={12} >
+                                            />
+
+                  </Box>
+                  </Grid>
+
+          <Grid item xs={12} >
          <Box sx={{
                                 "& > :not(style)": { m: 1, width: { xs: "96%", md: "98.5%" } },
                             }}>
@@ -246,8 +317,8 @@ const Create=()=>{
                                             select
                                             native="true"
                                             required
-                                            value={PT}
-                                            onChange={handleProject}
+                                           // value={PT}
+                                           // onChange={handleProject}
                                             //autoComplete="current-password"
 
                                             error={!!errors['projectType']}
@@ -263,7 +334,7 @@ const Create=()=>{
                                 />
                             </Box>
                                             </Grid>
-        {/* <Grid item xs={12} lg={6}>
+      {/*<Grid item xs={12} lg={6}>
          <Box sx={{
                                 "& > :not(style)": { m: 1, width: { xs: "96%", md: "98.5%" } },
                             }}>
@@ -282,8 +353,8 @@ const Create=()=>{
                                             select
                                             native="true"
                                             required
-                                            value={OT}
-                                            onChange={handleOpening}
+                                            //value={OT}
+                                            //onChange={handleOpening}
                                             //autoComplete="current-password"
 
                                             error={!!errors['openingType']}
@@ -305,19 +376,21 @@ const Create=()=>{
                             }}
                             >
                                 <Controller
-                                    name="openingnum"
+                                    name="openingNum"
                                     control={control}
                                     defaultValue=""
                                     rules={{ required: "Opening number is required" }}
                                     render={({ field }) => (
                                         <TextField
                                             {...field}
-                                            name="openingnum"
-                                            id="openingnum"
+                                            name="openingNum"
+                                            id="openingNum"
                                             label="Number of Openings"
                                             type="number"
                                             inputProps={{ min:1, max:6 }}
                                             required
+                                            error={!!errors['openingNum']}
+                                            helperText={errors['openingNum'] ? errors['openingNum'].message : ''}
 
                                         >
 
@@ -351,8 +424,8 @@ const Create=()=>{
                                             select
                                             native="true"
                                             required
-                                            value={PT}
-                                            onChange={handleProject}
+                                            //value={expertise}
+                                           // onChange={handleExpertise}
                                             //autoComplete="current-password"
 
                                             error={!!errors['expertise']}
@@ -376,32 +449,35 @@ const Create=()=>{
                                 }}
                             >
                                 <Controller
-                                    name="projdesc"
+                                    name="projDesc"
                                     control={control}
                                     defaultValue=""
                                     rules={{ required: "Project Description is required" }}
                                     render={({ field }) => (
                                         <TextField
                                             {...field}
-                                            name="projdesc"
-                                            id="projdesc"
+                                            name="projDesc"
+                                            id="projDesc"
                                             fullWidth
                                             multiline
                                             maxRows={10}
                                             label="Project Description"
                                             required
+                                            error={!!errors['projDesc']}
+                                            helperText={errors['projDesc'] ? errors['projDesc'].message : ''}
 
                                         />
                                     )}
                                 />
                             </Box>
-         </Grid>
+                                    </Grid>
 
 
-         </Grid>
+                                    </Grid>
 <br/>
-         <Button  variant="contained" sx={{borderRadius:"30px",width:"300px",color:"0A66C2",height:"50px",fontWeight:"bold",fontFamily:"inherit",fontSize:"18px"}}>Post the Project</Button>
-
+         <Button  type="submit" variant="contained" sx={{borderRadius:"30px",width:"300px",color:"0A66C2",height:"50px",fontWeight:"bold",fontFamily:"inherit",fontSize:"18px"}}>Post the Project</Button>
+</Box>
+</form>
          </Card>
 
          <br/>
