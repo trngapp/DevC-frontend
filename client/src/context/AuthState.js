@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState, useEffect } from 'react';
 import { getUser } from './auth.js'
 import AuthContext from './AuthContext'

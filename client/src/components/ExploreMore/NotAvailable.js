@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react"
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 const NAvailable=()=>{

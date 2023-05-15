@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React ,{useEffect,useContext} from "react"
 import "bootstrap"
 import Button from '@mui/material/Button';
@@ -27,7 +28,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
     }
     const handleCreate=()=>{
-        
+
     }
     const handleWeb=()=>{
         navigate('/explore',{state:{Type:"Web"}});

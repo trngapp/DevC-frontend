@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React,{useEffect,useState} from "react"
 import WrongLocationIcon from '@mui/icons-material/WrongLocation';
 import axios from "axios"

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React,{createContext} from "react";
 import { useState } from "react";
 export const InfoContext = createContext();

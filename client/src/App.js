@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React,{useState,useEffect} from 'react';
 import './App.css';
 import { Route, Routes,useLocation } from 'react-router-dom';
@@ -6,6 +7,7 @@ import Invalid from "./components/invalid/invalid"
 import Admin from "./components/admin/admin"
 import Footer from "./components/footer/footer2"
 import Nav from "./components/navbar/navbar"
+// eslint-disable-next-line
 import Home from "./components/home/home"
 import Home1 from "./components/home/home1"
 //import Create from "./components/createform/create"

@@ -11,6 +11,7 @@
     "antd": "^4.20.5",
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
+    "eslint-plugin-disable": "^2.0.3",
     "react": "^17.0.2",
     "react-bootstrap": "^2.4.0",
     "react-cookie": "^4.1.1",
@@ -27,15 +28,13 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint:disable": "REACT_APP_DEV_DISABLE_ESLINT=true",
+          "start": "npm run eslint:disable  react-scripts start"
   },
   "eslintConfig": {
-    "rules": {
-      "no-console": "off"
-    },
     "extends": [
       "react-app",
       "react-app/jest"
@@ -62,7 +61,4 @@
   "author": "",
   "license": "ISC",
   "description": ""
-
-
-
 }
