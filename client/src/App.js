@@ -25,6 +25,7 @@ import {ApplyProvider} from "./context/ApplyContext";
 import {ApplyContext} from "./context/ApplyContext";
 import {InfoProvider} from "./components/createform/context.js"
 import {ProfileProvider} from "./components/Profile/profContext.js";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 const App = () => {
   const location =useLocation();
   const [isLoading,setLoading]=useState(true);
@@ -36,6 +37,17 @@ const App = () => {
    //const {from,to} = React.useContext(ApplyContext);
   return (
     <>
+    <HelmetProvider>
+    <Helmet>
+  <title>Design+Code - Learn to design and code React and Swift apps</title>
+</Helmet>
+<Helmet>
+<meta
+  name="description"
+  content="Learn design and code by building real apps with React and Swift. Complete courses about UI design, web and iOS development using Figma, CSS, React Hooks and SwiftUI."
+/>;
+</Helmet>
+    </HelmetProvider>
     {isLoading===true?<Loading/> :
     <AuthProvider>
       <ApplyProvider>
