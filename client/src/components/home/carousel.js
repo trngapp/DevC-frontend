@@ -14,7 +14,8 @@ const CarouselFunction =({Type})=>{
    console.log(arr);
    //console.log(arr.length);
   var type=Type;
-  axios.get(`http://localhost:3336/projectinfo/all?type=${type}`).then((res)=>{
+  var server=process.env.REACT_APP_server;
+  axios.get(`${server}/all?type=${type}`).then((res)=>{
     console.log(res.data);
     //const Json=res.data[0];
     const Json=res.data;
