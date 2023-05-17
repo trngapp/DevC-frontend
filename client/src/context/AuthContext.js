@@ -34,12 +34,12 @@ export function AuthProvider({children}){
 
     }
     const logout=()=>{
-        axios.get('http://localhost:3336/logout',{withCredentials:true}).then((res)=>{
+        axios.get('https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/logout',{withCredentials:true}).then((res)=>{
         console.log("token deleted!!");
         setLog(false);
         setUser(null);
         localStorage.removeItem("user");
-        
+
     })
 
 
