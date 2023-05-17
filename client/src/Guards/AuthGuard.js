@@ -12,7 +12,7 @@ console.log(user);
 console.log(document.cookie.in);
 console.log(isAuthenticated);
 console.log(access);
-  if ( /*!isAuthenticated ||*/ isAuthenticated!==user) {
+  if ( !isAuthenticated || isAuthenticated!==user) {
     return <Navigate to="/signup" state={pathname} />;
   }
 

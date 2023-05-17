@@ -77,7 +77,7 @@ export default function SignIn() {
 
 
     }).catch(error=>{
-console.log(error.response.data);
+console.log(error);
 setTimeout(()=>{
 setLoading(false);
 },1000)
