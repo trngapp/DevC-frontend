@@ -99,7 +99,7 @@ const {user}=useContext(AuthContext);
         //console.log(From);
          const value={from:user,to:state?state.To:""};
          setsub(true);
-        axios.post('http://localhost:3336/apply',value,{withCredentials:true}).then((res)=>{
+        axios.post('https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/apply',value,{withCredentials:true}).then((res)=>{
 
          console.log(res);
          // login(formData.email);

@@ -15,7 +15,7 @@ const CarouselFunction =({Type})=>{
    //console.log(arr.length);
   var type=Type;
   var server=process.env.REACT_APP_server;
-  axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api//projectinfo/all?type=${type}`).then((res)=>{
+  axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/projectinfo/all?type=${type}`).then((res)=>{
     console.log(res.data);
     //const Json=res.data[0];
     const Json=res.data;
