@@ -39,7 +39,7 @@ const Request =()=>{
         const [arr,setarr]=useState([]);
         useEffect(()=>{
             const value=localStorage.getItem("user");
-            axios.get(`http://localhost:3336/request?from=${value}`).then((result)=>{
+            axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/request?from=${value}`).then((result)=>{
                  console.log(result);
                  const Json=result.data;
                  console.log(Json.length);
