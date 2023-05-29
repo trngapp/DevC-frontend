@@ -120,8 +120,8 @@ function CustomizedTables() {
               <StyledTableCell  scope="row">
                 {row.project_name}
               </StyledTableCell>
-              <StyledTableCell /*align="right"*/>{row.leader_name}</StyledTableCell>
-              <StyledTableCell >10/11/22</StyledTableCell>
+              {/*<StyledTableCell /*align="right">{row.leader_name}</StyledTableCell>*/}
+              <StyledTableCell >{row.date}</StyledTableCell>
               <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  >Desc</button></StyledTableCell>
 
               <StyledTableCell >{row.status}</StyledTableCell>
