@@ -103,7 +103,7 @@ function CustomizedTables() {
         <TableHead >
           <TableRow >
             <StyledTableCell><strong>Project Name</strong></StyledTableCell>
-            <StyledTableCell /*align="right"*/><strong>Leader Name</strong></StyledTableCell>
+    {/* <StyledTableCell /*align="right"><strong>Leader Name</strong></StyledTableCell>*/}
             <StyledTableCell ><strong>Date</strong></StyledTableCell>
             <StyledTableCell ><strong>Description&nbsp;</strong></StyledTableCell>
             <StyledTableCell ><strong>Status&nbsp;</strong></StyledTableCell>
