@@ -61,7 +61,7 @@ function CustomizedTables() {
   useEffect(()=>{
 
     const value=localStorage.getItem("user");
-    axios.get(`http://localhost:3336/apply/get?from=${value}&applied=yes`).then((result)=>{
+    axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/apply/get?from=${value}&applied=yes`).then((result)=>{
          console.log(result.data[0].status);
          setArrayinfo(result.data);
 
