@@ -56,7 +56,9 @@ function CustomizedTables() {
   //const [user,setuser]=useState("");
 
 
-
+const click=(x)=>{
+  console.log(x);
+}
 
   useEffect(()=>{
 
@@ -122,7 +124,7 @@ function CustomizedTables() {
               </StyledTableCell>
               {/*<StyledTableCell /*align="right">{row.leader_name}</StyledTableCell>*/}
               <StyledTableCell >{row.date}</StyledTableCell>
-              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  >Desc</button></StyledTableCell>
+              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  onclick={click(row.status)}>Desc</button></StyledTableCell>
 
               <StyledTableCell >{row.status}</StyledTableCell>
 
