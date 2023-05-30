@@ -124,7 +124,7 @@ const click=(x)=>{
               </StyledTableCell>
               {/*<StyledTableCell /*align="right">{row.leader_name}</StyledTableCell>*/}
               <StyledTableCell >{row.date}</StyledTableCell>
-              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  onClick={click(row.status)}>Desc</button></StyledTableCell>
+              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  onClick={console.log(row.status)}>Desc</button></StyledTableCell>
 
               <StyledTableCell >{row.status}</StyledTableCell>
 

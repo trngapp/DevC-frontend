@@ -45,7 +45,7 @@ const App = () => {
 <meta
   name="description"
   content="Learn design and code by building real apps with React and Swift. Complete courses about UI design, web and iOS development using Figma, CSS, React Hooks and SwiftUI."
-/>;
+/>
 </Helmet>
     </HelmetProvider>
     {isLoading===true?<Loading/> :
