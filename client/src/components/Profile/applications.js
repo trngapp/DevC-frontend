@@ -124,7 +124,7 @@ const handleClick=(x)=>{
               <StyledTableCell  scope="row">
                 {row.project_name}
               </StyledTableCell>
-              <StyledTableCell align="right">{index}</StyledTableCell>
+
               <StyledTableCell >{row.date}</StyledTableCell>
               <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  onClick={()=>{handleClick(row.project_name)}}>Desc</button></StyledTableCell>
 
