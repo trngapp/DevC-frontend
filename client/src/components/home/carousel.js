@@ -4,15 +4,18 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from "./card"
 import Ca from "./card12"
+import Load from "../loading.js"
 //import Json from "./items.json"
 import axios from "axios"
 const CarouselFunction =({Type})=>{
   var p=[];
  var [arr,setarr]=useState([]);
+ const [loads,setload]=useState(true);
 
  useEffect(()=>{
    console.log(arr);
    //console.log(arr.length);
+
   var type=Type;
   var server=process.env.REACT_APP_server;
   axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/projectinfo/all?type=${type}`).then((res)=>{
@@ -27,18 +30,20 @@ const CarouselFunction =({Type})=>{
     //d.push(Json);
 
     setarr(d);
+
     console.log(d);
 
 
 
 }).catch((error)=>{
 // console.log(error.response.data);
-setTimeout(()=>{
-//setLoading(false);
-},1000)
+
 
 })
 
+setTimeout(()=>{
+  setload(false);
+  },1000)
  },arr)
 
     const responsive = {
@@ -99,8 +104,10 @@ setTimeout(()=>{
 );
       };
 
-    return (<>
+    return (
 
+    <>
+    {loads===true?<Load/>:
 
 
 
@@ -110,7 +117,7 @@ setTimeout(()=>{
 
 
 
-
+}
 
     </>)
 }
