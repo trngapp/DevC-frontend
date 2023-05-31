@@ -112,7 +112,7 @@ const click=(x)=>{
           </TableRow>
         </TableHead>
         <TableBody>
-        {arrInfo.map((row)=>(
+        {arrInfo.map((row,index)=>(
             <StyledTableRow >
 
 <>
@@ -122,9 +122,9 @@ const click=(x)=>{
               <StyledTableCell  scope="row">
                 {row.project_name}
               </StyledTableCell>
-              {/*<StyledTableCell /*align="right">{row.leader_name}</StyledTableCell>*/}
+              <StyledTableCell align="right">{index}</StyledTableCell>
               <StyledTableCell >{row.date}</StyledTableCell>
-              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  onClick={console.log(row.status)}>Desc</button></StyledTableCell>
+              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  onClick={console.log(index)}>Desc</button></StyledTableCell>
 
               <StyledTableCell >{row.status}</StyledTableCell>
 
