@@ -9,8 +9,9 @@ import Load from "../loading.js"
 import axios from "axios"
 const CarouselFunction =({Type})=>{
   var p=[];
+
  var [arr,setarr]=useState([]);
- var [loads,setload]=useState(true);
+
 
  useEffect(()=>{
    console.log(arr);
@@ -41,9 +42,7 @@ const CarouselFunction =({Type})=>{
 
 })
 
-setTimeout(()=>{
-  setload(false);
-  },1000)
+
  },arr)
 
     const responsive = {
@@ -107,7 +106,7 @@ setTimeout(()=>{
     return (
 
     <>
-    {loads===true?<Load/>:
+
 
 
 
@@ -117,7 +116,7 @@ setTimeout(()=>{
 
 
 
-}
+
 
     </>)
 }
