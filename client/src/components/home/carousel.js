@@ -10,7 +10,7 @@ import axios from "axios"
 const CarouselFunction =({Type})=>{
   var p=[];
  var [arr,setarr]=useState([]);
- const [loads,setload]=useState(true);
+ var [loads,setload]=useState(true);
 
  useEffect(()=>{
    console.log(arr);

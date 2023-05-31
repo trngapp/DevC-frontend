@@ -57,10 +57,10 @@ function CustomizedTables() {
   //const [user,setuser]=useState("");
 
 
-const handleClick=(x)=>{
+/*const handleClick=(x)=>{
  setclick(x);
  console.log(x);
-}
+}*/
 
   useEffect(()=>{
 
@@ -126,7 +126,7 @@ const handleClick=(x)=>{
               </StyledTableCell>
 
               <StyledTableCell >{row.date}</StyledTableCell>
-              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  onClick={()=>{handleClick(row.project_name)}}>Desc</button></StyledTableCell>
+              <StyledTableCell ><button style={{width:"50px",height:"30px",borderRadius:"10px"}}  >Desc</button></StyledTableCell>
 
               <StyledTableCell >{row.status}</StyledTableCell>
 
