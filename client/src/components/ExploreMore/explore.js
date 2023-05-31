@@ -48,7 +48,7 @@ const Explore=()=>{
     console.log(arr);
     //console.log(arr.length);
    var type= state?state.Type:"";
-   axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/all?type=${type}`).then((res)=>{
+   axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/projectinfo/all?type=${type}`).then((res)=>{
      console.log(res);
      const Json=res.data;
      var d=[];
