@@ -67,7 +67,7 @@ const {user}=useContext(AuthContext);
         const value=state?state.To:"";
         console.log(value);
 
-        axios.get(`http://localhost:3336/projectinfo?email=${value}`).then((res)=>{
+        axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/projectinfo?email=${value}`).then((res)=>{
               console.log(res.data[0].project_type);
               setLogo(res.data[0].logo);
               setLeadermail(res.data[0].leader_email);
