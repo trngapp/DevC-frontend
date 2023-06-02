@@ -42,7 +42,7 @@ const Request =()=>{
             axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/request?from=${value}`).then((result)=>{
                  console.log(result);
                  const Json=result.data;
-                 console.log(Json.length);
+                 console.log(Json.data);
      var d=[];
      Object.keys(Json).forEach(function(key) {
        d.push(Json[key]);
