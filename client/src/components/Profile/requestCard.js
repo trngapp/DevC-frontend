@@ -33,7 +33,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RequestCard({name,last,email,skill,linkedin,twitter,github,bio,job,logo}) {
+export default function RequestCard({name,last,email,skill,linkedin,twitter,github,bio,job,logo,date}) {
   const [expanded, setExpanded] = React.useState(false);
 
   //const [open,setopen]=React.useState(false);
@@ -83,7 +83,7 @@ export default function RequestCard({name,last,email,skill,linkedin,twitter,gith
       />*/}
       <CardContent onClick={clicky} sx={{cursor:"pointer"}}>
         <Typography variant="body2" color="text.secondary">
-        September 14, 2016
+       {date}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

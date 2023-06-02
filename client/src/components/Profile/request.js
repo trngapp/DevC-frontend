@@ -73,7 +73,7 @@ const Request =()=>{
 
            {arr[0]!==undefined ?
 <CardContainer container>
-{arr.map(item => <Card name={item?item.first_name:""}  last={item?item.last_name:""} email={item?item.email:""} skill={item?item.skill:""} linkedin={item?item.linkedin:""} twitter={item?item.twitter:""} github={item?item.github:""} /> )}
+{arr.map(item => <Card name={item?item.first_name:""}  last={item?item.last_name:""} email={item?item.email:""} skill={item?item.skill:""} linkedin={item?item.linkedin:""} twitter={item?item.twitter:""} github={item?item.github:""} date={item?item.date:""}/> )}
     </CardContainer>: null}
             </>
         )
