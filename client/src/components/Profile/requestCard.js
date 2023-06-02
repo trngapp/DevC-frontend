@@ -21,6 +21,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import CardInfo from "./reqInfoCard.js"
 import {ProfileContext} from "./profContext.js"
+import axios from "axios"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -42,6 +43,24 @@ export default function RequestCard({name,last,email,skill,linkedin,twitter,gith
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+const accept=()=>{
+let value={to:localStorage.getItem("user"),from:email};
+  axios.patch(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/accept`,value,{withCredentials:true}).then((result)=>{
+    console.log(result);
+  }).catch((error)=>{
+console.log(error);
+  })
+
+
+}
+
+const reject=()=>{
+
+}
+
+
+
   const clicky=()=>{
     console.log("clickkkyy");
 
@@ -93,11 +112,11 @@ export default function RequestCard({name,last,email,skill,linkedin,twitter,gith
         <IconButton aria-label="share">
           <ShareIcon />
     </IconButton>*/}
-     <Button variant="contained" color="success" size="small">
+     <Button  onClick={accept}    variant="contained" color="success" size="small">
         Accept
       </Button>
       &nbsp;
-      <Button variant="contained" color="error" size="small">
+      <Button onClick={reject}    variant="contained" color="error" size="small">
         Reject
       </Button>
         <ExpandMore
