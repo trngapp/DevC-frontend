@@ -36,7 +36,7 @@ const ExpandMore = styled((props) => {
 
 export default function RequestCard({name,last,email,skill,linkedin,twitter,github,bio,job,logo,date}) {
   const [expanded, setExpanded] = React.useState(false);
-
+const [disable,setdisable]=useState(false);
   //const [open,setopen]=React.useState(false);
   const {open,setopen,setfirst,setlast,setemail,setlink,settwit,setskill,setgit} =React.useContext(ProfileContext);
 
@@ -48,6 +48,7 @@ const accept=()=>{
 let value={to:localStorage.getItem("user"),from:email};
   axios.patch(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/accept`,value,{withCredentials:true}).then((result)=>{
     console.log(result);
+    setdisable(true);
   }).catch((error)=>{
 console.log(error);
   })
@@ -75,6 +76,71 @@ const reject=()=>{
   }
 
   return (
+    <>
+    {disable===true?  <Card disabled sx={{ maxWidth: 345,margin:5 }} >
+      <CardHeader
+        /*avatar={
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+            {name}
+          </Avatar>
+        }*/
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={name}
+         sx={{cursor:"pointer"}}
+        onClick={clicky}
+
+      />
+      {/*<CardMedia
+        component="img"
+        height="194"
+        image="/static/images/cards/paella.jpg"
+        alt="Paella dish"
+      />*/}
+      <CardContent onClick={clicky} sx={{cursor:"pointer"}}>
+        <Typography variant="body2" color="text.secondary">
+       {date}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+      {/*  <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+    </IconButton>*/}
+     <Button  onClick={accept}    variant="contained" color="success" size="small">
+        Accept
+      </Button>
+      &nbsp;
+      <Button onClick={reject}    variant="contained" color="error" size="small">
+        Reject
+      </Button>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+
+          <LinkedInIcon sx={{color:"#0A66C2"}}/> {linkedin}
+          <br/>
+         <GitHubIcon/>  {github}
+         <br/>
+         <TwitterIcon sx={{color:"#0A66C2"}}/> {twitter}
+
+
+        </CardContent>
+      </Collapse>
+    </Card>   :
     <>
     {open==true? <CardInfo firstName={name} lastName={last} skill={skill} email={email} linkedin={linkedin} twitter={twitter} github={github} bio={bio} job={job} logo={logo}/> :null}
     <Card sx={{ maxWidth: 345,margin:5 }} >
@@ -141,6 +207,8 @@ const reject=()=>{
         </CardContent>
       </Collapse>
     </Card>
+    </>
+    }
     </>
   );
 }
