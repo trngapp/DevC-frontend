@@ -36,7 +36,7 @@ const ExpandMore = styled((props) => {
 
 export default function RequestCard({name,last,email,skill,linkedin,twitter,github,bio,job,logo,date}) {
   const [expanded, setExpanded] = React.useState(false);
-const [disable,setdisable]=useState(false);
+const [disable,setdisable]=React.useState(false);
   //const [open,setopen]=React.useState(false);
   const {open,setopen,setfirst,setlast,setemail,setlink,settwit,setskill,setgit} =React.useContext(ProfileContext);
 
