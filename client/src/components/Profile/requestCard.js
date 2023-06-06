@@ -23,6 +23,8 @@ import CardInfo from "./reqInfoCard.js"
 import {ProfileContext} from "./profContext.js"
 import axios from "axios"
 
+import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -36,6 +38,7 @@ const ExpandMore = styled((props) => {
 
 export default function RequestCard({name,last,email,skill,linkedin,twitter,github,bio,job,logo,date}) {
   const [expanded, setExpanded] = React.useState(false);
+  const [sub,setsub]=React.useState(false);
 //const [disable,setdisable]=React.useState(false);
   //const [open,setopen]=React.useState(false);
   const {open,setopen,setfirst,setlast,setemail,setlink,settwit,setskill,setgit} =React.useContext(ProfileContext);
@@ -46,9 +49,13 @@ export default function RequestCard({name,last,email,skill,linkedin,twitter,gith
 
 const accept=()=>{
 let value={to:localStorage.getItem("user"),from:email};
+setsub(true);
   axios.patch(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/accept`,value,{withCredentials:true}).then((result)=>{
     console.log(result);
     alert(result);
+    setTimeout(()=>{
+      setsub(false);
+    },1000)
     //setdisable(true);
   }).catch((error)=>{
 console.log(error);
@@ -80,6 +87,10 @@ const reject=()=>{
 
     <>
     {open==true? <CardInfo firstName={name} lastName={last} skill={skill} email={email} linkedin={linkedin} twitter={twitter} github={github} bio={bio} job={job} logo={logo}/> :null}
+    <CircleSpinnerOverlay
+      　　loading={sub}
+       overlayColor="rgba(0,153,255,0.2)"
+      />
     <Card sx={{ maxWidth: 345,margin:5 }} >
       <CardHeader
         /*avatar={
