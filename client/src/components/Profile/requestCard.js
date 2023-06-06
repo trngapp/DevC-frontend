@@ -161,11 +161,11 @@ console.log(error);
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
 
-          <LinkedInIcon sx={{color:"#0A66C2"}}/> <Link href={linkedin}>{linkedin}</Link>
+          <LinkedInIcon sx={{color:"#0A66C2"}}/> <a href={linkedin}>{linkedin}</a>
           <br/>
-         <GitHubIcon/><Link href={github}>  {github}</Link>
+         <GitHubIcon/><a href={github}>  {github}</a>
          <br/>
-         <TwitterIcon sx={{color:"#0A66C2"}}/> <Link href={twitter}>{twitter}</Link>
+         <TwitterIcon sx={{color:"#0A66C2"}}/> <a href={twitter}>{twitter}</a>
 
 
         </CardContent>
