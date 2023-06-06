@@ -22,7 +22,7 @@ const profile =()=>{
     const {logout} = useContext(AuthContext);
     const {first}=useContext(ProfileContext);
 const navigate=useNavigate();
-const
+
     const log=()=>{
        logout();
        navigate("/signin");
