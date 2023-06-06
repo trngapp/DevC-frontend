@@ -48,6 +48,7 @@ const accept=()=>{
 let value={to:localStorage.getItem("user"),from:email};
   axios.patch(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/accept`,value,{withCredentials:true}).then((result)=>{
     console.log(result);
+    alert(result);
     //setdisable(true);
   }).catch((error)=>{
 console.log(error);
