@@ -5,6 +5,7 @@ import { Grid, InputBase, Paper } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import axios from "axios"
+import Loading from "../loading.js"
 const GridWrapper = styled(Grid)({
     '.search_wrapper': {
       display: 'flex',
@@ -36,6 +37,7 @@ const GridWrapper = styled(Grid)({
   });
 const Request =()=>{
 
+  const [load,setLoad]=useState(true);
         const [arr,setarr]=useState([]);
         useEffect(()=>{
             const value=localStorage.getItem("user");
@@ -53,6 +55,10 @@ const Request =()=>{
 
      console.log(d);
 
+     setTimeout(()=>{
+       setLoad(false);
+     },1000)
+
 
 
               })
@@ -64,6 +70,7 @@ const Request =()=>{
 
 
       const RenderCards =()=>{
+       
         //var arr = [];
         /*Object.keys(Json).forEach(function(key) {
           arr.push(Json[key]);
@@ -86,7 +93,8 @@ const Request =()=>{
 
     )
     return (
-        <>
+           <>
+           {load?<Loading/>: 
 <div>
         <GridWrapper container spacing={2} sx={{ margin:"10px" }}>
         <Grid item xs={10} sm={4} className="search_wrapper">
@@ -121,6 +129,7 @@ const Request =()=>{
       </GridWrapper>
 {content}
 </div>
+           }
         </>
     )
 }
