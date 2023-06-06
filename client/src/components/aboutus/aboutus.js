@@ -39,7 +39,7 @@ function Aboutus() {
           <Card sx={{ borderRadius: "5px", backgroundColor: "#F5F5F5", color: "black" }}>
             <CardContent>
               <Typography variant="h5" sx={{ fontFamily: "agrandir medium" }}>
-                There's something for everybody. Follow along, chat on Discord, or read up on what we're doing.chat on Discord, or read up on what we're doing.</Typography>
+               A platform made especially for developers to come and create new projects ,build teams , become a part of the teams , and to create some projects that can be usefull</Typography>
 
             </CardContent>
 
@@ -54,7 +54,7 @@ function Aboutus() {
             <CardContent>
               <h1>DevCera Community</h1>
               <Typography>
-                There's something for everybody. Follow along, chat on Discord, or read up on what we're doing.chat on Discord, or read up on what we're doing.</Typography>
+                There's something for everybody. Follow along, chat on Discord, or read up on what we're doing.</Typography>
             </CardContent>
             <CardActions>
 
@@ -66,7 +66,7 @@ function Aboutus() {
             <CardContent>
               <h1>Donate</h1>
               <Typography>
-                We want donation to grow our app, and serve you with high end application</Typography>
+                We want donation to grow our app for us to serve you with high end application</Typography>
             </CardContent>
             <CardActions>
 
@@ -76,7 +76,7 @@ function Aboutus() {
         <Grid item xs={12} md={12}>
           <Card sx={{ borderRadius: "5px", backgroundColor: "rgb(128, 236, 255)", color: "black" }}>
             <CardContent>
-              <h1>Contribute</h1>
+              <h1>Contribute (Coming soon!!)</h1>
               <Typography>Help create DevCera
                 Help create us DevCera by directly contributing to DevCera Codebase. We're always looking for new contributors.</Typography>
             </CardContent>
