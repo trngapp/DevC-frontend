@@ -22,6 +22,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import CardInfo from "./reqInfoCard.js"
 import {ProfileContext} from "./profContext.js"
 import axios from "axios"
+import {useNavigate} from "react-router-dom"
 
 import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
 
@@ -39,6 +40,7 @@ const ExpandMore = styled((props) => {
 export default function RequestCard({name,last,email,skill,linkedin,twitter,github,bio,job,logo,date}) {
   const [expanded, setExpanded] = React.useState(false);
   const [sub,setsub]=React.useState(false);
+  const navigate=useNavigate();
 //const [disable,setdisable]=React.useState(false);
   //const [open,setopen]=React.useState(false);
   const {open,setopen,setfirst,setlast,setemail,setlink,settwit,setskill,setgit} =React.useContext(ProfileContext);
@@ -55,6 +57,7 @@ setsub(true);
     alert(result);
     setTimeout(()=>{
       setsub(false);
+      navigate("/profile");
     },1000)
     //setdisable(true);
   }).catch((error)=>{

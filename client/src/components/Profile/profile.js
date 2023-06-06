@@ -16,10 +16,13 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import Typography from "@mui/material/Typography";
 import {AuthContext} from "../../context/AuthContext"
 import {useNavigate} from "react-router-dom"
+import {ProfileContext} from "./profContext.js"
 
 const profile =()=>{
     const {logout} = useContext(AuthContext);
+    const {first}=useContext(ProfileContext);
 const navigate=useNavigate();
+const
     const log=()=>{
        logout();
        navigate("/signin");
@@ -93,7 +96,7 @@ color:"black",
 
 <Grid item lg={12} xs={12} style={{height:"220px",borderBottom:"0.5px #EAEAEA  solid "}} >
 <center><Avatar
-        alt="Tarang"
+        alt={first}
         src="/static/images/avatar/1.jpg"
         sx={{ width: 160, height: 160,marginTop:"12%",backgroundColor:"#64b9f9"}}
       />
