@@ -70,7 +70,7 @@ const Request =()=>{
 
 
       const RenderCards =()=>{
-       
+
         //var arr = [];
         /*Object.keys(Json).forEach(function(key) {
           arr.push(Json[key]);
@@ -94,7 +94,7 @@ const Request =()=>{
     )
     return (
            <>
-           {load?<Loading/>: 
+           {load?<Loading/>:
 <div>
         <GridWrapper container spacing={2} sx={{ margin:"10px" }}>
         <Grid item xs={10} sm={4} className="search_wrapper">
