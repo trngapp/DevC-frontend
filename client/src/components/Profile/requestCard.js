@@ -22,6 +22,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import CardInfo from "./reqInfoCard.js"
 import {ProfileContext} from "./profContext.js"
 import axios from "axios"
+import Link from '@mui/material/Link';
 import {useNavigate} from "react-router-dom"
 
 import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
@@ -160,11 +161,11 @@ console.log(error);
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
 
-          <LinkedInIcon sx={{color:"#0A66C2"}}/> <link>{linkedin}</link>
+          <LinkedInIcon sx={{color:"#0A66C2"}}/> <Link href={linkedin}>{linkedin}</Link>
           <br/>
-         <GitHubIcon/><link>  {github}</link>
+         <GitHubIcon/><Link href={github}>  {github}</Link>
          <br/>
-         <TwitterIcon sx={{color:"#0A66C2"}}/> <link>{twitter}</link>
+         <TwitterIcon sx={{color:"#0A66C2"}}/> <Link href={twitter}>{twitter}</Link>
 
 
         </CardContent>
