@@ -40,6 +40,7 @@ const Project=()=>{
             console.log(res.data);
             console.log(res.data[0]);
             console.log(res);
+
             {/*setposition(res.data[0].position);
             setemail(res.data[0].leader_email);
             setname(res.data[0].leader_name);
