@@ -37,6 +37,8 @@ const Project=()=>{
         setLoad(true);
         const value=localStorage.getItem("user");
         axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/projinfo?email=${value}`,{withCredentials:true}).then((res)=>{
+            console.log(res.data);
+            console.log(res.data[0]);
             console.log(res);
             {/*setposition(res.data[0].position);
             setemail(res.data[0].leader_email);
