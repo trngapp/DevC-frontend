@@ -38,7 +38,7 @@ const Project=()=>{
         const value=localStorage.getItem("user");
         axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/projinfo?email=${value}`,{withCredentials:true}).then((res)=>{
             console.log(res);
-            setposition(res.data[0].position);
+            {/*setposition(res.data[0].position);
             setemail(res.data[0].leader_email);
             setname(res.data[0].leader_name);
             setpname(res.data[0].project_name);
@@ -46,7 +46,7 @@ const Project=()=>{
             setdesc(res.data[0].project_desc);
             settype(res.data[0].project_type);
             setnumber(res.data[0].opening_number);
-            setexp(res.data[0].opening_expertise);
+            setexp(res.data[0].opening_expertise);*/}
 
 
 
