@@ -41,15 +41,15 @@ const Project=()=>{
             console.log(res.data.position);
             console.log(res);
 
-            {/*setposition(res.data[0].position);
-            setemail(res.data[0].leader_email);
-            setname(res.data[0].leader_name);
-            setpname(res.data[0].project_name);
-            setworkplace(res.data[0].workplace_type);
-            setdesc(res.data[0].project_desc);
-            settype(res.data[0].project_type);
-            setnumber(res.data[0].opening_number);
-            setexp(res.data[0].opening_expertise);*/}
+            setposition(res.data.position);
+            setemail(res.data.leader_email);
+            setname(res.data.leader_name);
+            setpname(res.data.project_name);
+            setworkplace(res.data.workplace_type);
+            setdesc(res.data.project_desc);
+            settype(res.data.project_type);
+            setnumber(res.data.opening_number);
+            setexp(res.data.opening_expertise);
 
 
 
