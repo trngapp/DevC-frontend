@@ -32,6 +32,14 @@ const Project=()=>{
     const [expertise,setexp]=useState("");
 
     const [load,setLoad]=useState(false);
+    const remove=()=>{
+        let value=localStorage.getItem("user");
+        axios.post(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/deleteproject?email=${value}`,{withCredentials:true}).then((res)=>{
+            console.log(res);
+    }).catch((error)=>{
+console.log(error);
+    })
+    }
     useEffect(()=>{
 
         setLoad(true);
@@ -89,7 +97,7 @@ const Project=()=>{
 
         setTimeout(()=>{
           setLoad(false);
-        },1000)
+        },2000)
     },load)
     return (
         <>
@@ -100,14 +108,14 @@ const Project=()=>{
                       <Grid item md={12} xs={12}>
                       <TextField
                           fullWidth
- label="First Name"
+ label="Project Name"
  defaultValue={pname}
 />
                       </Grid>
                       <Grid item md={12} xs={12}>
                       <TextField
                           fullWidth
- label="First Name"
+ label="Leader's Name"
  defaultValue={name}
 />
                           </Grid>
@@ -115,7 +123,7 @@ const Project=()=>{
 
 <TextField
     fullWidth
-label="First Name"
+label="Position"
 defaultValue={position}
 />
 
@@ -125,7 +133,7 @@ defaultValue={position}
 <Grid item xs={12} md={6}>
 <TextField
 fullWidth
-label="First Name"
+label="Workplace"
 defaultValue={workplace}
 />
 </Grid>
@@ -133,7 +141,7 @@ defaultValue={workplace}
 
 <TextField
     fullWidth
-label="First Name"
+label="Description"
 defaultValue={desc}
 />
 
@@ -143,21 +151,21 @@ defaultValue={desc}
 <Grid item xs={12} md={6}>
 <TextField
 fullWidth
-label="First Name"
+label="Project Type"
 defaultValue={type}
 />
 </Grid>
                           <Grid item md={12} xs={12}>
                           <TextField
                               fullWidth
- label="First Name"
+ label="Openings"
  defaultValue={number}
 />
                           </Grid>
                           <Grid item md={12} xs={12}>
                           <TextField
                               fullWidth
- label="First Name"
+ label="Expertise"
  defaultValue={expertise}
 />
                           </Grid>
@@ -165,7 +173,7 @@ defaultValue={type}
 
 
      </Grid>
-     <ColorButton      variant="contained" className="next" >Edit</ColorButton>
+     <ColorButton    onClick={remove}  variant="contained" className="next" >Delete</ColorButton>
      </center>}
         </>
     )
