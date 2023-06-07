@@ -59,10 +59,15 @@ console.log(error);
             setnumber(res.data.opening_number);
             setexp(res.data.opening_expertise);
 
-
+            setTimeout(()=>{
+                setLoad(false);
+              },2000)
 
             }).catch((error)=>{
       console.log(error)
+      setTimeout(()=>{
+        setLoad(false);
+      },2000)
 
             })
 
@@ -95,9 +100,7 @@ console.log(error);
 
 
 
-        setTimeout(()=>{
-          setLoad(false);
-        },2000)
+
     },load)
     return (
         <>
