@@ -30,6 +30,9 @@ const App = () => {
   const location =useLocation();
   const [isLoading,setLoading]=useState(true);
    useEffect(()=>{
+     window.onbeforeunload=()=>{
+       localStorage.removeItem("user");
+     }
      setTimeout(()=>{
        setLoading(false);
      },2000)
