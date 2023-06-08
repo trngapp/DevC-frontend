@@ -11,7 +11,7 @@ const ProtectedRoute = () => {
   const [access,setaccess]=useCookies(['access_token']);
 console.log(user);
 console.log(document.cookie.in);
-console.log(isAuthenticated);
+console.log(isAuthenticated1);
 console.log(access);
   if ( /*!isAuthenticated ||*/ !isAuthenticated1 || isAuthenticated1!==user) {
     return <Navigate to="/signup" state={pathname} />;
