@@ -18,6 +18,7 @@ import FAQ from './components/faq/faq';
 import Aboutus from './components/aboutus/aboutus'
 import Explore from "./components/ExploreMore/explore"
 import AuthGuard from "./Guards/AuthGuard";
+import AfterLoginGuard from "./Guards/afterLogin";
 import {AuthProvider} from "./context/AuthContext";
 import Loading from "./components/loading.js"
 import Profile from "./components/Profile/profile";
@@ -82,9 +83,10 @@ const App = () => {
           <Route exact path="/explore" element={<Explore />}/>
           <Route exact path="/profile" element={<Profile/>}/>
           </Route>
-
+          <Route element={<AfterLoginGuard/>}>
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
+          </Route>
 
           <Route  path="*" element={<Invalid />} />
         </Routes>
