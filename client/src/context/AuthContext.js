@@ -29,6 +29,10 @@ export function AuthProvider({children}){
        localStorage.setItem("user",user);
        sessionStorage.setItem("user",user);
 
+       setTimeout(()=>{
+         localStorage.removeItem("user");
+       },5*60*1000);
+
        setUser(user);
        setLog(true);
        return <Navigate to="/" state={pathname} />

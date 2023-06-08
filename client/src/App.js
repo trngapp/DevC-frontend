@@ -33,6 +33,7 @@ const App = () => {
      window.onbeforeunload=()=>{
        localStorage.removeItem("user");
      }
+     
      setTimeout(()=>{
        setLoading(false);
      },2000)
