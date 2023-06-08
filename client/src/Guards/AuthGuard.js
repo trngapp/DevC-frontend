@@ -7,13 +7,13 @@ const ProtectedRoute = () => {
   const { pathname } = useLocation();
   const {user} = useContext(AuthContext);
   const isAuthenticated1 = localStorage.getItem("user");
-  const isAuthenticated =sessionStorage.getItem("user");
+  //const isAuthenticated =sessionStorage.getItem("user");
   const [access,setaccess]=useCookies(['access_token']);
 console.log(user);
 console.log(document.cookie.in);
 console.log(isAuthenticated);
 console.log(access);
-  if ( !isAuthenticated || !isAuthenticated1 || isAuthenticated!==user) {
+  if ( /*!isAuthenticated ||*/ !isAuthenticated1 || isAuthenticated!==user) {
     return <Navigate to="/signup" state={pathname} />;
   }
 

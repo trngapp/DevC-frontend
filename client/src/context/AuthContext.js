@@ -27,7 +27,7 @@ export function AuthProvider({children}){
     const login=(user)=>{
 
        localStorage.setItem("user",user);
-       sessionStorage.setItem("user",user);
+       //sessionStorage.setItem("user",user);
 
        setTimeout(()=>{
          localStorage.removeItem("user");
