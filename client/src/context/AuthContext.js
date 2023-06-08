@@ -31,7 +31,7 @@ export function AuthProvider({children}){
 
        setTimeout(()=>{
          localStorage.removeItem("user");
-       },5*60*1000);
+       },30*60*1000);
 
        setUser(user);
        setLog(true);
