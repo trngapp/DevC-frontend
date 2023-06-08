@@ -30,11 +30,12 @@ const App = () => {
   const location =useLocation();
   const [isLoading,setLoading]=useState(true);
    useEffect(()=>{
+    setTimeout(()=>{
+      setLoading(false);
+    },2000)
     document.addEventListener('contextmenu', handleContextMenu);
     return () => {
-      setTimeout(()=>{
-        setLoading(false);
-      },2000)
+
       document.removeEventListener('contextmenu', handleContextMenu);
     };
 
