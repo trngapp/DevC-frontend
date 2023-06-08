@@ -32,12 +32,13 @@ const App = () => {
    useEffect(()=>{
     document.addEventListener('contextmenu', handleContextMenu);
     return () => {
+      setTimeout(()=>{
+        setLoading(false);
+      },2000)
       document.removeEventListener('contextmenu', handleContextMenu);
     };
 
-     setTimeout(()=>{
-       setLoading(false);
-     },2000)
+
    })
    const handleContextMenu = (event) => {
     event.preventDefault();
