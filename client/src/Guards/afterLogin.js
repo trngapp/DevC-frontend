@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import {AuthContext} from "../context/AuthContext"
-import { useCookies } from 'react-cookie';
+//import { useCookies } from 'react-cookie';
 const ProtectedRoute = () => {
   const { pathname } = useLocation();
   const {user} = useContext(AuthContext);
