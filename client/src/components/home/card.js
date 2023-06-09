@@ -95,10 +95,10 @@ navigate('/apply',{state:{To:projectLeader,From:user}});
         Project Name: {projectName}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-      Project Leader: {projectLeader}
+      Project Leader: {projectLeader.substring(0,15)}...
         </Typography>
         <Typography sx={{maxLines:3}} variant="body2">
-       <strong>Description:</strong> <br/> {description.substring(0,100)}...
+       <strong>Description:</strong> <br/> {description.substring(0,20)}...
           <br />
 
         </Typography>
