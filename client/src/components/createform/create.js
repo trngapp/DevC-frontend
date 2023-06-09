@@ -321,7 +321,7 @@ seterrorMessage(error.response.data);
                                            // value={PT}
                                            // onChange={handleProject}
                                             //autoComplete="current-password"
-
+                                           sx={{textAlign:"center"}}
                                             error={!!errors['projectType']}
                                             helperText={errors['projectType'] ? errors['projectType'].message : ''}
                                         >
