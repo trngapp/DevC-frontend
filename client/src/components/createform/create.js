@@ -17,6 +17,7 @@ import Success from "./card.js"
 import Error from "./cardError.js"
 import Info from "./infoCard.js"
 import {InfoContext} from "./context.js"
+//import {useNavigate} from "react-router-dom"
 import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
 
 const Create=()=>{
@@ -40,6 +41,7 @@ const Create=()=>{
     const [sub,setsub]=useState(false);
     const [done,setdone]=useState(false);
     const [error,seterror]=useState(false);
+    const navigate =useNavigate();
     const [errorMessage,seterrorMessage]=useState("");
     const Type0 = [
         {
@@ -155,6 +157,7 @@ console.log(event);
                 //navigate("/");
                setsub(false);
                setdone(true);
+              // navigate("/");
                },3000)
 
 
@@ -321,7 +324,7 @@ seterrorMessage(error.response.data);
                                            // value={PT}
                                            // onChange={handleProject}
                                             //autoComplete="current-password"
-                                           sx={{textAlign:"center"}}
+                                           sx={{textAlign:"left"}}
                                             error={!!errors['projectType']}
                                             helperText={errors['projectType'] ? errors['projectType'].message : ''}
                                         >
