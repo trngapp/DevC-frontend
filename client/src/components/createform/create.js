@@ -41,7 +41,7 @@ const Create=()=>{
     const [sub,setsub]=useState(false);
     const [done,setdone]=useState(false);
     const [error,seterror]=useState(false);
-    const navigate =useNavigate();
+    //const navigate =useNavigate();
     const [errorMessage,seterrorMessage]=useState("");
     const Type0 = [
         {
