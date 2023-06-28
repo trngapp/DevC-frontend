@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from "react";
+import React,{useEffect} from "react";
 import { Box } from "@mui/material";
 import DevC from "../faq/hello.png";
 import {  InputBase, Paper } from '@mui/material';
@@ -18,7 +18,10 @@ import Heel from '../faq/heel.jpg'
 function FAQ() {
 
 
-
+    useEffect(()=>{
+        document.title="Faq-Welcome!"
+     })
+ 
     const TextAreaWrapper = styled(Paper)({
         marginLeft: '16px',
         padding: '2px 4px',

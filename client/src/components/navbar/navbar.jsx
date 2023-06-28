@@ -61,7 +61,7 @@ const Navbar = () => {
             <MediaQuery query="(min-width: 992px)">
               <div className='navigation'>
                         <ul>
-                        <li> <Link  id="Item1" style={{borderBottom:isOne?"#89CFF0":""}} to='/' ><HomeIcon/></Link> </li>
+                        <li> <Link  id="Item1" style={{borderBottom:isOne?"#89CFF0":""}} to='/' ><HomeIcon sx={{}}/></Link> </li>
                             <li><Link id="Item2" style={{borderBottom:isTwo?'#C81132':""}} to='/faq'> <QuizIcon/></Link> </li>
                             <li><Link id="Item3" style={{borderBottom:isThree?'#C81132':""}} to='/aboutus'> <InfoIcon/> </Link> </li>
                             <li> <Link id="Item4" style={{borderBottom:isFour?'#C81132':""}} to='/profile'> <PersonIcon/></Link></li>

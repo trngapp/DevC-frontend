@@ -58,12 +58,14 @@ const {user}=useContext(AuthContext);
     const [error,seterror]=useState(false);
     const [errorMessage,seterrorMessage]=useState("");
 
+
     useEffect(()=>{
         //const values={email:'tarang@gmail.com'};
         //const params = new url.URLSearchParams(values);
 
        // console.log(state.To);
        // console.log(state.From);
+       document.title="Apply-Welcome!"
         const value=state?state.To:"";
         console.log(value);
 

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 70%;
     background: white /*rgba(51, 147, 221, 0.8) 50.83%*/;
     margin-bottom: 30px;
 }

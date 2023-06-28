@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 //import { Box } from "@mui/material";
 import "bootstrap"
 import ReactPlayer from 'react-player';
@@ -12,6 +12,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 function Aboutus() {
+  useEffect(()=>{
+    document.title="About-Us-Welcome!"
+ })
+
   return (
     <>
       {/* <Box

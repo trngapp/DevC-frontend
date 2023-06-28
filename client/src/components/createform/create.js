@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React,{useState,useContext} from "react"
+import React,{useState,useContext,useEffect} from "react"
 import { Card } from '@mui/material';
 import { Grid, InputLabel } from '@mui/material';
 import { Box } from '@mui/material';
@@ -32,6 +32,10 @@ const Create=()=>{
         handleSubmit,
         formState: { errors },
     } = useForm();
+    useEffect(()=>{
+        document.title="Create-Welcome!"
+     })
+ 
     const {open,setopen} = useContext(InfoContext);
     const [OT, setOT] = useState('');
     const [PT, setPT] = useState('');

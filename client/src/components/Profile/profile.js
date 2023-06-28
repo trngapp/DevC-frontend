@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React ,{useState,useContext}from "react"
+import React ,{useState,useContext,useEffect}from "react"
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 import Project from "./project"
@@ -23,6 +23,11 @@ const profile =()=>{
     const {logout} = useContext(AuthContext);
     const {first}=useContext(ProfileContext);
 const navigate=useNavigate();
+
+useEffect(()=>{
+    document.title="Profile-Welcome!"
+ })
+
 
     const log=()=>{
        logout();
