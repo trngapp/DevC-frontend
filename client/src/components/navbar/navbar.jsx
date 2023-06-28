@@ -6,6 +6,7 @@ import MediaQuery from "react-responsive";
 import { Drawer } from 'antd';
 import Logo from "./symbol.png"
 import './navbar.css'
+import PersonIcon from '@mui/icons-material/Person';
 //import  "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 import MenuIcon from '@mui/icons-material/Menu';
@@ -50,7 +51,7 @@ const Navbar = () => {
                     <li> <Link to='/'>Home</Link> </li>
                             <li><Link to='/faq'> FAQ</Link> </li>
                             <li><Link to='/aboutus'> About us</Link> </li>
-                            <li> <Link to='/profile'> Profile</Link></li>
+                            <li> <Link to='/profile'> <PersonIcon/> </Link></li>
                     </ul>
                 </Drawer>
             </MediaQuery>
