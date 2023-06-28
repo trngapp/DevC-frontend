@@ -17,6 +17,7 @@ import Typography from "@mui/material/Typography";
 import {AuthContext} from "../../context/AuthContext"
 import {useNavigate} from "react-router-dom"
 import {ProfileContext} from "./profContext.js"
+//fontFamily="Inter,sans-serif"
 
 const profile =()=>{
     const {logout} = useContext(AuthContext);
@@ -108,22 +109,22 @@ color:"black",
     <br/>
 <div onClick={Personal} style={{backgroundColor:personal?"#64b9f9":"white",height:"50px",borderRadius:"5px",cursor:"pointer"}}>
 
-<PermIdentityIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:personal?"white":"black"}}/><h6 style={{padding:"15px",paddingLeft:"5px",display:"inline-block",color:personal?"white":"black"}}>Personal Info</h6>
+<PermIdentityIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:personal?"white":"black"}}/><h6 style={{padding:"15px",paddingLeft:"5px",display:"inline-block",color:personal?"white":"black",fontFamily:"Inter,sans-serif"}}>Personal Info</h6>
 </div>
 <br/>
 <div onClick={Applied} style={{backgroundColor:applied?"#64b9f9":"white",height:"50px",borderRadius:"5px",cursor:"pointer"}}>
     <ListAltIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:applied?"white":"black"}}/>
-<h6 style={{padding:"15px",color:applied?"white":"black",paddingLeft:"5px",display:"inline-block",fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"}}>Applied</h6>
+<h6 style={{padding:"15px",color:applied?"white":"black",paddingLeft:"5px",display:"inline-block",fontFamily:"Inter,sans-serif"}}>Applied</h6>
 </div>
 <br/>
 <div onClick={Projects}  style={{backgroundColor:proj?"#64b9f9":"white",height:"50px",borderRadius:"5px",cursor:"pointer"}}>
     <CreateNewFolderIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:proj?"white":"black"}}/>
-<h6 style={{padding:"15px",paddingLeft:"5px",display:"inline-block",color:proj?"white":"black"}}>Project Created</h6>
+<h6 style={{padding:"15px",paddingLeft:"5px",display:"inline-block",color:proj?"white":"black",fontFamily:"Inter,sans-serif"}}>Project Created</h6>
 </div>
 <br/>
 <div onClick={Requests} style={{backgroundColor:req?"#64b9f9":"white",height:"50px",borderRadius:"5px",cursor:"pointer"}}>
     <ListAltIcon sx={{height:"20px",marginLeft:"12px",marginBottom:"4px",color:req?"white":"black"}}/>
-<h6 style={{padding:"15px",color:req?"white":"black",paddingLeft:"5px",display:"inline-block",fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"}}>Requests</h6>
+<h6 style={{padding:"15px",color:req?"white":"black",paddingLeft:"5px",display:"inline-block",fontFamily:"Inter,sans-serif"}}>Requests</h6>
 </div>
 <br/>
 <br/>

@@ -85,12 +85,12 @@ navigate('/explore',{state:{Type:"Security"}});
                 <Grid item md={7} xs={12} sx={{marginTop:"100px"}}>
 
 
-                <Typography  sx={{fontWeight:550,fontFamily:"helvetica,garamond"}} variant="h1" fontSize="3rem">Finding a Project or Creating one, We got you covered</Typography>
+                <Typography  sx={{fontWeight:550,fontFamily:"Inter,sans-serif"}} variant="h1" fontSize="3rem">Finding a Project or Creating one, We got you covered</Typography>
                 <br/>
                 <br/>
 
 
-                <Typography fontFamily="helvetica,garamond" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Find answers to your questions about finding a project, and creating your own project and building your own team.</Typography>
+                <Typography fontFamily="Inter,sans-serif" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Find answers to your questions about finding a project, and creating your own project and building your own team.</Typography>
 
                 <hr/>
 <br/>
@@ -122,7 +122,7 @@ navigate('/explore',{state:{Type:"Security"}});
                         <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><TipsAndUpdatesIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"8px"}}/></center></div></center>
                         <br />
 
-                        <center><Typography fontFamily="helvetica,garamond" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
+                        <center><Typography fontFamily="Inter,sans-serif" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
                         <br />
                         <br />
 
@@ -142,7 +142,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
                          <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><HandshakeIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"5px"}}/></center></div></center>
                          <br/>
-                        <center><Typography fontFamily="helvetica,garamond" variant="h1" fontSize={35}>APPLY IN DIFFERENT PROJECTS</Typography></center>
+                        <center><Typography fontFamily="Inter,sans-serif" variant="h1" fontSize={35}>APPLY IN DIFFERENT PROJECTS</Typography></center>
 
 
                         <br />
@@ -151,7 +151,7 @@ navigate('/explore',{state:{Type:"Security"}});
                     </Grid>
 
                    <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1>Web Development</h1>
+                        <h1 fontFamily="Inter,sans-serif">Web Development</h1>
                          <br />
                         <Carousel Type="Web"/>
                           <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleWeb}>Explore</ColorButton>
@@ -162,7 +162,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1>Android Development</h1>
+                        <h1 fontFamily="Inter,sans-serif">Android Development</h1>
                        <br />
                         <Carousel Type="Android"/>
                       <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleAndroid}>Explore</ColorButton>
@@ -173,7 +173,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1>ML/AI</h1>
+                        <h1 fontFamily="Inter,sans-serif">ML/AI</h1>
                           <br />
                         <Carousel Type="ML"/>
                          <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleML}>Explore</ColorButton>
@@ -184,7 +184,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1>Data Aanalysis</h1>
+                        <h1 fontFamily="Inter,sans-serif">Data Aanalysis</h1>
                          <br />
                         <Carousel Type="Data" />
                           <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next"  onClick={handleData}>Explore</ColorButton>
@@ -195,7 +195,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1>Web Security</h1>
+                        <h1 fontFamily="Inter,sans-serif">Web Security</h1>
 
                         <br />
                         <Carousel Type="Security" />
