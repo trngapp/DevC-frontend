@@ -151,7 +151,7 @@ navigate('/explore',{state:{Type:"Security"}});
                     </Grid>
 
                    <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily="Inter,sans-serif"}}>Web Development</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Web Development</h1>
                          <br />
                         <Carousel Type="Web"/>
                           <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleWeb}>Explore</ColorButton>
@@ -162,7 +162,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily="Inter,sans-serif"}}>Android Development</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Android Development</h1>
                        <br />
                         <Carousel Type="Android"/>
                       <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleAndroid}>Explore</ColorButton>
@@ -173,7 +173,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily="Inter,sans-serif"}}>ML/AI</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>ML/AI</h1>
                           <br />
                         <Carousel Type="ML"/>
                          <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleML}>Explore</ColorButton>
@@ -184,7 +184,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily="Inter,sans-serif"}}>Data Aanalysis</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Data Aanalysis</h1>
                          <br />
                         <Carousel Type="Data" />
                           <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next"  onClick={handleData}>Explore</ColorButton>
@@ -195,7 +195,7 @@ navigate('/explore',{state:{Type:"Security"}});
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily="Inter,sans-serif"}}>Web Security</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Web Security</h1>
 
                         <br />
                         <Carousel Type="Security" />
