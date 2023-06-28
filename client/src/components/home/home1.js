@@ -58,6 +58,9 @@ navigate('/explore',{state:{Type:"Security"}});
          })
 
     })*/
+    useEffect(()=>{
+       document.title="Home-Welcome!"
+    })
 
     const {logout} = useContext(AuthContext);
 
