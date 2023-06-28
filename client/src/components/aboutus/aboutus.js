@@ -15,6 +15,9 @@ function Aboutus() {
   useEffect(()=>{
     document.title="About-Us-Welcome!"
  })
+ const handleDiscord=()=>{
+   window.open("https://discord.gg/bf7ryWZc","_blank");
+ }
 
   return (
     <>
@@ -55,7 +58,7 @@ function Aboutus() {
 
 
         <Grid item xs={12} md={8}>
-          <Card sx={{ borderRadius: "5px", backgroundColor: "rgb(235, 84, 188)", color: "black" }}>
+          <Card sx={{ borderRadius: "5px", backgroundColor: "rgb(235, 84, 188)", color: "black" }} onClick={handleDiscord}>
             <CardContent>
               <h1>DevCera Community</h1>
               <Typography>
