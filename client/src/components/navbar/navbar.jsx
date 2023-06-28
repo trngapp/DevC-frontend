@@ -6,10 +6,10 @@ import MediaQuery from "react-responsive";
 import { Drawer } from 'antd';
 import Logo from "./symbol.png"
 import './navbar.css'
-import PersonIcon from '@mui/icons-material/Person';
-import HomeIcon from '@mui/icons-material/Home';
-import QuizIcon from '@mui/icons-material/Quiz';
-import InfoIcon from '@mui/icons-material/Info';
+//import PersonIcon from '@mui/icons-material/Person';
+//import HomeIcon from '@mui/icons-material/Home';
+//import QuizIcon from '@mui/icons-material/Quiz';
+//import InfoIcon from '@mui/icons-material/Info';
 //import Tooltip from '@mui/material/Tooltip';
 
 //import  "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -64,10 +64,10 @@ const Navbar = () => {
               <div className='navigation'>
                         <ul>
                         {/*<Tooltip title="Home">*/}
-                        <li> <Link  id="Item1" style={{borderBottom:isOne?"#89CFF0":""}} to='/' ><HomeIcon /></Link> </li>
-                            <li><Link id="Item2" style={{borderBottom:isTwo?'#C81132':""}} to='/faq'> <QuizIcon/></Link> </li>
-                            <li><Link id="Item3" style={{borderBottom:isThree?'#C81132':""}} to='/aboutus'> <InfoIcon/></Link> </li>
-                            <li> <Link id="Item4" style={{borderBottom:isFour?'#C81132':""}} to='/profile'> <PersonIcon/></Link></li>
+                        <li> <Link  id="Item1" style={{borderBottom:isOne?"#89CFF0":"",fontFamily:"Inter,sans-serif"}} to='/' ><strong>Home</strong></Link> </li>
+                            <li><Link id="Item2" style={{borderBottom:isTwo?'#C81132':"",fontFamily:"Inter,sans-serif"}} to='/faq'><strong>Faq</strong> </Link> </li>
+                            <li><Link id="Item3" style={{borderBottom:isThree?'#C81132':"",fontFamily:"Inter,sans-serif"}} to='/aboutus'> <strong>About-Us</strong></Link> </li>
+                            <li> <Link id="Item4" style={{borderBottom:isFour?'#C81132':"",fontFamily:"Inter,sans-serif"}} to='/profile'><strong>Profile</strong></Link></li>
                         </ul>
                     </div>
                     </MediaQuery>
