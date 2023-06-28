@@ -10,7 +10,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import HomeIcon from '@mui/icons-material/Home';
 import QuizIcon from '@mui/icons-material/Quiz';
 import InfoIcon from '@mui/icons-material/Info';
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip from '@mui/icons-material/Tooltip';
 
 //import  "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
