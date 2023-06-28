@@ -61,7 +61,7 @@ const Navbar = () => {
                         <li> <Link  id="Item1" style={{borderBottom:isOne?"#89CFF0":""}} to='/' >Home</Link> </li>
                             <li><Link id="Item2" style={{borderBottom:isTwo?'#C81132':""}} to='/faq'> FAQ</Link> </li>
                             <li><Link id="Item3" style={{borderBottom:isThree?'#C81132':""}} to='/aboutus'> About us</Link> </li>
-                            <li> <Link id="Item4" style={{borderBottom:isFour?'#C81132':""}} to='/profile'> Profile</Link></li>
+                            <li> <Link id="Item4" style={{borderBottom:isFour?'#C81132':""}} to='/profile'> <PersonIcon/></Link></li>
                         </ul>
                     </div>
                     </MediaQuery>
