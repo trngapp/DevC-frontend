@@ -56,7 +56,7 @@ const Navbar = () => {
                     <li> <Link to='/'>Home</Link> </li>
                             <li><Link to='/faq'> FAQ</Link> </li>
                             <li><Link to='/aboutus'> About us</Link> </li>
-                            <li> <Link to='/profile'> <PersonIcon/> </Link></li>
+                            <li> <Link to='/profile'> Profile </Link></li>
                     </ul>
                 </Drawer>
             </MediaQuery>
