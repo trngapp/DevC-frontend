@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import MediaQuery from "react-responsive";
 import { Drawer } from 'antd';
-import Logo from "./symbol.png"
+import Logo from "./symbol1.png"
 import './navbar.css'
 //import PersonIcon from '@mui/icons-material/Person';
 //import HomeIcon from '@mui/icons-material/Home';
