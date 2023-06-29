@@ -177,7 +177,7 @@ seterrorMessage(error.response.data);
 
 
           <br/>
-          <ApartmentIcon style={{display:"inline"}}/><Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"17px",display:"inline",color:"#585858",textTransform:"uppercase"}}>{workplace}</Typography>
+          <ApartmentIcon style={{display:"inline"}}/><Typography style={{fontFamily:"sans-serif",fontSize:"17px",display:"inline",color:"#585858",textTransform:"uppercase"}}>{workplace}</Typography>
           <br/>
           {/*<ApartmentIcon style={{display:"inline"}}/><Typography style={{fontSize:"17px",fontFamily:"sans-serif",display:"inline",color:"#585858"}}>10,001+ employees · IT Services and IT Consulting</Typography>*/}
 
@@ -193,13 +193,22 @@ seterrorMessage(error.response.data);
                                           <Modal.Body>
 By applying for a job on this job portal, you agree to the following terms and conditions:
 <br/>
-1.You agree to provide accurate and truthful information in your job application.
+<ol>
+    <li>
+You agree to provide accurate and truthful information in your job application.</li>
+
+<li>
+You agree to abide by the terms and conditions of the job posting.</li>
+<li>
+You agree to not submit multiple job applications for the same job.</li>
+<li>
+You agree to not contact the hiring manager or company directly without the express permission of the job portal.</li>
+<li>
+You agree to not use the job portal for any illegal or prohibited purpose.</li>
+<li>
+You agree to indemnify and hold harmless the job portal from any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of the job portal.</li>
+</ol>
 <br/>
-2.You agree to abide by the terms and conditions of the job posting.<br/>
-3.You agree to not submit multiple job applications for the same job.<br/>
-4.You agree to not contact the hiring manager or company directly without the express permission of the job portal.<br/>
-5.You agree to not use the job portal for any illegal or prohibited purpose.<br/>
-6.You agree to indemnify and hold harmless the job portal from any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of the job portal.<br/>
 This agreement is governed by the team of devcera. If any provision of this agreement is held to be invalid or unenforceable, such provision shall be struck from this agreement and the remaining provisions shall remain in full force and effect.
 <br/>
 By clicking below, you agree to the above terms and conditions.
