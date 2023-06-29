@@ -168,12 +168,12 @@ seterrorMessage(error.response.data);
                   }
                   } >
                       <div style={{marginLeft:"15px",marginTop:"10px"}}>
-                <img alt="img" src={Logo} width="80" height="60"></img>
+               {/* <img alt="img" src={Logo} width="80" height="60"></img>*/}
             <Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"27px"}}>{Otype}</Typography>
 
-          <Typography style={{fontSize:"14px",fontFamily:"sans-serif"}}>{projectname}. Bangaluru Urban,Karnataka,India</Typography>
+          <Typography style={{fontSize:"14px",fontFamily:"sans-serif"}}>{projectname}</Typography>
           <br/>
-          <ApartmentIcon style={{display:"inline"}}/><Typography style={{fontSize:"17px",fontFamily:"sans-serif",display:"inline",color:"#585858"}}>10,001+ employees · IT Services and IT Consulting</Typography>
+          {/*<ApartmentIcon style={{display:"inline"}}/><Typography style={{fontSize:"17px",fontFamily:"sans-serif",display:"inline",color:"#585858"}}>10,001+ employees · IT Services and IT Consulting</Typography>*/}
 
           <br/>
         <LandscapeIcon style={{display:"inline"}}/>  <Typography style={{fontSize:"17px",fontFamily:"sans-serif",color:"#585858",display:"inline",textTransform:"uppercase"}}>{expertise}</Typography>
@@ -186,15 +186,16 @@ seterrorMessage(error.response.data);
                                           </Modal.Header>
                                           <Modal.Body>
 By applying for a job on this job portal, you agree to the following terms and conditions:
-
+<br/>
 1.You agree to provide accurate and truthful information in your job application.
-2.You agree to abide by the terms and conditions of the job posting.
-3.You agree to not submit multiple job applications for the same job.
-4.You agree to not contact the hiring manager or company directly without the express permission of the job portal.
-5.You agree to not use the job portal for any illegal or prohibited purpose.
-6.You agree to indemnify and hold harmless the job portal from any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of the job portal.
+<br/>
+2.You agree to abide by the terms and conditions of the job posting.<br/>
+3.You agree to not submit multiple job applications for the same job.<br/>
+4.You agree to not contact the hiring manager or company directly without the express permission of the job portal.<br/>
+5.You agree to not use the job portal for any illegal or prohibited purpose.<br/>
+6.You agree to indemnify and hold harmless the job portal from any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of the job portal.<br/>
 This agreement is governed by the team of devcera. If any provision of this agreement is held to be invalid or unenforceable, such provision shall be struck from this agreement and the remaining provisions shall remain in full force and effect.
-
+<br/>
 By clicking below, you agree to the above terms and conditions.
  </Modal.Body>
                                           <Modal.Footer>
@@ -230,17 +231,12 @@ By clicking below, you agree to the above terms and conditions.
 <Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline",color:"black"}}>About the project</Typography>
 <br/>
 <br/>
-<img alt="img" src={Logo} width="80" height="60" style={{display:"inline"}}/>&nbsp; &nbsp; <Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline"}}>Lenovo</Typography>
+{/*<img alt="img" src={Logo} width="80" height="60" style={{display:"inline"}}/>&nbsp; &nbsp;*/} <Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline"}}>{projectname}</Typography>
 <br/>
 <br/>
 <Typography style={{fontFamily:"sans-serif"}}>
     {desc}
-    <br/>
-    <br/>
-    <br/>
-Information Technology & Services  1,001-5,000 employees  2,987 on LinkedIn
-Comviva is changing the world through digital experiences. Our innovative portfolio of digital solutions and platforms brings greater choice, faster time to market and flexibility, to better meet the evolving needs of our customers as they drive growth, transform and bring efficiency. From maximizing customer lifetime value to enabling large-scale digital transformation, we partner globally with organizations in the communications and financial industry to solve problems fast and transform for tomorrow.
-Comviva solutions have been deployed by over 130 Communication Services Providers and Financial Institutions in more than 90 countries and have delivered the benefits of digital and mobility to billions of people around the world.
+
 </Typography>
 <br/>
           <br/>
