@@ -184,30 +184,19 @@ seterrorMessage(error.response.data);
                                           <Modal.Header closeButton>
                                                 <Modal.Title>Agreement</Modal.Title>
                                           </Modal.Header>
-                                          <Modal.Body>E. Project Planning Meetings
-After both parties have signed this Agreement, the parties shall meet at
-COMPANY or a mutually convenient location and at a mutually convenient date
-and time to discuss project planning. The parties shall endeavor to hold this
-meeting within one week after both parties have signed this Agreement.
-F. Submission To Index Sites
-At the time that DEVELOPER conducts the first “walk through” of COMPANY’s
-final Web Site, DEVELOPER will register COMPANY’s URL with the
-following search engines: Yahoo, Infoseek, Alta Vista, Web Crawler and Excite!.
-DEVELOPER will supply a list of other sites (up to 50 sites) with which
-COMPANY may also choose to register.
-G. Delivery of Deliverables
-Upon COMPANY’s approval of its final Web Site, or upon termination of this
-Agreement, whichever occurs earlier, DEVELOPER shall deliver to COMPANY
-all Code, Documentation, reports and other materials developed by DEVELOPER
-in the course of its performance under this Agreement and any other items
-reasonably necessary for the operation of COMPANY’s Wet) Site (other than
-third party operating system software, third party networking software, Web
-Browsers and hardware) and all changes and enhancements thereto (the
-“Deliverables”). Documentation shall be delivered in printed format and in
-electronic format. Code shall be delivered in electronic format. The transfer of
-electronic materials shall be accomplished by copying them to floppy disks, 100
-megabyte ZIP cartridges or via File Transfer Protocol (“FTP”). Files will be
-provided in HTML format, standard word processing Text format or, if images, as </Modal.Body>
+                                          <Modal.Body>
+By applying for a job on this job portal, you agree to the following terms and conditions:
+
+1.You agree to provide accurate and truthful information in your job application.
+2.You agree to abide by the terms and conditions of the job posting.
+3.You agree to not submit multiple job applications for the same job.
+4.You agree to not contact the hiring manager or company directly without the express permission of the job portal.
+5.You agree to not use the job portal for any illegal or prohibited purpose.
+6.You agree to indemnify and hold harmless the job portal from any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of the job portal.
+This agreement is governed by the team of devcera. If any provision of this agreement is held to be invalid or unenforceable, such provision shall be struck from this agreement and the remaining provisions shall remain in full force and effect.
+
+By clicking below, you agree to the above terms and conditions.
+ </Modal.Body>
                                           <Modal.Footer>
                                                 <Checkbox
                                                       checked={checked}
