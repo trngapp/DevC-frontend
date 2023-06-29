@@ -52,6 +52,7 @@ const {user}=useContext(AuthContext);
      const [Otype,setOtype]=useState("");
     const [expertise,setExpertise]=useState("");
     const [number,setNumber]=useState("");
+    const [workplace,setWorkplace]=useState("");
 
     const [sub,setsub]=useState(false);
     const [done,setdone]=useState(false);
@@ -78,6 +79,7 @@ const {user}=useContext(AuthContext);
               setDesc(res.data[0].project_desc);
               setPtype(res.data[0].project_type);
               setOtype(res.data[0].opening_type);
+              setWorkplace(res.data[0].workplace_type);
               setExpertise(res.data[0].opening_expertise);
               setNumber(res.data[0].opening_number);
 
@@ -169,10 +171,13 @@ seterrorMessage(error.response.data);
                   } >
                       <div style={{marginLeft:"15px",marginTop:"10px"}}>
                {/* <img alt="img" src={Logo} width="80" height="60"></img>*/}
-            <Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"27px"}}>{Otype}</Typography>
+               <Typography style={{fontSize:"14px",fontFamily:"sans-serif"}}>{projectname}</Typography>
+               <br/>
+            <Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"27px"}}>{Ptype}</Typography>
 
-          <Typography style={{fontSize:"14px",fontFamily:"sans-serif"}}>{projectname}</Typography>
+
           <br/>
+          <ApartmentIcon style={{display:"inline"}}/><Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"27px"}}>{workplace}</Typography>
           {/*<ApartmentIcon style={{display:"inline"}}/><Typography style={{fontSize:"17px",fontFamily:"sans-serif",display:"inline",color:"#585858"}}>10,001+ employees · IT Services and IT Consulting</Typography>*/}
 
           <br/>
