@@ -125,7 +125,7 @@ navigate('/explore',{state:{Type:"Security"}});
                         <center><div style={{borderRadius:"50%",height:"90px",width:"90px",backgroundColor:"#F0F8FF"}}>  <center><TipsAndUpdatesIcon sx={{width:"6vh",height:"6vh",color:"#007FFF",marginTop:"22px",marginLeft:"8px"}}/></center></div></center>
                         <br />
 
-                        <center><Typography fontFamily="Inter,sans-serif" variant="h1" fontSize={35}>CREATE YOUR OWN PROJECT</Typography></center>
+                        <center><Typography fontFamily="Inter,sans-serif" variant="h1" fontSize={35}>CREATE YOUR OWN TEAM</Typography></center>
                         <br />
                         <br />
 

@@ -11,8 +11,9 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Card } from "@mui/material";
-import Flow from '../faq/flow.jpg'
+//import Flow from '../faq/flow.jpg'
 import Heel from '../faq/heel.jpg'
+import Left from '../faq/leftimage.jpg'
 
 
 function FAQ() {
@@ -21,7 +22,7 @@ function FAQ() {
     useEffect(()=>{
         document.title="Faq-Welcome!"
      })
- 
+
     const TextAreaWrapper = styled(Paper)({
         marginLeft: '16px',
         padding: '2px 4px',
@@ -49,7 +50,7 @@ function FAQ() {
                     <div class="row">
 
                         <div class="col">
-                        <img src={Flow} alt="faq1" style={{ width: '40vh', height: '36vh' }}>
+                        <img src={Left} alt="faq1" style={{ width: '40vh', height: '36vh' }}>
 
                         </img>
 
