@@ -173,14 +173,15 @@ seterrorMessage(error.response.data);
                {/* <img alt="img" src={Logo} width="80" height="60"></img>*/}
                <Typography style={{fontSize:"27px",fontFamily:"sans-serif",fontWeight:"bold"}}>{projectname}</Typography>
                <br/>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"17px"}}>{Ptype}</Typography>
+            <Typography style={{fontFamily:"sans-serif",fontSize:"20px",fontWeight:"bold"}}>{Ptype}</Typography>
 
 
           <br/>
-          <ApartmentIcon style={{display:"inline"}}/><Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"17px",display:"inline",}}>{workplace}</Typography>
+          <ApartmentIcon style={{display:"inline"}}/><Typography style={{fontWeight:"bold",fontFamily:"sans-serif",fontSize:"17px",display:"inline",color:"#585858",textTransform:"uppercase"}}>{workplace}</Typography>
+          <br/>
           {/*<ApartmentIcon style={{display:"inline"}}/><Typography style={{fontSize:"17px",fontFamily:"sans-serif",display:"inline",color:"#585858"}}>10,001+ employees · IT Services and IT Consulting</Typography>*/}
 
-        
+
         <LandscapeIcon style={{display:"inline"}}/>  <Typography style={{fontSize:"17px",fontFamily:"sans-serif",color:"#585858",display:"inline",textTransform:"uppercase"}}>{expertise}</Typography>
 <br/>
       <RadarIcon style={{display:"inline",color:"green"}}/>  <Typography style={{fontSize:"17px",fontFamily:"sans-serif",display:"inline",color:"black"}}>Actively Recruiting</Typography> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{checked?<Button  variant="contained" onClick={submit} style={{display:"inline"}}>Apply</Button>:<Button  variant="contained"  disabled style={{display:"inline"}}>Apply</Button>}&nbsp;&nbsp;&nbsp;<Button  variant="primary"  onClick={handleShow} style={{display:"inline",backgroundColor:"green",color:"white"}}>Agreement</Button>
@@ -233,7 +234,7 @@ By clicking below, you agree to the above terms and conditions.
 
                       <div style={{marginLeft:"15px",marginTop:"10px"}}>
 
-<Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline",color:"black"}}>About the project</Typography>
+<Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline",color:"black",fontWeight:"bold"}}>About the project</Typography>
 <br/>
 <br/>
 {/*<img alt="img" src={Logo} width="80" height="60" style={{display:"inline"}}/>&nbsp; &nbsp;*/} <Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline"}}>{projectname}</Typography>
