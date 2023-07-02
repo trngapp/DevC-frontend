@@ -35,7 +35,7 @@ const Create=()=>{
     useEffect(()=>{
         document.title="Create-Welcome!"
      })
- 
+
     const {open,setopen} = useContext(InfoContext);
     const [OT, setOT] = useState('');
     const [PT, setPT] = useState('');
@@ -263,6 +263,31 @@ seterrorMessage(error.response.data);
                                              required
                                             error={!!errors['projectName']}
                                             helperText={errors['projectName'] ? errors['projectName'].message : ''}
+                                        />
+                                    )}
+                                />
+                            </Box>
+         </Grid>
+         <Grid item xs={12}>
+         <Box sx={{
+                                "& > :not(style)": { m: 1, width: { xs: "96%", md: "98.5%" } },
+                            }}>
+                                <Controller
+                                    name="leaderName"
+                                    control={control}
+                                    defaultValue=""
+                                    rules={{ required: "Creator's Name is required" }}
+                                    render={({ field }) => (
+                                        <TextField
+                                            {...field}
+                                            name="leaderName"
+                                            label="Creator's Name"
+                                            type="text"
+                                            id="leaderName"
+                                            //autoComplete="current-password"
+                                             required
+                                            error={!!errors['leaderName']}
+                                            helperText={errors['leaderName'] ? errors['leaderName'].message : ''}
                                         />
                                     )}
                                 />
