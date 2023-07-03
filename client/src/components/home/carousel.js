@@ -97,7 +97,7 @@ const CarouselFunction =({Type})=>{
         itemClass="carousel-item-padding-20-px">
 
 {/*{arr[0]!==undefined ? */}
-{arr[0]!==undefined ? arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.leader_email:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> ):<Ca/>}
+{arr[0]!==undefined ? arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.leader_email:""} leaderName={item?item.leader_name:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> ):<Ca/>}
 </Carousel>
 
 );

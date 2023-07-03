@@ -62,7 +62,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
       },
     },
   }));
-export default function BasicCard({description,projectLeader,projectName,openings}) {
+export default function BasicCard({description,projectLeader,leaderName,projectName,openings}) {
   useEffect(()=>{
     console.log(description);
   })
@@ -95,7 +95,7 @@ navigate('/apply',{state:{To:projectLeader,From:user}});
         Project Name: {projectName}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-      Project Leader: {leader_name.substring(0,15)}...
+      Project Leader: {leaderName.substring(0,15)}...
         </Typography>
         <Typography sx={{maxLines:3}} variant="body2">
        <strong>Description:</strong> <br/> {description.substring(0,20)}...
