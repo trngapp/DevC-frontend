@@ -81,7 +81,7 @@ const Explore=()=>{
 
            {arr[0]!==undefined ?
 <CardContainer container>
-{arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.project_leader:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> )}
+{arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.project_leader:""} leaderName={item?item.leader_name:""}  openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> )}
     </CardContainer>: <NotAvailable/>}
             </>
         )
