@@ -53,7 +53,7 @@ const {user}=useContext(AuthContext);
     const [expertise,setExpertise]=useState("");
     const [number,setNumber]=useState("");
     const [workplace,setWorkplace]=useState("");
-
+   const [position,setposition]=useState("");
     const [sub,setsub]=useState(false);
     const [done,setdone]=useState(false);
     const [error,seterror]=useState(false);
@@ -82,6 +82,7 @@ const {user}=useContext(AuthContext);
               setWorkplace(res.data[0].workplace_type);
               setExpertise(res.data[0].opening_expertise);
               setNumber(res.data[0].opening_number);
+              setposition(res.data[0].position);
 
   }).catch((error)=>{
        // console.log(error.response.data);
@@ -173,9 +174,9 @@ seterrorMessage(error.response.data);
                {/* <img alt="img" src={Logo} width="80" height="60"></img>*/}
                <Typography style={{fontSize:"27px",fontFamily:"sans-serif",fontWeight:"bold"}}>{projectname}</Typography>
                <br/>
+            <Typography style={{fontFamily:"sans-serif",fontSize:"20px",fontWeight:"bold"}}>{position}</Typography>
+<br/>
             <Typography style={{fontFamily:"sans-serif",fontSize:"20px",fontWeight:"bold"}}>{Ptype}</Typography>
-
-
           <br/>
           <ApartmentIcon style={{display:"inline"}}/><Typography style={{fontFamily:"sans-serif",fontSize:"17px",display:"inline",color:"#585858",textTransform:"uppercase"}}>{workplace}</Typography>
           <br/>
@@ -273,9 +274,10 @@ By clicking below, you agree to the above terms and conditions.
 
 <Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline",color:"black",fontWeight:"bold"}}>Meet the leader</Typography>
 <br/>
+<Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline",color:"black"}}>{leadername}</Typography>
 <br/>
 
-<img alt="img" src="https://i.imgur.com/bDLhJiP.jpg" width="80" height="60" style={{display:"inline"}} class="rounded-circle"/>&nbsp; &nbsp; <Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline"}}>{leadername}</Typography>
+{/*<img alt="img" src="https://i.imgur.com/bDLhJiP.jpg" width="80" height="60" style={{display:"inline"}} class="rounded-circle"/>&nbsp; &nbsp; <Typography style={{fontSize:"20px",fontFamily:"sans-serif",display:"inline"}}>{leadername}</Typography>*/}
 
 
 <br/>
