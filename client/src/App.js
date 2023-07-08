@@ -27,13 +27,22 @@ import {ApplyContext} from "./context/ApplyContext";
 import {InfoProvider} from "./components/createform/context.js"
 import {ProfileProvider} from "./components/Profile/profContext.js";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import MobileNA from "./static/images/mobile.png";
+// only one tab opener
+import { withOneTabEnforcer } from "react-one-tab-enforcer"
 const App = () => {
   const location =useLocation();
   const [isLoading,setLoading]=useState(true);
+  const [showMobileWarning, setShowMobileWarning] = useState(false)
    useEffect(()=>{
+     if(window.innerWidth <= 600)
+     {
+      setShowMobileWarning(true);
+
+     }
     setTimeout(()=>{
       setLoading(false);
-    },2000)
+    },3000)
    /* document.addEventListener('contextmenu', handleContextMenu);
     return () => {
 
@@ -48,9 +57,11 @@ const App = () => {
    //const {from,to} = React.useContext(ApplyContext);
   return (
     <>
+    { showMobileWarning ? <center><div><img src={MobileNA} style={{width:"100%",height:"100%"}}/></div></center> :
+    <>
     <HelmetProvider>
     <Helmet>
-  <title>Design+Code - Learn to design and code React and Swift apps</title>
+  <title>Create+Collaborate</title>
 </Helmet>
 <Helmet>
 <meta
@@ -92,14 +103,16 @@ const App = () => {
         </Routes>
 
       </div>
-      {location.pathname !== '/signin' && location.pathname !=='/signup' ? <Footer /> : null}
+      {location.pathname !== '/signin' && location.pathname !=='/signup' ? <Footer sx={{position:"absolute"}} /> : null}
       </ProfileProvider>
       </InfoProvider>
       </ApplyProvider>
       </AuthProvider>
       }
 </>
+    }
+    </>
   );
 };
 
-export default App;
+export default withOneTabEnforcer({appName: "devcera"}) (App);

@@ -7,14 +7,17 @@ import Ca from "./card12"
 import Load from "../loading.js"
 //import Json from "./items.json"
 import axios from "axios"
+import Loader from "./loaderUni.js"
 const CarouselFunction =({Type})=>{
   var p=[];
 
  var [arr,setarr]=useState([]);
+ const [isLoading,setLoading]=useState(true);
 
 
  useEffect(()=>{
    console.log(arr);
+
    //console.log(arr.length);
 
   var type=Type;
@@ -27,7 +30,11 @@ const CarouselFunction =({Type})=>{
     var d=[];
     Object.keys(Json).forEach(function(key) {
       d.push(Json[key]);
+
+
+
     })
+    setLoading(false);
     //d.push(Json);
 
     setarr(d);
@@ -37,7 +44,10 @@ const CarouselFunction =({Type})=>{
 
 
 }).catch((error)=>{
-// console.log(error.response.data);
+ console.log(error);
+
+  setLoading(false);
+
 
 
 })
@@ -97,7 +107,11 @@ const CarouselFunction =({Type})=>{
         itemClass="carousel-item-padding-20-px">
 
 {/*{arr[0]!==undefined ? */}
-{arr[0]!==undefined ? arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.leader_email:""} leaderName={item?item.leader_name:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> ):<Ca/>}
+{
+  isLoading? <Loader/>: <>
+{arr.length!=0 ? arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.leader_email:""} leaderName={item?item.leader_name:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> ):<Ca/>}
+</>
+}
 </Carousel>
 
 );

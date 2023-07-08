@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React ,{useEffect,useContext} from "react"
+import React ,{useEffect,useContext,useState} from "react"
 import "bootstrap"
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -15,12 +15,14 @@ import {AuthContext} from "../../context/AuthContext"
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import { useNavigate } from "react-router-dom";
+//import Loader from "./loaderUni.js"
 
 
 
 
 const Home1 = () => {
     const navigate= useNavigate();
+    //const [isLoading,setLoading]=useState(true);
 
     const handleSecurity=()=>{
 navigate('/explore',{state:{Type:"Security"}});
@@ -60,6 +62,7 @@ navigate('/explore',{state:{Type:"Security"}});
     })*/
     useEffect(()=>{
        document.title="Home-Welcome!"
+
     })
 
     const {logout} = useContext(AuthContext);
@@ -71,10 +74,11 @@ navigate('/explore',{state:{Type:"Security"}});
 
     const ColorButton = styled(Button)(({ theme }) => ({
         //color: theme.palette.getContrastText(purple[500]),
-        backgroundColor: "#C81132",
+        //backgroundColor: "#C81132",
+        backgroundColor:"#FF8000",
 
         '&:hover': {
-            backgroundColor: "#C81132 ",
+            backgroundColor: "#FF8000 ",
         },
     }));
     return (
@@ -93,11 +97,11 @@ navigate('/explore',{state:{Type:"Security"}});
                 <br/>
 
 
-                <Typography fontFamily="Inter,sans-serif" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Find answers to your questions about finding a project, and creating your own project and building your own team.</Typography>
+                <Typography fontFamily="Inter,sans-serif" sx={{color:"#495057"}} variant="h2" fontSize="1.50rem"> Devcera is a place for you to Create and Collaborate , build your own team or become a part of a team or project !</Typography>
 
                 <hr/>
 <br/>
-                <Link to="/aboutus">  <ColorButton  variant="contained" className="next" >About Us</ColorButton></Link>
+               {/* <Link to="/aboutus">  <ColorButton  variant="contained" className="next" >About Us</ColorButton></Link>*/}
                 </Grid>
 
                     <Grid item md={5} xs={12}>
@@ -156,8 +160,9 @@ navigate('/explore',{state:{Type:"Security"}});
                    <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1 style={{fontFamily:"Inter,sans-serif"}}>Web Development</h1>
                          <br />
-                        <Carousel Type="Web"/>
-                          <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleWeb}>Explore</ColorButton>
+                    <Carousel Type="Web"/>
+                    <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleWeb}>Explore</ColorButton>
+
                        <br/>
                         <hr style={{ width: "100%" }}></hr>
                         <br /> <br />

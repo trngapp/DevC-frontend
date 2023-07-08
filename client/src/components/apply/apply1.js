@@ -6,8 +6,12 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import Button from '@mui/material/Button';
 import { SettingsBackupRestore } from "@mui/icons-material";
 import { useSSRSafeId } from "@react-aria/ssr";
-import {useLocation} from 'react-router-dom';
+import {useLocation, Navigate} from 'react-router-dom';
 import axios from "axios"
+//import Loading from "../loading.js";
+//import Skeleton from 'react-loading-skeleton';
+import Skeleton from "./loaderUni.js"
+import "react-loading-skeleton/dist/skeleton.css";
 import { Modal } from "react-bootstrap";
 import Checkbox from '@mui/material/Checkbox';
 import RadarIcon from '@mui/icons-material/Radar';
@@ -15,6 +19,7 @@ import LandscapeIcon from '@mui/icons-material/Landscape';
 import Success from "./success.js"
 import {AuthContext} from "../../context/AuthContext";
 import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
+import { useNavigate } from "react-router-dom";
 
 import Error from "./error.js"
 const Apply=()=>{
@@ -59,6 +64,10 @@ const {user}=useContext(AuthContext);
     const [error,seterror]=useState(false);
     const [errorMessage,seterrorMessage]=useState("");
 
+    const [isLoading,setLoading]=useState(true);
+    const navigate= useNavigate();
+
+
 
     useEffect(()=>{
         //const values={email:'tarang@gmail.com'};
@@ -68,6 +77,11 @@ const {user}=useContext(AuthContext);
        // console.log(state.From);
        document.title="Apply-Welcome!"
         const value=state?state.To:"";
+
+        if(!state)
+        {
+            navigate("/wrong");
+        }
         console.log(value);
 
         axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/projectinfo?email=${value}`).then((res)=>{
@@ -83,11 +97,14 @@ const {user}=useContext(AuthContext);
               setExpertise(res.data[0].opening_expertise);
               setNumber(res.data[0].opening_number);
               setposition(res.data[0].position);
+              setTimeout(()=>{
+                setLoading(false);
+                },1000)
 
   }).catch((error)=>{
        // console.log(error.response.data);
     setTimeout(()=>{
-    //setLoading(false);
+    setLoading(false);
     },1000)
 
   })
@@ -152,6 +169,7 @@ seterrorMessage(error.response.data);
 
     return (
         <>
+       {isLoading? <Skeleton count={5}/> : <>
         { done===true? <Success/>:null}
             {error===true?<Error message={errorMessage}/>:null}
         <div style={{backgroundColor:"#F5F5F5"}}>
@@ -288,6 +306,7 @@ By clicking below, you agree to the above terms and conditions.
                   </div>
 
 
+        </>}
         </>
     )
 

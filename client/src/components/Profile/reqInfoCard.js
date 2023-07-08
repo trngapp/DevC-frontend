@@ -2,6 +2,8 @@
 import React, {useState,useContext} from 'react'
 import {Modal} from "react-bootstrap"
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
 //import logo from "./success.png"
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
 //import "react-bootstrap"
@@ -58,46 +60,54 @@ const {open,setopen,first,last,email,linkedin,twitter,skill,github}=useContext(P
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <center>
-                                    <h1 style={
-                                        {
-                                            fontStyle: "Franklin Gothic Medium",
-                                            fontWeight: "normal"
-                                        }
-                                    }>
-
-                                     <ol style={{textAlign:"left",fontFamily:"sans-serif",fontSize:"27px"}}>
-                                      <li>
-                                          <b>{first}{last}</b>
-
-                                      </li>
-                                      <li>
-                                         <b>{email}</b>
-                                      </li>
-                                      <li>
-                                         <b> {skill}</b>
-                                      </li>
-                                      <li>
-                                         <b> {linkedin}</b>
-                                      </li>
-                                      <li>
-                                         <b> {twitter}</b>
-                                      </li>
-
-                                      <li>
-                                         <b> {github}</b>
-                                      </li>
-
-                                     </ol>
+                        <center>  <Grid container spacing={2} sx={{padding:{lg:"5px",xs:"5px"},width:"80%"}}>
 
 
+<Grid item md={12} xs={12}>
+<TextField
+    fullWidth
+label="Name"
+defaultValue={first}
+sx={{fontWeight:"bold"}}
+/>
+</Grid>
+<Grid item md={12} xs={12}>
+<TextField
+    fullWidth
+label="Skills"
+defaultValue={skill}
+/>
+    </Grid>
+    <Grid item xs={12} md={6}>
+
+<TextField
+fullWidth
+label="Linkedin"
+defaultValue={linkedin}
+/>
+
+</Grid>
 
 
+<Grid item xs={12} md={6}>
+<TextField
+fullWidth
+label="Github"
+defaultValue={github}
+/>
+</Grid>
+<Grid item xs={12} md={6}>
 
-                                    </h1>
-                                </center>
-                            </div>
+<TextField
+fullWidth
+label="Twitter"
+defaultValue={twitter}
+/>
+
+</Grid>
+
+</Grid>
+</center>
                         </div>
 
 

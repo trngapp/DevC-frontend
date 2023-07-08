@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import Loading from "../loading.js"
 import { styled } from '@mui/material/styles';
 import axios from "axios"
+import { CircleSpinnerOverlay, FerrisWheelSpinner } from 'react-spinner-overlay'
+import NotAvailable from "./projectNA.js";
 
 const Project=()=>{
     const ColorButton = styled(Button)(({ theme }) => ({
@@ -30,12 +32,18 @@ const Project=()=>{
     const [type,settype]=useState("");
     const [number,setnumber]=useState("");
     const [expertise,setexp]=useState("");
+    const [sub,setsub]=useState(false);
 
     const [load,setLoad]=useState(false);
     const remove=()=>{
         let value=localStorage.getItem("user");
+        setsub(true);
         axios.post(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/deleteproject?email=${value}`,{withCredentials:true}).then((res)=>{
             console.log(res);
+            setTimeout(()=>{
+              setsub(false);
+              window.alert("You have successfully deleted the project , Please refresh to see changes!!");
+            })
     }).catch((error)=>{
 console.log(error);
     })
@@ -105,7 +113,15 @@ console.log(error);
     return (
         <>
             {load?<Loading/>:
-    <center>  <Grid container spacing={2} sx={{padding:{lg:"50px",xs:"5px"},width:"80%"}}>
+            <>
+            {name===undefined? <NotAvailable/> :
+            <>
+    <center>
+        <CircleSpinnerOverlay
+      　　loading={sub}
+       overlayColor="rgba(0,153,255,0.2)"
+      />
+          <Grid container spacing={2} sx={{padding:{lg:"50px",xs:"5px"},width:"80%"}}>
 
 
                       <Grid item md={12} xs={12}>
@@ -177,7 +193,8 @@ defaultValue={type}
 
      </Grid>
      <ColorButton    onClick={remove}  variant="contained" className="next" >Delete</ColorButton>
-     </center>}
+     </center></>
+    }</>}
         </>
     )
 }

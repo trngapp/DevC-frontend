@@ -25,7 +25,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="/signin">
         DevCera
       </Link>{' '}
       {new Date().getFullYear()}
@@ -90,6 +90,10 @@ setLoading(false);
 }
 React.useEffect(()=>{
   setLoading(true)
+  if(localStorage.getItem("user"))
+  {
+    navigate("/");
+  }
   setTimeout(()=>{
     setLoading(false);
   },1000)
@@ -197,10 +201,10 @@ React.useEffect(()=>{
                     />
 
 
-                    <FormControlLabel
+                  { /* <FormControlLabel
                       control={<Checkbox value="remember" color="primary" />}
                       label="Remember me"
-                    />
+                  />*/}
                     <Button
                       type="submit"
                       fullWidth
@@ -211,9 +215,9 @@ React.useEffect(()=>{
                     </Button>
                     <Grid container>
                       <Grid item xs>
-                        <Link href="#" variant="body2">
+                        {/*<Link href="#" variant="body2">
                           Forgot password?
-                        </Link>
+                      </Link>*/}
                       </Grid>
                       <Grid item>
                         <Link href="signup" variant="body2">

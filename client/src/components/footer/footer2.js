@@ -9,7 +9,7 @@ import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 
 const Footer = () => (
   <Box component="footer" style={{background:"linear-gradient(90deg, rgba(64, 209, 203, 0.8) 0%, rgba(51, 147, 221, 0.8) 50.83%, rgba(51, 107, 213, 0.8) 100%)"}}  color="black">
-    <Container maxWidth="lg" sx={{ p: 2 }}>
+    <Container maxWidth="lg" sx={{ p: 2}}>
       <Stack spacing={2}>
         <Stack
           direction={{ xs: 'column', sm: 'row' }}

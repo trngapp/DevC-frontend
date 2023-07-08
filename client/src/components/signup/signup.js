@@ -30,7 +30,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="/about">
+      <Link color="inherit" href="/signup">
         DevCera
       </Link>{' '}
       {new Date().getFullYear()}
@@ -82,6 +82,19 @@ export default function SignUp() {
     github: formData.github,
     password: formData.password
   }
+
+  React.useEffect(()=>{
+    console.log('enter');
+    setLoading(true)
+    if(localStorage.getItem("user"))
+    {
+      console.log(localStorage.getItem("user"));
+      navigate("/");
+    }
+    setTimeout(()=>{
+      setLoading(false);
+    },1000)
+  },isLoading)
 
   axios.post('https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/signup',value,{withCredentials:true}).then((res)=>{
   console.log(res.data);
@@ -453,12 +466,12 @@ export default function SignUp() {
 
 
                       </Grid>
-                      <Grid item xs={12}>
+                      {/*<Grid item xs={12}>
                         <FormControlLabel
                           control={<Checkbox value="allowExtraEmails" color="primary" />}
                           label="I want to receive inspiration, marketing promotions and updates via email."
                         />
-                      </Grid>
+                          </Grid>*/}
                     </Grid>
                     <Button
 

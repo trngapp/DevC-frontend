@@ -102,7 +102,7 @@ color:"black",
 
 <Grid item lg={12} xs={12} style={{height:"220px",borderBottom:"0.5px #EAEAEA  solid "}} >
 <center><Avatar
-        alt={first}
+        //alt={first}
         src="/static/images/avatar/1.jpg"
         sx={{ width: 160, height: 160,marginTop:"12%",backgroundColor:"#64b9f9"}}
       />

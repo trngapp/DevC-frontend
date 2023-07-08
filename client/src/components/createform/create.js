@@ -315,7 +315,7 @@ seterrorMessage(error.response.data);
                                            // value={workplace}
                                            // onChange={handleWorkplace}
                                             //autoComplete="current-password"
-
+                                            sx={{textAlign:"left"}}
                                             error={!!errors['workplace']}
                                             helperText={errors['workplace'] ? errors['workplace'].message : ''}
                                         >
@@ -460,7 +460,7 @@ seterrorMessage(error.response.data);
                                             //value={expertise}
                                            // onChange={handleExpertise}
                                             //autoComplete="current-password"
-
+                                            sx={{textAlign:"left"}}
                                             error={!!errors['expertise']}
                                             helperText={errors['expertise'] ? errors['expertise'].message : ''}
                                         >
