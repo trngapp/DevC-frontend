@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import PaellaImage from "../../static/images/webimage.png"
+import PaellaImage from "../../static/images/webimage1.png"
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";

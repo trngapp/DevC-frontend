@@ -28,6 +28,7 @@ import {InfoProvider} from "./components/createform/context.js"
 import {ProfileProvider} from "./components/Profile/profContext.js";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import MobileNA from "./static/images/mobile.png";
+import Feedback from "./Feedback/feedback.js";
 // only one tab opener
 import { withOneTabEnforcer } from "react-one-tab-enforcer"
 const App = () => {
@@ -93,6 +94,7 @@ const App = () => {
           <Route exact path="/aboutus" element={<Aboutus />}/>
           <Route exact path="/explore" element={<Explore />}/>
           <Route exact path="/profile" element={<Profile/>}/>
+          <Route exact path="/feedback" element={<Feedback/>}/>
           </Route>
          {/* <Route element={<AfterLoginGuard/>}></Route>*/}
           <Route exact path="/signin" element={<Signin />} />

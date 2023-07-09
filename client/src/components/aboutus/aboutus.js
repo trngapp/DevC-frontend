@@ -18,7 +18,7 @@ function Aboutus() {
     document.title="About-Us-Welcome!"
  })
  const handleDiscord=()=>{
-   window.open("https://discord.gg/bf7ryWZc","_blank");
+   window.open("https://discord.gg/SHuJxNXQkF","_blank");
  }
 
   return (

@@ -121,7 +121,7 @@ function FAQ() {
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                         >
-                            <Typography>How many projects can be created for hiring team members?</Typography>
+                            <Typography>How many projects can I create at once?</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
@@ -135,7 +135,7 @@ function FAQ() {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                         >
-                            <Typography>In how many projects one can apply at most </Typography>
+                            <Typography>In how many projects can I apply ? </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
@@ -149,7 +149,7 @@ function FAQ() {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                         >
-                            <Typography>Can a person create project and apply to different one at a same time</Typography>
+                            <Typography>Can I create a project and also apply to another one at the same time?</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
