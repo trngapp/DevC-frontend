@@ -44,11 +44,11 @@ const App = () => {
     setTimeout(()=>{
       setLoading(false);
     },3000)
-   /* document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('contextmenu', handleContextMenu);
     return () => {
 
       document.removeEventListener('contextmenu', handleContextMenu);
-    };*/
+    };
 
 
    })

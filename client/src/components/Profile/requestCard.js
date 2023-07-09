@@ -98,6 +98,15 @@ console.log(error);
     settwit(twitter);
     setgit(github);
   }
+  const OnGithub=()=>{
+    window.open(`https://github.com/${github}`,"_blank");
+  }
+  const OnLinkdin=()=>{
+    window.open(`https://www.linkedin.com/in/${linkedin}`,"_blank");
+  }
+  const OnTwitter=()=>{
+    window.open(`https://twitter.com/${twitter}`,"_blank");
+  }
 
   return (
 
@@ -161,11 +170,11 @@ console.log(error);
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
 
-          <LinkedInIcon sx={{color:"#0A66C2"}}/> <a href={linkedin}>{linkedin}</a>
+        <div onClick={OnLinkdin}> <LinkedInIcon sx={{color:"#0A66C2",display:"inline"}}/> <h6 style={{display:"inline"}}>Linkedin</h6></div>
           <br/>
-         <GitHubIcon/><a href={github}>  {github}</a>
+        <div onClick={OnGithub}> <GitHubIcon sx={{display:"inline"}}/> <h6 style={{display:"inline"}}>Github</h6></div>
          <br/>
-         <TwitterIcon sx={{color:"#0A66C2"}}/> <a href={twitter}>{twitter}</a>
+       <div onClick={OnTwitter}>  <TwitterIcon sx={{color:"#0A66C2",display:"inline"}}/> <h6 style={{display:"inline"}}>Twitter</h6></div>
 
 
         </CardContent>
