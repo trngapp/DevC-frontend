@@ -21,7 +21,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import axios from 'axios';
 import Loading from "../loading.js"
+import Gmail from "./gmailCheck.js/gmailc.js";
 import {useNavigate} from "react-router-dom";
+import {SignupContext} from "./signupContext.js"
 
 
 
@@ -66,6 +68,7 @@ export default function SignUp() {
     clearErrors,
   } = useForm();*/
   const navigate = useNavigate();
+  const {email,image}=React.useContext(SignupContext);
   const [isLoading,setLoading]=React.useState(false);
   React.useEffect(()=>{
     console.log('enter');
@@ -93,7 +96,8 @@ export default function SignUp() {
     linkedin: formData.linkedin,
     twitter: formData.twitter,
     github: formData.github,
-    password: formData.password
+    password: formData.password,
+    image:image
   }
 
 
@@ -287,6 +291,10 @@ export default function SignUp() {
                               id="email"
                               label="Email Address"
                               name="email"
+                              inputProps={
+                                { readOnly: true, }
+                            }
+                              defaultValue={email}
                               autoComplete="email"
                               {...register('email')}
                               error={errors.email ? true : false}
@@ -295,6 +303,9 @@ export default function SignUp() {
                           )}
                         />
 
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Gmail/>
                       </Grid>
 
                       <Grid item xs={12}>

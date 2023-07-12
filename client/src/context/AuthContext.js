@@ -14,6 +14,7 @@ export function AuthProvider({children}){
 
     const [log,setLog]=useState(false);
     const [user,setUser]=useState(localStorage.getItem("user"));
+ 
     /*useEffect(()=>{
 
       var x=document.cookie.indexOf("access_token");

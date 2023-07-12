@@ -13,7 +13,7 @@ import Home1 from "./components/home/home1"
 //import Create from "./components/createform/create"
 import Signin from "./components/signin/signin"
 import Signup from "./components/signup/signup"
-import Gmail from "./components/signup/gmailCheck.js/gmailc.js"
+//import Gmail from "./components/signup/gmailCheck.js/gmailc.js"
 import Createus from './components/createform/create';
 import FAQ from './components/faq/faq';
 import Aboutus from './components/aboutus/aboutus'
@@ -21,6 +21,7 @@ import Explore from "./components/ExploreMore/explore"
 import AuthGuard from "./Guards/AuthGuard";
 //import AfterLoginGuard from "./Guards/afterLogin";
 import {AuthProvider} from "./context/AuthContext";
+import {SignupProvider} from "./components/signup/signupContext.js"
 import Loading from "./components/loading.js"
 import Profile from "./components/Profile/profile";
 import {ApplyProvider} from "./context/ApplyContext";
@@ -74,6 +75,7 @@ const App = () => {
     </HelmetProvider>
     {isLoading===true?<Loading/> :
     <AuthProvider>
+      <SignupProvider>
       <ApplyProvider>
       <InfoProvider>
         <ProfileProvider>
@@ -100,7 +102,7 @@ const App = () => {
          {/* <Route element={<AfterLoginGuard/>}></Route>*/}
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/gmailcheck" element={<Gmail/>}/>
+
 
           <Route  path="*" element={<Invalid />} />
         </Routes>
@@ -110,6 +112,7 @@ const App = () => {
       </ProfileProvider>
       </InfoProvider>
       </ApplyProvider>
+      </SignupProvider>
       </AuthProvider>
       }
 </>
