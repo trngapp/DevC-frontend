@@ -21,7 +21,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import axios from 'axios';
 import Loading from "../loading.js"
-import Gmail from "./gmailCheck.js/gmailc.js";
+//import Gmail from "./gmailCheck.js/gmailc.js";
 import {useNavigate} from "react-router-dom";
 //import {SignupContext} from "./signupContext.js"
 
@@ -93,15 +93,14 @@ export default function SignUp() {
     const value={
       first_name: formData.first_name,
     last_name: formData.last_name,
-   // email: formData.email,
-   email: localStorage.getItem("email"),
+    email: formData.email,
     city: formData.city,
     skill: formData.skills,
     linkedin: formData.linkedin,
     twitter: formData.twitter,
     github: formData.github,
     password: formData.password,
-    image:image
+
   }
 
 
@@ -202,7 +201,7 @@ export default function SignUp() {
             </img>
           </MediaQuery>
         </Grid>
-        {!localStorage.getItem("email")? <Gmail/> :
+
         <Grid item>
           <Card sx={{ width: { xs: '100%', md: 500 }, alignitem: 'center', backgroundColor: "#F5F5F5", marginBottom: '5%' }}>
             <ThemeProvider theme={theme}>
@@ -276,7 +275,7 @@ export default function SignUp() {
                         />
                       </Grid>
 
-                     {/* <Grid item xs={12}>
+                     <Grid item xs={12}>
                         <Controller
                           name="email"
                           control={control}
@@ -305,7 +304,7 @@ export default function SignUp() {
                           )}
                         />
 
-                          </Grid>*/}
+                          </Grid>
 
 
                       <Grid item xs={12}>
@@ -512,7 +511,7 @@ export default function SignUp() {
             </ThemeProvider>
           </Card>
         </Grid>
-      }
+
       </Grid>
 
     </>
