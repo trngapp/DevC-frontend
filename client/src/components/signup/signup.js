@@ -23,7 +23,7 @@ import axios from 'axios';
 import Loading from "../loading.js"
 import Gmail from "./gmailCheck.js/gmailc.js";
 import {useNavigate} from "react-router-dom";
-import {SignupContext} from "./signupContext.js"
+//import {SignupContext} from "./signupContext.js"
 
 
 
@@ -68,13 +68,14 @@ export default function SignUp() {
     clearErrors,
   } = useForm();*/
   const navigate = useNavigate();
-  const {email,image}=React.useContext(SignupContext);
+  ///const {email,image}=React.useContext(SignupContext);
   const [isLoading,setLoading]=React.useState(false);
+  //const [email,setEmail]=useState(localStorage.getItem("email"));
+
   React.useEffect(()=>{
     console.log('enter');
     console.log(localStorage.getItem("user"));
-    console.log(email);
-    console.log(image);
+
     setLoading(true)
     if(localStorage.getItem("user"))
     {
@@ -296,7 +297,7 @@ export default function SignUp() {
                               inputProps={
                                 { readOnly: true, }
                             }
-                              defaultValue={email}
+                              defaultValue={localStorage.getItem("email")}
                               autoComplete="email"
                               {...register('email')}
                               error={errors.email ? true : false}
