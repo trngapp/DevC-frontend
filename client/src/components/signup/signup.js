@@ -21,7 +21,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import axios from 'axios';
 import Loading from "../loading.js"
-//import Gmail from "./gmailCheck.js/gmailc.js";
+import Gmail from "./gmailCheck.js/gmailc.js";
 import {useNavigate} from "react-router-dom";
 //import {SignupContext} from "./signupContext.js"
 
@@ -296,6 +296,9 @@ export default function SignUp() {
                               id="email"
                               label="Email Address"
                               name="email"
+                              inputProps={
+                                { readOnly: true, }
+                            }
                               autoComplete="email"
                               {...register('email')}
                               error={errors.email ? true : false}
@@ -304,6 +307,9 @@ export default function SignUp() {
                           )}
                         />
 
+                          </Grid>
+                          <Grid item xs={12}>
+                            <Gmail/>
                           </Grid>
 
 
