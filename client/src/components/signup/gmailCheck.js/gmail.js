@@ -32,7 +32,7 @@ navigate("/signup");
   buttonText="Login with Google"
             onSuccess={SuccessResponse}
             onError={() => {
-              console.log('Login Failed');
+              console.log('signup Failed');
             }}
             scope="email"
           />

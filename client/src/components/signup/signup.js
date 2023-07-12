@@ -93,7 +93,8 @@ export default function SignUp() {
     const value={
       first_name: formData.first_name,
     last_name: formData.last_name,
-    email: formData.email,
+   // email: formData.email,
+   email: localStorage.getItem("email"),
     city: formData.city,
     skill: formData.skills,
     linkedin: formData.linkedin,
@@ -191,6 +192,8 @@ export default function SignUp() {
 
     <>
     {isLoading===true?<Loading/>:
+    <>
+
       <Grid container columnGap={{ md: 16 }} columnSpacing={{ xs: 4, md: 8 }}>
         <Grid item>
           <MediaQuery minWidth={1224}>
@@ -199,7 +202,7 @@ export default function SignUp() {
             </img>
           </MediaQuery>
         </Grid>
-
+        {!localStorage.getItem("email")? <Gmail/> :
         <Grid item>
           <Card sx={{ width: { xs: '100%', md: 500 }, alignitem: 'center', backgroundColor: "#F5F5F5", marginBottom: '5%' }}>
             <ThemeProvider theme={theme}>
@@ -273,11 +276,11 @@ export default function SignUp() {
                         />
                       </Grid>
 
-                      <Grid item xs={12}>
+                     {/* <Grid item xs={12}>
                         <Controller
                           name="email"
                           control={control}
-                          defaultValue=""
+                          defaultValue={localStorage.getItem("email")}
                           rules={{
                             required: "Email is required",
                             pattern: {
@@ -294,10 +297,6 @@ export default function SignUp() {
                               id="email"
                               label="Email Address"
                               name="email"
-                              inputProps={
-                                { readOnly: true, }
-                            }
-                              defaultValue={localStorage.getItem("email")}
                               autoComplete="email"
                               {...register('email')}
                               error={errors.email ? true : false}
@@ -306,10 +305,8 @@ export default function SignUp() {
                           )}
                         />
 
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Gmail/>
-                      </Grid>
+                          </Grid>*/}
+
 
                       <Grid item xs={12}>
                         <Controller
@@ -515,8 +512,11 @@ export default function SignUp() {
             </ThemeProvider>
           </Card>
         </Grid>
+      }
       </Grid>
-    }
+
+    </>
+  }
     </>
   );
   }
