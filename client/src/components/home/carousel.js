@@ -109,7 +109,7 @@ const CarouselFunction =({Type})=>{
 {/*{arr[0]!==undefined ? */}
 {
   isLoading? <Loader/>: <>
-{arr.length!=0 ? arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.leader_email:""} leaderName={item?item.leader_name:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""}/> ):<Ca/>}
+{arr.length!=0 ? arr.map(item => <Card description={item?item.project_desc:""} projectLeader={item?item.leader_email:""} leaderName={item?item.leader_name:""} openings={item?item.opening_number:""} projectName={item?item.project_name:""} position={item?item.position:""}/> ):<Ca/>}
 </>
 }
 </Carousel>

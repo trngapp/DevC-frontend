@@ -170,11 +170,11 @@ console.log(error);
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
 
-        <div onClick={OnLinkdin}> <LinkedInIcon sx={{color:"#0A66C2",display:"inline"}}/> <h6 style={{display:"inline"}}>Linkedin</h6></div>
+        <div onClick={OnLinkdin} style={{cursor:"pointer"}}> <LinkedInIcon sx={{color:"#0A66C2",display:"inline"}}/> <h6 style={{display:"inline"}}>Linkedin</h6></div>
           <br/>
-        <div onClick={OnGithub}> <GitHubIcon sx={{display:"inline"}}/> <h6 style={{display:"inline"}}>Github</h6></div>
+        <div onClick={OnGithub} style={{cursor:"pointer"}}> <GitHubIcon sx={{display:"inline"}}/> <h6 style={{display:"inline"}}>Github</h6></div>
          <br/>
-       <div onClick={OnTwitter}>  <TwitterIcon sx={{color:"#0A66C2",display:"inline"}}/> <h6 style={{display:"inline"}}>Twitter</h6></div>
+       <div onClick={OnTwitter} style={{cursor:"pointer"}}>  <TwitterIcon sx={{color:"#0A66C2",display:"inline"}}/> <h6 style={{display:"inline"}}>Twitter</h6></div>
 
 
         </CardContent>

@@ -138,7 +138,7 @@ console.log(error);
  defaultValue={name}
 />
                           </Grid>
-                          <Grid item xs={12} md={6}>
+                          <Grid item xs={12} md={12}>
 
 <TextField
     fullWidth
@@ -148,7 +148,13 @@ defaultValue={position}
 
 </Grid>
 
-
+<Grid item md={6} xs={12}>
+                          <TextField
+                              fullWidth
+ label="Openings"
+ defaultValue={number}
+/>
+                          </Grid>
 <Grid item xs={12} md={6}>
 <TextField
 fullWidth
@@ -156,15 +162,16 @@ label="Workplace"
 defaultValue={workplace}
 />
 </Grid>
-<Grid item xs={12} md={6}>
-
-<TextField
-    fullWidth
-label="Description"
-defaultValue={desc}
+<Grid item md={6} xs={12}>
+                          <TextField
+                              fullWidth
+ label="Expertise"
+ defaultValue={expertise}
 />
+                          </Grid>
 
-</Grid>
+
+
 
 
 <Grid item xs={12} md={6}>
@@ -174,20 +181,16 @@ label="Project Type"
 defaultValue={type}
 />
 </Grid>
-                          <Grid item md={12} xs={12}>
-                          <TextField
-                              fullWidth
- label="Openings"
- defaultValue={number}
+
+                          <Grid item xs={12} md={12}>
+
+<TextField
+    fullWidth
+label="Description"
+defaultValue={desc}
 />
-                          </Grid>
-                          <Grid item md={12} xs={12}>
-                          <TextField
-                              fullWidth
- label="Expertise"
- defaultValue={expertise}
-/>
-                          </Grid>
+</Grid>
+
 
 
 

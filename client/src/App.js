@@ -13,6 +13,7 @@ import Home1 from "./components/home/home1"
 //import Create from "./components/createform/create"
 import Signin from "./components/signin/signin"
 import Signup from "./components/signup/signup"
+import Gmail from "./components/signup/gmailCheck.js/gmailcheck.js"
 import Createus from './components/createform/create';
 import FAQ from './components/faq/faq';
 import Aboutus from './components/aboutus/aboutus'
@@ -44,11 +45,11 @@ const App = () => {
     setTimeout(()=>{
       setLoading(false);
     },3000)
-    document.addEventListener('contextmenu', handleContextMenu);
+   /* document.addEventListener('contextmenu', handleContextMenu);
     return () => {
 
       document.removeEventListener('contextmenu', handleContextMenu);
-    };
+    };*/
 
 
    })
@@ -99,7 +100,7 @@ const App = () => {
          {/* <Route element={<AfterLoginGuard/>}></Route>*/}
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
-
+          <Route exact path="/gmailcheck" element={<Gmail/>}/>
 
           <Route  path="*" element={<Invalid />} />
         </Routes>

@@ -67,6 +67,19 @@ export default function SignUp() {
   } = useForm();*/
   const navigate = useNavigate();
   const [isLoading,setLoading]=React.useState(false);
+  React.useEffect(()=>{
+    console.log('enter');
+    console.log(localStorage.getItem("user"));
+    setLoading(true)
+    if(localStorage.getItem("user"))
+    {
+      console.log(localStorage.getItem("user"));
+      navigate("/");
+    }
+    setTimeout(()=>{
+      setLoading(false);
+    },1000)
+  },isLoading)
   const onsubmit = (formData) => {
    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(formData, null, 4));
 
@@ -83,18 +96,7 @@ export default function SignUp() {
     password: formData.password
   }
 
-  React.useEffect(()=>{
-    console.log('enter');
-    setLoading(true)
-    if(localStorage.getItem("user"))
-    {
-      console.log(localStorage.getItem("user"));
-      navigate("/");
-    }
-    setTimeout(()=>{
-      setLoading(false);
-    },1000)
-  },isLoading)
+
 
   axios.post('https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/signup',value,{withCredentials:true}).then((res)=>{
   console.log(res.data);

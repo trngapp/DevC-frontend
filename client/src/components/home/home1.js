@@ -25,7 +25,7 @@ const Home1 = () => {
     //const [isLoading,setLoading]=useState(true);
 
     const handleSecurity=()=>{
-navigate('/explore',{state:{Type:"Security"}});
+//navigate('/explore',{state:{Type:"Security"}});
 
 
     }
@@ -33,22 +33,22 @@ navigate('/explore',{state:{Type:"Security"}});
 
     }
     const handleWeb=()=>{
-        navigate('/explore',{state:{Type:"Web"}});
+        //navigate('/explore',{state:{Type:"Web"}});
 
 
             }
             const handleAndroid=()=>{
-                navigate('/explore',{state:{Type:"Android"}});
+                //navigate('/explore',{state:{Type:"Android"}});
 
 
                     }
                     const handleML=()=>{
-                        navigate('/explore',{state:{Type:"ML"}});
+                        //navigate('/explore',{state:{Type:"ML"}});
 
 
                             }
                             const handleData=()=>{
-                                navigate('/explore',{state:{Type:"Data"}});
+                                //navigate('/explore',{state:{Type:"Data"}});
 
 
                                     }
