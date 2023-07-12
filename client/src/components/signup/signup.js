@@ -73,6 +73,8 @@ export default function SignUp() {
   React.useEffect(()=>{
     console.log('enter');
     console.log(localStorage.getItem("user"));
+    console.log(email);
+    console.log(image);
     setLoading(true)
     if(localStorage.getItem("user"))
     {
