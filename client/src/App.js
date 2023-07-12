@@ -13,7 +13,7 @@ import Home1 from "./components/home/home1"
 //import Create from "./components/createform/create"
 import Signin from "./components/signin/signin"
 import Signup from "./components/signup/signup"
-import Gmail from "./components/signup/gmailCheck.js/gmailcheck.js"
+import Gmail from "./components/signup/gmailCheck.js/gmail.js"
 import Createus from './components/createform/create';
 import FAQ from './components/faq/faq';
 import Aboutus from './components/aboutus/aboutus'
