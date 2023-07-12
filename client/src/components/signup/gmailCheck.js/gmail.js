@@ -10,7 +10,7 @@ const google = () => {
 
   buttonText="Login with Google"
             onSuccess={credentialResponse => {
-              console.log(credentialResponse.profileObj.email);
+              console.log(credentialResponse);
             }}
             onError={() => {
               console.log('Login Failed');
