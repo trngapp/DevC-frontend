@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { GoogleLogin} from '@react-oauth/google';
-import Success from '../../apply/success';
+//import Success from '../../apply/success';
 import jwt_decode from "jwt-decode";
 
 const google = () => {
