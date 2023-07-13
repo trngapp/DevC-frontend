@@ -153,8 +153,8 @@ export default function SignUp() {
       .required('City is required'),
     skills: Yup.string()
       .required('Skills is required'),
-   /* github: Yup.string()
-      .required('GitHub is required')*/
+    github: Yup.string()
+      .required('GitHub is required'),
     linkedin: Yup.string()
       .required('Linkedin is required'),
     password: Yup.string()
@@ -365,14 +365,14 @@ export default function SignUp() {
                           name="github"
                           control={control}
                           defaultValue=""
-                         // rules={{ required: "GitHub is required" }}
+                          rules={{ required: "GitHub is required" }}
                           render={({ field }) => (
 
                             <TextField
                               {...field}
-                             // required
+                              required
                               fullWidth
-                              //error={!!errors['github']}
+                              error={!!errors['github']}
                               id="github"
                               label="GitHub"
                               name="github"
