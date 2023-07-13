@@ -18,22 +18,26 @@ import {AuthContext} from "../../context/AuthContext"
 import {useNavigate} from "react-router-dom"
 import {ProfileContext} from "./profContext.js"
 import axios from "axios"
+import Loading from "../loading.js";
 //fontFamily="Inter,sans-serif"
 
 const profile =()=>{
     const {logout} = useContext(AuthContext);
     const {first}=useContext(ProfileContext);
     const [image,setImage]=useState("");
+   // const [load,setLoad]=useState(false);
 const navigate=useNavigate();
 
 useEffect(()=>{
     document.title="Profile-Welcome!"
+
     const value=localStorage.getItem("user");
     axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/image?email=${value}`,{withCredentials:true}).then((res)=>{
       setImage(res.data[0].image);
 
 }).catch((error)=>{
 console.log(error);
+
 })
  })
 
@@ -155,6 +159,7 @@ color:"black",
 {req? <Request/> : null}
                    </Grid>
            </Grid>
+
 
         </>
     )

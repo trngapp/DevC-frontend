@@ -68,6 +68,7 @@ export default function SignIn() {
 
      setTimeout(()=>{
        setLoading(false);
+       localStorage.removeItem("email");
       navigate("/");
      },2000)
 
