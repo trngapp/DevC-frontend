@@ -55,7 +55,7 @@ let value={to:localStorage.getItem("user"),from:email};
 setsub(true);
   axios.patch(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/accept`,value,{withCredentials:true}).then((result)=>{
     console.log(result);
-    alert(result);
+    alert("You have accepted the applicant , refresh to see changes and check email for information of accepted applicant!!");
     setTimeout(()=>{
       setsub(false);
       navigate("/profile");
@@ -73,7 +73,7 @@ const reject=()=>{
 setsub(true);
   axios.patch(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/reject`,value,{withCredentials:true}).then((result)=>{
     console.log(result);
-    alert(result);
+    alert("You have rejected the applicant , please refresh to see changes!!");
     setTimeout(()=>{
       setsub(false);
     },1000)
