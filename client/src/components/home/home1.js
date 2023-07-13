@@ -160,7 +160,7 @@ const Home1 = () => {
                    <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1 style={{fontFamily:"Inter,sans-serif"}}>Web Development</h1>
                          <br />
-                    <Carousel Type="Web"/>
+                    <Carousel Type="Web-Development"/>
                     <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleWeb}>Explore</ColorButton>
 
                        <br/>
@@ -170,9 +170,9 @@ const Home1 = () => {
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Android Development</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>App Development</h1>
                        <br />
-                        <Carousel Type="Android"/>
+                        <Carousel Type="App-Development"/>
                       <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleAndroid}>Explore</ColorButton>
                        <br/>
                         <hr style={{ width: "100%" }}></hr>
@@ -183,7 +183,7 @@ const Home1 = () => {
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
                         <h1 style={{fontFamily:"Inter,sans-serif"}}>ML/AI</h1>
                           <br />
-                        <Carousel Type="ML"/>
+                        <Carousel Type="ML-AI"/>
                          <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next" onClick={handleML}>Explore</ColorButton>
                        <br/>
                         <hr style={{ width: "100%" }}></hr>
@@ -192,9 +192,9 @@ const Home1 = () => {
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Data Aanalysis</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Internet Of Things</h1>
                          <br />
-                        <Carousel Type="Data" />
+                        <Carousel Type="IOT" />
                           <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right" }} variant="contained" className="next"  onClick={handleData}>Explore</ColorButton>
                        <br/>
                         <hr style={{ width: "100%" }}></hr>
@@ -203,10 +203,10 @@ const Home1 = () => {
 
 
                     <Grid item md={11} xs={12} sx={{marginLeft:{md:"50px",xs:"0px"}}}>
-                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Web Security</h1>
+                        <h1 style={{fontFamily:"Inter,sans-serif"}}>Video Editing</h1>
 
                         <br />
-                        <Carousel Type="Security" />
+                        <Carousel Type="Video-Editing" />
 
                 <ColorButton sx={{ /*marginLeft: { lg: "1150px", md:"700px", xs: "10px" }*/ float:"right"  }}  onClick={handleSecurity} variant="contained" className="next" >Explore</ColorButton>
                        <br/> <hr style={{ width: "100%" }}></hr>

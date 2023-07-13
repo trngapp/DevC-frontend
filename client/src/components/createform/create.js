@@ -91,29 +91,25 @@ const Create=()=>{
 
         const Type1 = [
             {
-                value: 'Web',
+                value: 'Web-Development',
                 label: 'Web-Development',
             },
             {
-                value: 'App',
+                value: 'App-Development',
                 label: 'App-Development',
             },
             {
-                value: 'Cyber',
-                label: 'Cyber-Security',
-            },
-            {
-                value: 'AnalysisD',
-                label: 'Data-Analysis',
-            },
-            {
-                value: 'IOThings',
+                value: 'IOT',
                 label: 'IOT',
             },
             {
-                value: 'AIntel',
-                label: 'Artificial Intelligence',
+                value: 'ML-AI',
+                label: 'ML-AI',
             },
+            {
+                value: 'Video-Editing',
+                label: 'Video-Editing',
+            }
         ];
         const Type3=[
             {
