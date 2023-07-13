@@ -18,7 +18,7 @@ const google = () => {
     const {email,picture}=userObject;
     localStorage.setItem("image",picture);
     localStorage.setItem("email",email);
-
+window.location.reload();
     console.log(userObject);
     /*setTimeout(()=>{
 navigate("/signup");

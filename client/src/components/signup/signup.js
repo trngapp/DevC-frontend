@@ -100,6 +100,7 @@ export default function SignUp() {
     twitter: formData.twitter,
     github: formData.github,
     password: formData.password,
+    image:localStorage.getItem("image")
 
   }
 
@@ -275,7 +276,7 @@ export default function SignUp() {
                         />
                       </Grid>
 
-                     <Grid item xs={12}>
+                     <Grid item xs={12} sx={{paddingTop:"5px"}}>
                         <Controller
                           name="email"
                           control={control}
@@ -308,7 +309,7 @@ export default function SignUp() {
                         />
 
                           </Grid>
-                          <Grid item xs={12}>
+                          <Grid item xs={12} sx={{paddingBottom:"5px"}}>
                             <Gmail/>
                           </Grid>
 
