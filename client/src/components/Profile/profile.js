@@ -17,15 +17,24 @@ import Typography from "@mui/material/Typography";
 import {AuthContext} from "../../context/AuthContext"
 import {useNavigate} from "react-router-dom"
 import {ProfileContext} from "./profContext.js"
+import axios from "axios"
 //fontFamily="Inter,sans-serif"
 
 const profile =()=>{
     const {logout} = useContext(AuthContext);
     const {first}=useContext(ProfileContext);
+    const [image,setImage]=useState("");
 const navigate=useNavigate();
 
 useEffect(()=>{
     document.title="Profile-Welcome!"
+    const value=localStorage.getItem("user");
+    axios.get(`https://main--polite-syrniki-ad57c8.netlify.app/.netlify/functions/api/image?email=${value}`,{withCredentials:true}).then((res)=>{
+      setImage(res.data[0].image);
+
+}).catch((error)=>{
+console.log(error);
+})
  })
 
 
@@ -103,7 +112,8 @@ color:"black",
 <Grid item lg={12} xs={12} style={{height:"220px",borderBottom:"0.5px #EAEAEA  solid "}} >
 <center><Avatar
         //alt={first}
-        src="/static/images/avatar/1.jpg"
+        //src="/static/images/avatar/1.jpg"
+        src={image}
         sx={{ width: 160, height: 160,marginTop:"12%",backgroundColor:"#64b9f9"}}
       />
       {/*<ColorButton variant="contained" className="next" style={{width:"20px",marginTop:"23px"}} >Upload</ColorButton>*/}
