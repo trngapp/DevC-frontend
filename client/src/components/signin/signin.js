@@ -21,6 +21,7 @@ import axios from "axios"
 import {AuthContext} from "../../context/AuthContext";
 import Loading from "../loading.js"
 import {useNavigate} from "react-router-dom";
+import Betawarn from "./beta.png"
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -70,7 +71,7 @@ export default function SignIn() {
        setLoading(false);
        localStorage.removeItem("email");
       navigate("/");
-     },2000)
+     },200)
 
 
 
@@ -219,6 +220,8 @@ React.useEffect(()=>{
                         {/*<Link href="#" variant="body2">
                           Forgot password?
                       </Link>*/}
+
+                  <img style={{width:"100px"}} src={Betawarn}/>
                       </Grid>
                       <Grid item>
                         <Link href="signup" variant="body2">

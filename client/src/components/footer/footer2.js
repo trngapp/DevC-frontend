@@ -49,7 +49,7 @@ const Footer = () => (
 
             </Stack>
             <Typography variant="caption" color="#777676">
-              &copy; Copyright 2022 - DEVCERA
+              &copy; Copyright 2023 - DEVCERA
             </Typography>
           </Stack>
           <Stack direction="column">

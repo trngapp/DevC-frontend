@@ -45,7 +45,7 @@ const App = () => {
      }
     setTimeout(()=>{
       setLoading(false);
-    },3000)
+    },1000)
    /* document.addEventListener('contextmenu', handleContextMenu);
     return () => {
 

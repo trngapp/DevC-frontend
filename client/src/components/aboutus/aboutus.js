@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 //import MediaQuery from "react-responsive";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Tarang from "./tarang.jpeg";
+import Logo from "./aboutlogo.png"
 
 
 function Aboutus() {
@@ -35,6 +36,7 @@ function Aboutus() {
         }}
 
       />*/}
+     <center><img src={Logo} alt="logo"/></center>
       <Grid container spacing={2} sx={{ padding: 6 }} >
        {/* <Grid item md={12}>
           <MediaQuery maxWidth={1224} >
@@ -48,8 +50,21 @@ function Aboutus() {
         <Grid item md={12}>
           <Card sx={{ borderRadius: "5px", backgroundColor: "#F5F5F5", color: "black" }}>
             <CardContent>
-              <Typography variant="h5" sx={{ fontFamily: "agrandir medium" }}>
-               A platform made especially for creators to come together and build projects , there is no limit ,you want to build a website for hackathon ,make your team here or you want to start a podcast get team members from here!!</Typography>
+              <Typography variant="h6" sx={{ fontFamily: "Inter,sans-serif" }}>
+
+
+               A platform made especially for students to come together and build projects , there is no limit ,you want to build a website for hackathon ,make your team here or you want to start a podcast ,get team members from here!!. Here are some additional benefits of using the  Platform:
+<br/>
+<b>Learn from each other:</b> Students from different backgrounds and cultures can share their knowledge and perspectives, which can help them to learn and grow.
+<br/>
+<b>Develop new skills:</b> The platform provides a variety of resources that can help students to develop new skills, such as project management, communication, Digital marketing , web development and data analysis etc. Coming Soon!!
+<br/>
+<b>Build relationships:</b> Students can build relationships with other students from all over the world, which can help them to network and find future opportunities.
+<br/>
+If you are a student looking for a way to collaborate with other students and develop your skills , Devcera is the place.
+<br/>
+<b>Go to feedback form and let us know , what new features you want which can help you in your career ahead!!</b>
+</Typography>
 
             </CardContent>
 
@@ -74,7 +89,7 @@ function Aboutus() {
         <Grid item xs={12} md={5} sx={{cursor:"pointer"}}>
           <Card sx={{ borderRadius: "5px", backgroundColor: "rgb(20, 241, 149)", color: "black" }}>
             <CardContent>
-              <h1>Donate</h1>
+              <h1>Donate (Coming soon!!)</h1>
               <Typography>
                 We need donation to grow our app to serve you different features!!</Typography>
             </CardContent>

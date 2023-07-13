@@ -23,6 +23,7 @@ import axios from 'axios';
 import Loading from "../loading.js"
 import Gmail from "./gmailCheck.js/gmailc.js";
 import {useNavigate} from "react-router-dom";
+
 //import {SignupContext} from "./signupContext.js"
 
 
@@ -492,6 +493,7 @@ export default function SignUp() {
                           label="I want to receive inspiration, marketing promotions and updates via email."
                         />
                           </Grid>*/}
+
                     </Grid>
                     <Button
 
