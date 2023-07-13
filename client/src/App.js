@@ -46,11 +46,11 @@ const App = () => {
     setTimeout(()=>{
       setLoading(false);
     },1000)
-   /* document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('contextmenu', handleContextMenu);
     return () => {
 
       document.removeEventListener('contextmenu', handleContextMenu);
-    };*/
+    };
 
 
    })
