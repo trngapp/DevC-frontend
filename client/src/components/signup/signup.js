@@ -377,7 +377,7 @@ export default function SignUp() {
                               label="GitHub"
                               name="github"
                               autoComplete="github"
-                              helperText={errors['github'] ? errors['github'].message : 'Only profile name , do not add link & write NA if you do not have'}
+                              helperText={errors['github'] ? errors['github'].message : 'Only profile name , do not add link & write N.A if you do not have'}
                             />
                           )}
                         />
@@ -401,7 +401,7 @@ export default function SignUp() {
                               label="Linkedin"
                               name="linkedin"
                               autoComplete="linkedin"
-                              helperText={errors['linkedin'] ? errors['linkedin'].message : 'Only profile name , do not add link & write NA if you do not have'}
+                              helperText={errors['linkedin'] ? errors['linkedin'].message : 'Only profile name , do not add link & write N.A if you do not have'}
                             />
 
                           )}
