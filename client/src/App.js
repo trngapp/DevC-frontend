@@ -31,6 +31,7 @@ import {ProfileProvider} from "./components/Profile/profContext.js";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import MobileNA from "./static/images/mobile.png";
 import Feedback from "./Feedback/feedback.js";
+import Tour from "./components/TourPage/taketour.js"
 // only one tab opener
 import { withOneTabEnforcer } from "react-one-tab-enforcer"
 const App = () => {
@@ -93,15 +94,22 @@ const App = () => {
           <Route exact path="/create" element={<Createus />} />
 
           <Route exact path="/apply"  element={<Apply /*To="tarang@gmail.com"  From="taran@gmail.com"*/ />} />
-          <Route exact path="/faq"   element={<FAQ />}/>
+         {/* <Route exact path="/faq"   element={<FAQ />}/>
           <Route exact path="/aboutus" element={<Aboutus />}/>
+           <Route exact path="/feedback" element={<Feedback/>}/>
+          */}
           <Route exact path="/explore" element={<Explore />}/>
           <Route exact path="/profile" element={<Profile/>}/>
-          <Route exact path="/feedback" element={<Feedback/>}/>
+
+
           </Route>
          {/* <Route element={<AfterLoginGuard/>}></Route>*/}
+         <Route exact path="/faq"   element={<FAQ />}/>
+          <Route exact path="/aboutus" element={<Aboutus />}/>
           <Route exact path="/signin" element={<Signin />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/tour" element={<Tour/>}/>
+          <Route exact path="/feedback" element={<Feedback/>}/>
 
 
           <Route  path="*" element={<Invalid />} />

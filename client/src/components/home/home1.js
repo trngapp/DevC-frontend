@@ -85,7 +85,7 @@ const Home1 = () => {
         <>
 
 
-            <Grid container spacing={4} sx={{ padding:4 }}>
+            <Grid container spacing={4} sx={{ padding:4,background: "linear-gradient(173deg, #EEF9FE 100%, #F0E4DB 0%)" }}>
                 {/*<button onClick={log}></button>*/}
                 {/*<Grid item   style={{backgroundColor:"f8f9fa"}}>*/}
 
@@ -106,7 +106,7 @@ const Home1 = () => {
 
                     <Grid item md={5} xs={12}>
 
-                        <img src={Landing} alt="homeimg" style={{ width: '60vh', height: '50vh',float:"right" }}>
+                        <img src={Landing} alt="homeimg" style={{ width: '60vh', height: '50vh',float:"right",mixBlendMode: "darken" }}>
 
                         </img>
                     </Grid>

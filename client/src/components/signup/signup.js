@@ -24,6 +24,8 @@ import Loading from "../loading.js"
 import Gmail from "./gmailCheck.js/gmailc.js";
 import {useNavigate} from "react-router-dom";
 
+import FestivalIcon from '@mui/icons-material/Festival';
+
 //import {SignupContext} from "./signupContext.js"
 
 
@@ -196,6 +198,9 @@ export default function SignUp() {
     <>
 
       <Grid container columnGap={{ md: 16 }} columnSpacing={{ xs: 4, md: 8 }}>
+        <Grid item lg={12} >
+        <Link href="/tour" variant="body2">  <FestivalIcon sx={{width:"4vh",height:"4vh",color:"#007FFF",marginTop:"22px",marginLeft:"8px",marginLeft:"50px",cursor:"pointer"}}/></Link>
+        </Grid>
         <Grid item>
           <MediaQuery minWidth={1224}>
             <img src={Entry} alt="Girl" style={{ width: '80vh', height: '80vh', marginLeft: '10%', marginTop: '40%' }}>

@@ -22,6 +22,8 @@ import {AuthContext} from "../../context/AuthContext";
 import Loading from "../loading.js"
 import {useNavigate} from "react-router-dom";
 import Betawarn from "./beta.png"
+
+import FestivalIcon from '@mui/icons-material/Festival';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -105,8 +107,10 @@ React.useEffect(()=>{
     <>
 
 {isLoading===true?<Loading/>:
-      <Grid container columnGap={{ md: 20 }} columnSpacing={{ xs: 1, md: 12 }} sx={{marginTop:"90px"}}>
-
+      <Grid container columnGap={{ md: 20 }} columnSpacing={{ xs: 1, md: 12 }} sx={{marginTop:"60px"}}>
+<Grid item lg={12} >
+        <Link href="/tour" variant="body2">  <FestivalIcon sx={{width:"4vh",height:"4vh",color:"#007FFF",marginTop:"22px",marginLeft:"8px",marginLeft:"50px",cursor:"pointer"}}/></Link>
+        </Grid>
 
         {/*GIF */}
         <Grid item >
